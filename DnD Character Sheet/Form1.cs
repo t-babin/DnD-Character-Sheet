@@ -150,6 +150,10 @@ namespace DnD_Character_Sheet
                     character.race = new Gnome();
                     speedLabel.Text += " 25 base (Gnome)";
                     break;
+                case "half elf":
+                    character.race = new HalfElf();
+                    speedLabel.Text += " 30 base (Half Elf)";
+                    break;
 			}
             character.race.Subrace = (subraceComboBox.SelectedItem.ToString() != "NONE" ? subraceComboBox.SelectedItem.ToString() : "");
             character.race.AddSubraceBonuses(character.race.Subrace);

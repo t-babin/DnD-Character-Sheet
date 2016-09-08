@@ -59,6 +59,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Races\Gnome.cs" />
+    <Compile Include="Races\HalfElf.cs" />
     <Compile Include="Races\Halfling.cs" />
     <Compile Include="Races\Human.cs" />
     <Compile Include="Program.cs" />
