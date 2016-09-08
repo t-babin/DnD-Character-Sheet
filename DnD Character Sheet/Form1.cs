@@ -154,6 +154,10 @@ namespace DnD_Character_Sheet
                     character.race = new HalfElf();
                     speedLabel.Text += " 30 base (Half Elf)";
                     break;
+                case "half orc":
+                    character.race = new HalfOrc();
+                    speedLabel.Text += " 30 base (Half Orc)";
+                    break;
 			}
             character.race.Subrace = (subraceComboBox.SelectedItem.ToString() != "NONE" ? subraceComboBox.SelectedItem.ToString() : "");
             character.race.AddSubraceBonuses(character.race.Subrace);
