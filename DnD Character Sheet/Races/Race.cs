@@ -29,6 +29,19 @@ namespace DnD_Character_Sheet
 
         public virtual int MaximumHeight { get; set; } = 0;
 
+        public static Dictionary<string, List<string>> SubraceDictionary = new Dictionary<string, List<string>>()
+        {
+            { "Dwarf", new List<string>(new string[] {"Hill Dwarf", "Mountain Dwarf"}) },
+            { "Elf", new List<string>(new string[] {"High Elf", "Wood Elf", "Dark Elf"}) },
+            { "Halfling", new List<string>(new string[] {"Lightfood", "Stout"}) },
+            { "Human", new List<string>(new string[] {"None"}) },
+            { "Dragonborn", new List<string>(new string[] {"None"}) },
+            { "Gnome", new List<string>(new string[] {"Forest Gnome", "Rock Gnome"}) },
+            { "Half-Elf", new List<string>(new string[] {"None"}) },
+            { "Half-Orc", new List<string>(new string[] {"None"}) },
+            { "Tiefling", new List<string>(new string[] {"None"}) },
+        };
+
         public abstract void AddSubraceBonuses(string subrace);
 
         public abstract string AbilityIncreasePrintString();

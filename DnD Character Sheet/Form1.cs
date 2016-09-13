@@ -343,43 +343,10 @@ namespace DnD_Character_Sheet
             raceLabel.ForeColor = Color.Black;
             subraceComboBox.Items.Clear();
             string selectedRace = raceComboBox.SelectedItem.ToString();
-            //TODO: Change this so that each Race has a static list of strings with the names of their subraces.
-            switch (selectedRace.ToLower())
+            List<string> subraceList = Race.SubraceDictionary[selectedRace];
+            foreach (string s in subraceList)
             {
-                case "dwarf":
-                    subraceComboBox.Items.Add("Hill Dwarf");
-                    subraceComboBox.Items.Add("Mountain Dwarf");
-                    BasicInfoToolTip.SetToolTip(basicHeightLabel, "Dwarves stand between 4 and 5 feet tall.");
-                    BasicInfoToolTip.SetToolTip(basicWeightLabel, "Dwarves are an average of 150 pounds.");
-                    break;
-                case "elf":
-                    subraceComboBox.Items.Add("High Elf");
-                    subraceComboBox.Items.Add("Wood Elf");
-                    subraceComboBox.Items.Add("Dark Elf");
-                    break;
-                case "halfling":
-                    subraceComboBox.Items.Add("Lightfoot");
-                    subraceComboBox.Items.Add("Stout");
-                    break;
-                case "human":
-                    subraceComboBox.Items.Add("NONE");
-                    break;
-                case "dragonborn":
-                    subraceComboBox.Items.Add("NONE");
-                    break;
-                case "gnome":
-                    subraceComboBox.Items.Add("Forest Gnome");
-                    subraceComboBox.Items.Add("Rock Gnome");
-                    break;
-                case "half-elf":
-                    subraceComboBox.Items.Add("NONE");
-                    break;
-                case "half-orc":
-                    subraceComboBox.Items.Add("NONE");
-                    break;
-                case "tiefling":
-                    subraceComboBox.Items.Add("NONE");
-                    break;
+                subraceComboBox.Items.Add(s);
             }
             validBasicInfo[2] = true;
             checkIfBasicInfoVerified();
