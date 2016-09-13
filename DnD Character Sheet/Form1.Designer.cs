@@ -146,7 +146,7 @@
             this.hitDiceLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.levelLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.raceAndClassTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -1418,7 +1418,7 @@
             // flowLayoutPanel14
             // 
             this.flowLayoutPanel14.Controls.Add(this.label2);
-            this.flowLayoutPanel14.Controls.Add(this.label4);
+            this.flowLayoutPanel14.Controls.Add(this.levelLabel);
             this.flowLayoutPanel14.Location = new System.Drawing.Point(721, 39);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
             this.flowLayoutPanel14.Size = new System.Drawing.Size(381, 30);
@@ -1434,15 +1434,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Level:";
             // 
-            // label4
+            // levelLabel
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(45, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(10, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "-";
+            this.levelLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.levelLabel.AutoSize = true;
+            this.levelLabel.Location = new System.Drawing.Point(45, 0);
+            this.levelLabel.Name = "levelLabel";
+            this.levelLabel.Size = new System.Drawing.Size(10, 13);
+            this.levelLabel.TabIndex = 1;
+            this.levelLabel.Text = "-";
             // 
             // label6
             // 
@@ -1674,7 +1674,7 @@
         private System.Windows.Forms.Label hitDiceLabel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel14;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label levelLabel;
         private System.Windows.Forms.Label xpLabel;
         private System.Windows.Forms.TextBox xpTextBox;
     }

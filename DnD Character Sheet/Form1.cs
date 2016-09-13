@@ -162,9 +162,12 @@ namespace DnD_Character_Sheet
             character.race.Subrace = (subraceComboBox.SelectedItem.ToString() != "NONE" ? subraceComboBox.SelectedItem.ToString() : "");
             character.race.AddSubraceBonuses(character.race.Subrace);
             character.alignment = alignmentComboBox.SelectedItem.ToString();
-            character.weight = Int32.Parse(weightTextBox.Text);
-            character.height = Int32.Parse(heightTextBox.Text);
+            character.weight = int.Parse(weightTextBox.Text);
+            character.height = int.Parse(heightTextBox.Text);
             character.sex = sexComboBox.SelectedItem.ToString();
+            character.experiencePoints = int.Parse(xpTextBox.Text);
+            character.DetermineLevel();
+            levelLabel.Text = character.level.ToString();
             abilityScoreIncreaseLabel.Text += character.race.AbilityIncreasePrintString();
 
             additionalInfoTabControl.Enabled = true;
@@ -179,6 +182,7 @@ namespace DnD_Character_Sheet
             heightTextBox.Enabled = false;
             weightTextBox.Enabled = false;
             sexComboBox.Enabled = false;
+            xpTextBox.Enabled = false;
             editBasicInformationButton.Enabled = true;
         }
 
@@ -244,8 +248,6 @@ namespace DnD_Character_Sheet
             {
                 if (l.Item1 == sender)
                 {
-                    Console.WriteLine(l);
-                    Console.WriteLine(sender);
                     return l;
                 }
             }
@@ -259,8 +261,6 @@ namespace DnD_Character_Sheet
             {
                 if (l.Item3 == sender)
                 {
-                    Console.WriteLine(l);
-                    Console.WriteLine(sender);
                     return l;
                 }
             }
@@ -274,14 +274,12 @@ namespace DnD_Character_Sheet
             //int tmp = triple.IndexOf()
             Tuple<Button, Label, ComboBox> tuple = getSaveTuple((Button) sender);
             string ability = tuple.Item3.Text;
-            Console.WriteLine(ability);
             rollStatsButton.Enabled = false;
             switch (ability.ToLower())
             {
                 //TODO: if roll is pressed more than once it'll add all of the stats more than once
                 case "strength":
                     character.abilityScores.Strength[0] += Int32.Parse(tuple.Item2.Text);
-                    Console.WriteLine(character.abilityScores.Strength[0]);
                     tuple.Item3.Enabled = false;
                     removeTagFromAll(saveButtons.IndexOf((Button) sender) + 1, "Strength");
                     break;
@@ -338,7 +336,6 @@ namespace DnD_Character_Sheet
 
         private void raceComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Console.WriteLine(subraceComboBox.SelectedIndex);
             subraceLabel.ForeColor = Color.Red;
             raceLabel.ForeColor = Color.Black;
             subraceComboBox.Items.Clear();
@@ -542,6 +539,7 @@ namespace DnD_Character_Sheet
             heightTextBox.Enabled = true;
             weightTextBox.Enabled = true;
             sexComboBox.Enabled = true;
+            xpTextBox.Enabled = true;
             editBasicInformationButton.Enabled = false;
 
             abilityScoreIncreaseLabel.Text = "Ability Score Increases:";
