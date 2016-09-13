@@ -32,7 +32,8 @@ namespace DnD_Character_Sheet.Races
 
         public override string AbilityIncreasePrintString()
         {
-            throw new NotImplementedException();
+            string s = " +1 Int (Tiefling) +2 Cha (Tiefling)";
+            return s;
         }
 
         public override void AddSubraceBonuses(string subrace)
