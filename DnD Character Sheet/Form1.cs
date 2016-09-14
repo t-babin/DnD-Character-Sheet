@@ -493,6 +493,7 @@ namespace DnD_Character_Sheet
                 saveBasicInfoButton.Enabled = true;
         }
 
+        //TODO change it so that pressing this button also clears the previous stat selections, but does not get rid of the current values
         private void editBasicInformationButton_Click(object sender, EventArgs e)
         {
             additionalInfoTabControl.Enabled = false;

@@ -106,31 +106,37 @@
             this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             this.abilityValuesComboSix = new System.Windows.Forms.ComboBox();
             this.abilityValueLabelSix = new System.Windows.Forms.Label();
+            this.abilityValueModifierSix = new System.Windows.Forms.Label();
             this.abilityValueSixSaveButton = new System.Windows.Forms.Button();
             this.abilityValueSixUndoButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.abilityValuesComboFive = new System.Windows.Forms.ComboBox();
             this.abilityValueLabelFive = new System.Windows.Forms.Label();
+            this.abilityValueModifierFive = new System.Windows.Forms.Label();
             this.abilityValueFiveSaveButton = new System.Windows.Forms.Button();
             this.abilityValueFiveUndoButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.abilityValuesComboFour = new System.Windows.Forms.ComboBox();
             this.abilityValueLabelFour = new System.Windows.Forms.Label();
+            this.abilityValueModifierFour = new System.Windows.Forms.Label();
             this.abilityValueFourSaveButton = new System.Windows.Forms.Button();
             this.abilityValueFourUndoButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
             this.abilityValuesComboThree = new System.Windows.Forms.ComboBox();
             this.abilityValueLabelThree = new System.Windows.Forms.Label();
+            this.abilityValueModifierThree = new System.Windows.Forms.Label();
             this.abilityValueThreeSaveButton = new System.Windows.Forms.Button();
             this.abilityValueThreeUndoButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.abilityValuesComboTwo = new System.Windows.Forms.ComboBox();
             this.abilityValueLabelTwo = new System.Windows.Forms.Label();
+            this.abilityValueModifierTwo = new System.Windows.Forms.Label();
             this.abilityValueTwoSaveButton = new System.Windows.Forms.Button();
             this.abilityValueTwoUndoButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.abilityValuesComboOne = new System.Windows.Forms.ComboBox();
             this.abilityValueLabelOne = new System.Windows.Forms.Label();
+            this.abilityValueModifierOne = new System.Windows.Forms.Label();
             this.abilityValueOneSaveButton = new System.Windows.Forms.Button();
             this.abilityValueOneUndoButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -152,12 +158,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.spellsPage = new System.Windows.Forms.TabPage();
             this.equipmentPage = new System.Windows.Forms.TabPage();
-            this.abilityValueModifierOne = new System.Windows.Forms.Label();
-            this.abilityValueModifierTwo = new System.Windows.Forms.Label();
-            this.abilityValueModifierThree = new System.Windows.Forms.Label();
-            this.abilityValueModifierFour = new System.Windows.Forms.Label();
-            this.abilityValueModifierFive = new System.Windows.Forms.Label();
-            this.abilityValueModifierSix = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.basicInfoPanel.SuspendLayout();
             this.additionalInfoTabControl.SuspendLayout();
@@ -1039,9 +1039,18 @@
             this.abilityValueLabelSix.TabIndex = 1;
             this.abilityValueLabelSix.Text = "0";
             // 
+            // abilityValueModifierSix
+            // 
+            this.abilityValueModifierSix.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierSix.AutoSize = true;
+            this.abilityValueModifierSix.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierSix.Name = "abilityValueModifierSix";
+            this.abilityValueModifierSix.Size = new System.Drawing.Size(0, 13);
+            this.abilityValueModifierSix.TabIndex = 7;
+            // 
             // abilityValueSixSaveButton
             // 
-            this.abilityValueSixSaveButton.Location = new System.Drawing.Point(168, 3);
+            this.abilityValueSixSaveButton.Location = new System.Drawing.Point(155, 3);
             this.abilityValueSixSaveButton.Name = "abilityValueSixSaveButton";
             this.abilityValueSixSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueSixSaveButton.TabIndex = 3;
@@ -1051,7 +1060,7 @@
             // 
             // abilityValueSixUndoButton
             // 
-            this.abilityValueSixUndoButton.Location = new System.Drawing.Point(249, 3);
+            this.abilityValueSixUndoButton.Location = new System.Drawing.Point(236, 3);
             this.abilityValueSixUndoButton.Name = "abilityValueSixUndoButton";
             this.abilityValueSixUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueSixUndoButton.TabIndex = 6;
@@ -1090,9 +1099,18 @@
             this.abilityValueLabelFive.TabIndex = 1;
             this.abilityValueLabelFive.Text = "0";
             // 
+            // abilityValueModifierFive
+            // 
+            this.abilityValueModifierFive.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierFive.AutoSize = true;
+            this.abilityValueModifierFive.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierFive.Name = "abilityValueModifierFive";
+            this.abilityValueModifierFive.Size = new System.Drawing.Size(0, 13);
+            this.abilityValueModifierFive.TabIndex = 7;
+            // 
             // abilityValueFiveSaveButton
             // 
-            this.abilityValueFiveSaveButton.Location = new System.Drawing.Point(168, 3);
+            this.abilityValueFiveSaveButton.Location = new System.Drawing.Point(155, 3);
             this.abilityValueFiveSaveButton.Name = "abilityValueFiveSaveButton";
             this.abilityValueFiveSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueFiveSaveButton.TabIndex = 3;
@@ -1102,7 +1120,7 @@
             // 
             // abilityValueFiveUndoButton
             // 
-            this.abilityValueFiveUndoButton.Location = new System.Drawing.Point(249, 3);
+            this.abilityValueFiveUndoButton.Location = new System.Drawing.Point(236, 3);
             this.abilityValueFiveUndoButton.Name = "abilityValueFiveUndoButton";
             this.abilityValueFiveUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueFiveUndoButton.TabIndex = 6;
@@ -1141,9 +1159,18 @@
             this.abilityValueLabelFour.TabIndex = 1;
             this.abilityValueLabelFour.Text = "0";
             // 
+            // abilityValueModifierFour
+            // 
+            this.abilityValueModifierFour.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierFour.AutoSize = true;
+            this.abilityValueModifierFour.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierFour.Name = "abilityValueModifierFour";
+            this.abilityValueModifierFour.Size = new System.Drawing.Size(0, 13);
+            this.abilityValueModifierFour.TabIndex = 7;
+            // 
             // abilityValueFourSaveButton
             // 
-            this.abilityValueFourSaveButton.Location = new System.Drawing.Point(168, 3);
+            this.abilityValueFourSaveButton.Location = new System.Drawing.Point(155, 3);
             this.abilityValueFourSaveButton.Name = "abilityValueFourSaveButton";
             this.abilityValueFourSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueFourSaveButton.TabIndex = 3;
@@ -1153,7 +1180,7 @@
             // 
             // abilityValueFourUndoButton
             // 
-            this.abilityValueFourUndoButton.Location = new System.Drawing.Point(249, 3);
+            this.abilityValueFourUndoButton.Location = new System.Drawing.Point(236, 3);
             this.abilityValueFourUndoButton.Name = "abilityValueFourUndoButton";
             this.abilityValueFourUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueFourUndoButton.TabIndex = 6;
@@ -1192,9 +1219,18 @@
             this.abilityValueLabelThree.TabIndex = 1;
             this.abilityValueLabelThree.Text = "0";
             // 
+            // abilityValueModifierThree
+            // 
+            this.abilityValueModifierThree.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierThree.AutoSize = true;
+            this.abilityValueModifierThree.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierThree.Name = "abilityValueModifierThree";
+            this.abilityValueModifierThree.Size = new System.Drawing.Size(0, 13);
+            this.abilityValueModifierThree.TabIndex = 7;
+            // 
             // abilityValueThreeSaveButton
             // 
-            this.abilityValueThreeSaveButton.Location = new System.Drawing.Point(168, 3);
+            this.abilityValueThreeSaveButton.Location = new System.Drawing.Point(155, 3);
             this.abilityValueThreeSaveButton.Name = "abilityValueThreeSaveButton";
             this.abilityValueThreeSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueThreeSaveButton.TabIndex = 3;
@@ -1204,7 +1240,7 @@
             // 
             // abilityValueThreeUndoButton
             // 
-            this.abilityValueThreeUndoButton.Location = new System.Drawing.Point(249, 3);
+            this.abilityValueThreeUndoButton.Location = new System.Drawing.Point(236, 3);
             this.abilityValueThreeUndoButton.Name = "abilityValueThreeUndoButton";
             this.abilityValueThreeUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueThreeUndoButton.TabIndex = 6;
@@ -1243,9 +1279,18 @@
             this.abilityValueLabelTwo.TabIndex = 1;
             this.abilityValueLabelTwo.Text = "0";
             // 
+            // abilityValueModifierTwo
+            // 
+            this.abilityValueModifierTwo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierTwo.AutoSize = true;
+            this.abilityValueModifierTwo.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierTwo.Name = "abilityValueModifierTwo";
+            this.abilityValueModifierTwo.Size = new System.Drawing.Size(0, 13);
+            this.abilityValueModifierTwo.TabIndex = 7;
+            // 
             // abilityValueTwoSaveButton
             // 
-            this.abilityValueTwoSaveButton.Location = new System.Drawing.Point(168, 3);
+            this.abilityValueTwoSaveButton.Location = new System.Drawing.Point(155, 3);
             this.abilityValueTwoSaveButton.Name = "abilityValueTwoSaveButton";
             this.abilityValueTwoSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueTwoSaveButton.TabIndex = 3;
@@ -1255,7 +1300,7 @@
             // 
             // abilityValueTwoUndoButton
             // 
-            this.abilityValueTwoUndoButton.Location = new System.Drawing.Point(249, 3);
+            this.abilityValueTwoUndoButton.Location = new System.Drawing.Point(236, 3);
             this.abilityValueTwoUndoButton.Name = "abilityValueTwoUndoButton";
             this.abilityValueTwoUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueTwoUndoButton.TabIndex = 6;
@@ -1294,9 +1339,18 @@
             this.abilityValueLabelOne.TabIndex = 1;
             this.abilityValueLabelOne.Text = "0";
             // 
+            // abilityValueModifierOne
+            // 
+            this.abilityValueModifierOne.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierOne.AutoSize = true;
+            this.abilityValueModifierOne.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierOne.Name = "abilityValueModifierOne";
+            this.abilityValueModifierOne.Size = new System.Drawing.Size(0, 13);
+            this.abilityValueModifierOne.TabIndex = 6;
+            // 
             // abilityValueOneSaveButton
             // 
-            this.abilityValueOneSaveButton.Location = new System.Drawing.Point(168, 3);
+            this.abilityValueOneSaveButton.Location = new System.Drawing.Point(155, 3);
             this.abilityValueOneSaveButton.Name = "abilityValueOneSaveButton";
             this.abilityValueOneSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueOneSaveButton.TabIndex = 3;
@@ -1306,7 +1360,7 @@
             // 
             // abilityValueOneUndoButton
             // 
-            this.abilityValueOneUndoButton.Location = new System.Drawing.Point(249, 3);
+            this.abilityValueOneUndoButton.Location = new System.Drawing.Point(236, 3);
             this.abilityValueOneUndoButton.Name = "abilityValueOneUndoButton";
             this.abilityValueOneUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueOneUndoButton.TabIndex = 5;
@@ -1509,66 +1563,6 @@
             this.equipmentPage.TabIndex = 2;
             this.equipmentPage.Text = "Equipment, Items";
             this.equipmentPage.UseVisualStyleBackColor = true;
-            // 
-            // abilityValueModifierOne
-            // 
-            this.abilityValueModifierOne.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.abilityValueModifierOne.AutoSize = true;
-            this.abilityValueModifierOne.Location = new System.Drawing.Point(149, 8);
-            this.abilityValueModifierOne.Name = "abilityValueModifierOne";
-            this.abilityValueModifierOne.Size = new System.Drawing.Size(13, 13);
-            this.abilityValueModifierOne.TabIndex = 6;
-            this.abilityValueModifierOne.Text = "()";
-            // 
-            // abilityValueModifierTwo
-            // 
-            this.abilityValueModifierTwo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.abilityValueModifierTwo.AutoSize = true;
-            this.abilityValueModifierTwo.Location = new System.Drawing.Point(149, 8);
-            this.abilityValueModifierTwo.Name = "abilityValueModifierTwo";
-            this.abilityValueModifierTwo.Size = new System.Drawing.Size(13, 13);
-            this.abilityValueModifierTwo.TabIndex = 7;
-            this.abilityValueModifierTwo.Text = "()";
-            // 
-            // abilityValueModifierThree
-            // 
-            this.abilityValueModifierThree.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.abilityValueModifierThree.AutoSize = true;
-            this.abilityValueModifierThree.Location = new System.Drawing.Point(149, 8);
-            this.abilityValueModifierThree.Name = "abilityValueModifierThree";
-            this.abilityValueModifierThree.Size = new System.Drawing.Size(13, 13);
-            this.abilityValueModifierThree.TabIndex = 7;
-            this.abilityValueModifierThree.Text = "()";
-            // 
-            // abilityValueModifierFour
-            // 
-            this.abilityValueModifierFour.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.abilityValueModifierFour.AutoSize = true;
-            this.abilityValueModifierFour.Location = new System.Drawing.Point(149, 8);
-            this.abilityValueModifierFour.Name = "abilityValueModifierFour";
-            this.abilityValueModifierFour.Size = new System.Drawing.Size(13, 13);
-            this.abilityValueModifierFour.TabIndex = 7;
-            this.abilityValueModifierFour.Text = "()";
-            // 
-            // abilityValueModifierFive
-            // 
-            this.abilityValueModifierFive.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.abilityValueModifierFive.AutoSize = true;
-            this.abilityValueModifierFive.Location = new System.Drawing.Point(149, 8);
-            this.abilityValueModifierFive.Name = "abilityValueModifierFive";
-            this.abilityValueModifierFive.Size = new System.Drawing.Size(13, 13);
-            this.abilityValueModifierFive.TabIndex = 7;
-            this.abilityValueModifierFive.Text = "()";
-            // 
-            // abilityValueModifierSix
-            // 
-            this.abilityValueModifierSix.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.abilityValueModifierSix.AutoSize = true;
-            this.abilityValueModifierSix.Location = new System.Drawing.Point(149, 8);
-            this.abilityValueModifierSix.Name = "abilityValueModifierSix";
-            this.abilityValueModifierSix.Size = new System.Drawing.Size(13, 13);
-            this.abilityValueModifierSix.TabIndex = 7;
-            this.abilityValueModifierSix.Text = "()";
             // 
             // Form1
             // 

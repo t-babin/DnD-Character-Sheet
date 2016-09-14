@@ -8,12 +8,6 @@ namespace DnD_Character_Sheet
 {
     class AbilityScores
     {
-        public int[] Strength { get; set; } = new int[2];
-        public int[] Dexterity { get; set; } = new int[2];
-        public int[] Constitution { get; set; } = new int[2];
-        public int[] Intelligence { get; set; } = new int[2];
-        public int[] Wisdom { get; set; } = new int[2];
-        public int[] Charisma { get; set; } = new int[2];
         public int[] finalStats { get; set; } = new int[6];
         public Dictionary<string, int[]> Scores = new Dictionary<string, int[]>()
         {
@@ -27,7 +21,6 @@ namespace DnD_Character_Sheet
 
         public AbilityScores()
         {
-
         }
 
         public void SetStat(string stat, int statValue)
