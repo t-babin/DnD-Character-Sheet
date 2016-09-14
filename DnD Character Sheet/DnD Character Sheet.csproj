@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="AbilityScores.cs" />
     <Compile Include="Character.cs" />
-    <Compile Include="CharacterClass.cs" />
+    <Compile Include="Character Classes\CharacterClass.cs" />
     <Compile Include="Races\Dragonborn.cs" />
     <Compile Include="Races\Dwarf.cs" />
     <Compile Include="Races\Elf.cs" />
@@ -92,6 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -130,6 +130,8 @@ namespace DnD_Character_Sheet
                     character.race = new Elf();
                     //TODO: fix this shit so that it's a part of each class and not typed here manually
                     speedLabel.Text += " 30 base (Elf)";
+                    //TODO move the languages field to the Race and Class Features tab; allow for drop down menu selection of languages
+                    //(keep in mind how many the character may be able to speak?)
                     languagesLabel.Text += " Common, Elvish (Elf)";
                     break;
                 case "halfling":

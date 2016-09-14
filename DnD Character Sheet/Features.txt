@@ -1,0 +1,42 @@
+﻿Race and Class Features Tab
+====
+- Shows Race features/abilities, such as "Darkvision", or other abilities that do not require specific coding
+- Maybe have a breakdown of what the class acquires at each level?
+	- in a table of some sort I suppose
+- maybe have speed, languages on this page?
+- should probably have a section here to select what languages you want to be able to speak (instead of having them set to the default values)
+
+Stats, Skills, Abilities Tab
+====
+- proficiency bonuses from the class chosen should probably appear on the Stats, Skills, Abilities tab
+- have an area that shows what the character is proficient in (armor, weapons, etc)
+- armor class
+- current HP should be bigger, more noticeable
+
+Cantrips, Spells Tab
+====
+- have a list to view the name of all spells, can select from list to add to character
+- when a spell is selected, show it's description and cost, etc
+- show cooldown or charges remaining
+
+Equipment, Items Tab
+====
+- Have a list of all equipment that the character has
+	- weapons, armor, bags from background, anything like that
+ 
+Save Character
+====
+- save as an xml file somewhere
+- has all info in it
+
+Load Character
+====
+- load from an xml
+- need checks to see if valid
+- fills in all fields with info
+- allow everything to be editable after loading
+
+Create Character
+====
+- might need to make a popup or something when selecting a class to choose what class features you want?
+- ex: picking which hunter spec at lvl 3 and stuff like that
