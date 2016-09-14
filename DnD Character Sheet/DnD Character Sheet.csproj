@@ -47,8 +47,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbilityScores.cs" />
+    <Compile Include="Character Classes\Barbarian.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Character Classes\CharacterClass.cs" />
+    <Compile Include="ClassCreationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassCreationForm.Designer.cs">
+      <DependentUpon>ClassCreationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Races\Dragonborn.cs" />
     <Compile Include="Races\Dwarf.cs" />
     <Compile Include="Races\Elf.cs" />
@@ -68,6 +75,10 @@
     <Compile Include="Races\Race.cs" />
     <Compile Include="Races\Tiefling.cs" />
     <Compile Include="Skills.cs" />
+    <Compile Include="Weapons.cs" />
+    <EmbeddedResource Include="ClassCreationForm.resx">
+      <DependentUpon>ClassCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

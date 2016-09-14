@@ -101,13 +101,13 @@ namespace DnD_Character_Sheet
 
 	    private void saveBasicInfoButton_Click(object sender, EventArgs e)
 	    {			
-			character.name = characterNameBox.Text;
-			character.age = int.Parse(ageTextBox.Text);
+			character.Name = characterNameBox.Text;
+			character.Age = int.Parse(ageTextBox.Text);
 			string race = raceComboBox.SelectedItem.ToString();
 			switch (race.ToLower())
 			{
 				case "dwarf":
-					character.race = new Dwarf();                    
+					character.Race = new Dwarf();                    
 					speedLabel.Text += " 25 base (Dwarf)";
 					languagesLabel.Text += " Common, Dwarvish (Dwarf)";
                     //TODO: Fix subraces.                    
@@ -127,7 +127,7 @@ namespace DnD_Character_Sheet
 					//}
 					break;
                 case "elf":
-                    character.race = new Elf();
+                    character.Race = new Elf();
                     //TODO: fix this shit so that it's a part of each class and not typed here manually
                     speedLabel.Text += " 30 base (Elf)";
                     //TODO move the languages field to the Race and Class Features tab; allow for drop down menu selection of languages
@@ -135,42 +135,42 @@ namespace DnD_Character_Sheet
                     languagesLabel.Text += " Common, Elvish (Elf)";
                     break;
                 case "halfling":
-                    character.race = new Halfling();
+                    character.Race = new Halfling();
                     speedLabel.Text += " 25 base (Halfling)";
                     languagesLabel.Text += " Common, Halfling (Halfling)";
                     break;
                 case "human":
-                    character.race = new Human();
+                    character.Race = new Human();
                     speedLabel.Text += " 30 base (Human)";
                     languagesLabel.Text += " Common (Human)";
                     break;
                 case "dragonborn":
-                    character.race = new Dragonborn();
+                    character.Race = new Dragonborn();
                     speedLabel.Text += " 30 base (Dragonborn)";
                     break;
                 case "gnome":
-                    character.race = new Gnome();
+                    character.Race = new Gnome();
                     speedLabel.Text += " 25 base (Gnome)";
                     break;
                 case "half elf":
-                    character.race = new HalfElf();
+                    character.Race = new HalfElf();
                     speedLabel.Text += " 30 base (Half Elf)";
                     break;
                 case "half orc":
-                    character.race = new HalfOrc();
+                    character.Race = new HalfOrc();
                     speedLabel.Text += " 30 base (Half Orc)";
                     break;
 			}
-            character.race.Subrace = (subraceComboBox.SelectedItem.ToString() != "NONE" ? subraceComboBox.SelectedItem.ToString() : "");
-            character.race.AddSubraceBonuses(character.race.Subrace);
-            character.alignment = alignmentComboBox.SelectedItem.ToString();
-            character.weight = int.Parse(weightTextBox.Text);
-            character.height = int.Parse(heightTextBox.Text);
-            character.sex = sexComboBox.SelectedItem.ToString();
-            character.experiencePoints = int.Parse(xpTextBox.Text);
+            character.Race.Subrace = (subraceComboBox.SelectedItem.ToString() != "NONE" ? subraceComboBox.SelectedItem.ToString() : "");
+            character.Race.AddSubraceBonuses(character.Race.Subrace);
+            character.Alignment = alignmentComboBox.SelectedItem.ToString();
+            character.Weight = int.Parse(weightTextBox.Text);
+            character.Height = int.Parse(heightTextBox.Text);
+            character.Sex = sexComboBox.SelectedItem.ToString();
+            character.ExperiencePoints = int.Parse(xpTextBox.Text);
             character.DetermineLevel();
-            levelLabel.Text = character.level.ToString();
-            abilityScoreIncreaseLabel.Text += character.race.AbilityIncreasePrintString();
+            levelLabel.Text = character.Level.ToString();
+            abilityScoreIncreaseLabel.Text += character.Race.AbilityIncreasePrintString();
 
             additionalInfoTabControl.Enabled = true;
             saveBasicInfoButton.Enabled = false;
@@ -186,6 +186,7 @@ namespace DnD_Character_Sheet
             sexComboBox.Enabled = false;
             xpTextBox.Enabled = false;
             editBasicInformationButton.Enabled = true;
+            classAttributesAndFeaturesButton.Enabled = true;
         }
 
         private void rollStatsButton_Click(object sender, EventArgs e)
@@ -197,7 +198,7 @@ namespace DnD_Character_Sheet
             abilityValuesComboFive.Enabled = true;
             abilityValuesComboSix.Enabled = true;
 
-            int[] stats = character.abilityScores.RollStats();
+            int[] stats = character.AbilityScores.RollStats();
             abilityValueLabelOne.Text = stats[0].ToString();
             abilityValueLabelTwo.Text = stats[1].ToString();
             abilityValueLabelThree.Text = stats[2].ToString();
@@ -277,9 +278,9 @@ namespace DnD_Character_Sheet
             Tuple<Button, Label, ComboBox, Label> tuple = getSaveTuple((Button) sender);
             string ability = tuple.Item3.Text;
             rollStatsButton.Enabled = false;
-            character.abilityScores.SetStat(ability, int.Parse(tuple.Item2.Text));
+            character.AbilityScores.SetStat(ability, int.Parse(tuple.Item2.Text));
             removeTagFromAll(saveButtons.IndexOf((Button)sender) + 1, ability);
-            tuple.Item4.Text = "(" + character.abilityScores.Scores[ability][1].ToString() + ")";
+            tuple.Item4.Text = "(" + character.AbilityScores.Scores[ability][1].ToString() + ")";
             tuple.Item3.Enabled = false;
             ((Button) sender).Enabled = false;
         }
@@ -288,19 +289,19 @@ namespace DnD_Character_Sheet
         {
             Tuple<Button, Label, ComboBox, Label> tup = getSaveTuple((ComboBox) sender);
             int tmp = abilityScoreFormTuples.IndexOf(tup);
-            tup.Item2.Text = character.abilityScores.finalStats[abilityScoreFormTuples.IndexOf(tup)].ToString();
+            tup.Item2.Text = character.AbilityScores.finalStats[abilityScoreFormTuples.IndexOf(tup)].ToString();
             int oldStat = int.Parse(tup.Item2.Text);
             string statSelected = ((ComboBox) sender).SelectedItem.ToString();
-            string characterAbilityIncrease = character.race.AbilityScoreIncrease.Item1;
-            string subRaceAbilityIncrease = (character.race.SubraceAbilityScoreIncrease != null) ? character.race.SubraceAbilityScoreIncrease.Item1 : null;
+            string characterAbilityIncrease = character.Race.AbilityScoreIncrease.Item1;
+            string subRaceAbilityIncrease = (character.Race.SubraceAbilityScoreIncrease != null) ? character.Race.SubraceAbilityScoreIncrease.Item1 : null;
             if (statSelected.Equals(characterAbilityIncrease))
             {
-                tup.Item2.Text = (oldStat + character.race.AbilityScoreIncrease.Item2).ToString();
+                tup.Item2.Text = (oldStat + character.Race.AbilityScoreIncrease.Item2).ToString();
             }
 
             if (statSelected.Equals(subRaceAbilityIncrease))
-                tup.Item2.Text = (oldStat + character.race.SubraceAbilityScoreIncrease.Item2).ToString();
-            if (character.race is Human)
+                tup.Item2.Text = (oldStat + character.Race.SubraceAbilityScoreIncrease.Item2).ToString();
+            if (character.Race is Human)
                 tup.Item2.Text = (oldStat + 1).ToString();
         }
 
@@ -512,6 +513,7 @@ namespace DnD_Character_Sheet
             sexComboBox.Enabled = true;
             xpTextBox.Enabled = true;
             editBasicInformationButton.Enabled = false;
+            classAttributesAndFeaturesButton.Enabled = false;
 
             abilityScoreIncreaseLabel.Text = "Ability Score Increases:";
             speedLabel.Text = "Speed:";

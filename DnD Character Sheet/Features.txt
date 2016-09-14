@@ -40,3 +40,5 @@ Create Character
 ====
 - might need to make a popup or something when selecting a class to choose what class features you want?
 - ex: picking which hunter spec at lvl 3 and stuff like that
+- select you weapons that you start with
+	- eg. barbarian: greataxe/any martial melee; 2 handaxe/any simple; explorer's pack + 4 javelins
