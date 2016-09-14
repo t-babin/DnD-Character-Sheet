@@ -21,19 +21,19 @@ namespace DnD_Character_Sheet
         List<ComboBox> abilityCombos = new List<ComboBox>();
         bool[] validBasicInfo = new bool[11] { false, false, false, false, false, false, false, false, false, false, false };
 
-        List<Tuple<Button, Label, ComboBox>> triple = new List<Tuple<Button, Label, ComboBox>>();
+        List<Tuple<Button, Label, ComboBox, Label>> abilityScoreFormTuples = new List<Tuple<Button, Label, ComboBox, Label>>();
 
         Character character;
         XmlDocument document;
         public Form1()
         {
             InitializeComponent();
-            triple.Add(new Tuple<Button, Label, ComboBox>(abilityValueOneSaveButton, abilityValueLabelOne, abilityValuesComboOne));
-            triple.Add(new Tuple<Button, Label, ComboBox>(abilityValueTwoSaveButton, abilityValueLabelTwo, abilityValuesComboTwo));
-            triple.Add(new Tuple<Button, Label, ComboBox>(abilityValueThreeSaveButton, abilityValueLabelThree, abilityValuesComboThree));
-            triple.Add(new Tuple<Button, Label, ComboBox>(abilityValueFourSaveButton, abilityValueLabelFour, abilityValuesComboFour));
-            triple.Add(new Tuple<Button, Label, ComboBox>(abilityValueFiveSaveButton, abilityValueLabelFive, abilityValuesComboFive));
-            triple.Add(new Tuple<Button, Label, ComboBox>(abilityValueSixSaveButton, abilityValueLabelSix, abilityValuesComboSix));
+            abilityScoreFormTuples.Add(new Tuple<Button, Label, ComboBox, Label>(abilityValueOneSaveButton, abilityValueLabelOne, abilityValuesComboOne, abilityValueModifierOne));
+            abilityScoreFormTuples.Add(new Tuple<Button, Label, ComboBox, Label>(abilityValueTwoSaveButton, abilityValueLabelTwo, abilityValuesComboTwo, abilityValueModifierTwo));
+            abilityScoreFormTuples.Add(new Tuple<Button, Label, ComboBox, Label>(abilityValueThreeSaveButton, abilityValueLabelThree, abilityValuesComboThree, abilityValueModifierThree));
+            abilityScoreFormTuples.Add(new Tuple<Button, Label, ComboBox, Label>(abilityValueFourSaveButton, abilityValueLabelFour, abilityValuesComboFour, abilityValueModifierFour));
+            abilityScoreFormTuples.Add(new Tuple<Button, Label, ComboBox, Label>(abilityValueFiveSaveButton, abilityValueLabelFive, abilityValuesComboFive, abilityValueModifierFive));
+            abilityScoreFormTuples.Add(new Tuple<Button, Label, ComboBox, Label>(abilityValueSixSaveButton, abilityValueLabelSix, abilityValuesComboSix, abilityValueModifierSix));
 
             saveButtons.Add(abilityValueOneSaveButton);
             saveButtons.Add(abilityValueTwoSaveButton);
@@ -242,9 +242,9 @@ namespace DnD_Character_Sheet
             }
         }
 
-        private Tuple<Button, Label, ComboBox> getSaveTuple(Button sender)
+        private Tuple<Button, Label, ComboBox, Label> getSaveTuple(Button sender)
         {
-            foreach (Tuple<Button, Label, ComboBox> l in triple)
+            foreach (Tuple<Button, Label, ComboBox, Label> l in abilityScoreFormTuples)
             {
                 if (l.Item1 == sender)
                 {
@@ -255,9 +255,9 @@ namespace DnD_Character_Sheet
             return null;
         }
 
-        private Tuple<Button, Label, ComboBox> getSaveTuple(ComboBox sender)
+        private Tuple<Button, Label, ComboBox, Label> getSaveTuple(ComboBox sender)
         {
-            foreach (Tuple<Button, Label, ComboBox> l in triple)
+            foreach (Tuple<Button, Label, ComboBox, Label> l in abilityScoreFormTuples)
             {
                 if (l.Item3 == sender)
                 {
@@ -272,53 +272,21 @@ namespace DnD_Character_Sheet
         private void saveAbilityRoll_handler(object sender, EventArgs e)
         {
             //int tmp = triple.IndexOf()
-            Tuple<Button, Label, ComboBox> tuple = getSaveTuple((Button) sender);
+            Tuple<Button, Label, ComboBox, Label> tuple = getSaveTuple((Button) sender);
             string ability = tuple.Item3.Text;
             rollStatsButton.Enabled = false;
-            switch (ability.ToLower())
-            {
-                //TODO: if roll is pressed more than once it'll add all of the stats more than once
-                case "strength":
-                    character.abilityScores.Strength[0] += Int32.Parse(tuple.Item2.Text);
-                    tuple.Item3.Enabled = false;
-                    removeTagFromAll(saveButtons.IndexOf((Button) sender) + 1, "Strength");
-                    break;
-                case "dexterity":
-                    character.abilityScores.Dexterity[0] += Int32.Parse(tuple.Item2.Text);
-                    tuple.Item3.Enabled = false;
-                    removeTagFromAll(saveButtons.IndexOf((Button)sender) + 1, "Dexterity");
-                    break;
-                case "intelligence":
-                    character.abilityScores.Intelligence[0] += Int32.Parse(tuple.Item2.Text);
-                    tuple.Item3.Enabled = false;
-                    removeTagFromAll(saveButtons.IndexOf((Button)sender) + 1, "Intelligence");
-                    break;
-                case "constitution":
-                    character.abilityScores.Constitution[0] += Int32.Parse(tuple.Item2.Text);
-                    tuple.Item3.Enabled = false;
-                    removeTagFromAll(saveButtons.IndexOf((Button)sender) + 1, "Constitution");
-                    break;
-                case "wisdom":
-                    character.abilityScores.Wisdom[0] += Int32.Parse(tuple.Item2.Text);
-                    tuple.Item3.Enabled = false;
-                    removeTagFromAll(saveButtons.IndexOf((Button)sender) + 1, "Wisdom");
-                    break;
-                case "charisma":
-                    character.abilityScores.Charisma[0] += Int32.Parse(tuple.Item2.Text);
-                    tuple.Item3.Enabled = false;
-                    removeTagFromAll(saveButtons.IndexOf((Button)sender) + 1, "Charisma");
-                    break;
-                default:
-                    break;
-            }
+            character.abilityScores.SetStat(ability, int.Parse(tuple.Item2.Text));
+            removeTagFromAll(saveButtons.IndexOf((Button)sender) + 1, ability);
+            tuple.Item4.Text = "(" + character.abilityScores.Scores[ability][1].ToString() + ")";
+            tuple.Item3.Enabled = false;
             ((Button) sender).Enabled = false;
         }
 
         private void abilityValuesComboBoxes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Tuple<Button, Label, ComboBox> tup = getSaveTuple((ComboBox) sender);
-            int tmp = triple.IndexOf(tup);
-            tup.Item2.Text = character.abilityScores.finalStats[triple.IndexOf(tup)].ToString();
+            Tuple<Button, Label, ComboBox, Label> tup = getSaveTuple((ComboBox) sender);
+            int tmp = abilityScoreFormTuples.IndexOf(tup);
+            tup.Item2.Text = character.abilityScores.finalStats[abilityScoreFormTuples.IndexOf(tup)].ToString();
             int oldStat = int.Parse(tup.Item2.Text);
             string statSelected = ((ComboBox) sender).SelectedItem.ToString();
             string characterAbilityIncrease = character.race.AbilityScoreIncrease.Item1;

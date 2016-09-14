@@ -15,10 +15,34 @@ namespace DnD_Character_Sheet
         public int[] Wisdom { get; set; } = new int[2];
         public int[] Charisma { get; set; } = new int[2];
         public int[] finalStats { get; set; } = new int[6];
+        public Dictionary<string, int[]> Scores = new Dictionary<string, int[]>()
+        {
+            { "Strength", new int[2] },
+            { "Dexterity", new int[2] },
+            { "Constitution", new int[2] },
+            { "Intelligence", new int[2] },
+            { "Wisdom", new int[2] },
+            { "Charisma", new int[2] }
+        };
 
         public AbilityScores()
         {
 
+        }
+
+        public void SetStat(string stat, int statValue)
+        {
+            int[] values = Scores[stat];
+            values[0] = statValue;
+            values[1] = computeModifier(values[0]);
+        }
+
+        private int computeModifier(int v)
+        {
+            int[] mods = new int[] { -5, -4, -4, -3, -3, -2, -2, -1, -1, 0, 0, 1, 1, 2, 2,
+                                      3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10};
+            
+            return mods[v-1];
         }
 
         public int[] RollStats()

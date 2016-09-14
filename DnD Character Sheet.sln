@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnD Character Sheet", "DnD Character Sheet\DnD Character Sheet.csproj", "{D856B482-B4A7-4644-AA8F-04AAA6EFADB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DnD_Character_Sheet.Tests", "DnD_Character_Sheet.Tests\DnD_Character_Sheet.Tests.csproj", "{E2C7AF2F-E3EF-4CBB-A533-C4D2115C0F94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D856B482-B4A7-4644-AA8F-04AAA6EFADB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D856B482-B4A7-4644-AA8F-04AAA6EFADB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D856B482-B4A7-4644-AA8F-04AAA6EFADB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2C7AF2F-E3EF-4CBB-A533-C4D2115C0F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2C7AF2F-E3EF-4CBB-A533-C4D2115C0F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2C7AF2F-E3EF-4CBB-A533-C4D2115C0F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2C7AF2F-E3EF-4CBB-A533-C4D2115C0F94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

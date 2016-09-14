@@ -152,6 +152,12 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.spellsPage = new System.Windows.Forms.TabPage();
             this.equipmentPage = new System.Windows.Forms.TabPage();
+            this.abilityValueModifierOne = new System.Windows.Forms.Label();
+            this.abilityValueModifierTwo = new System.Windows.Forms.Label();
+            this.abilityValueModifierThree = new System.Windows.Forms.Label();
+            this.abilityValueModifierFour = new System.Windows.Forms.Label();
+            this.abilityValueModifierFive = new System.Windows.Forms.Label();
+            this.abilityValueModifierSix = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.basicInfoPanel.SuspendLayout();
             this.additionalInfoTabControl.SuspendLayout();
@@ -556,9 +562,9 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.99729F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.04336F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.04968F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.15266F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.68202F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25565F));
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel12, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel11, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel10, 1, 3);
@@ -598,9 +604,9 @@
             this.flowLayoutPanel12.Controls.Add(this.label45);
             this.flowLayoutPanel12.Controls.Add(this.label46);
             this.flowLayoutPanel12.Controls.Add(this.label47);
-            this.flowLayoutPanel12.Location = new System.Drawing.Point(323, 183);
+            this.flowLayoutPanel12.Location = new System.Drawing.Point(369, 183);
             this.flowLayoutPanel12.Name = "flowLayoutPanel12";
-            this.flowLayoutPanel12.Size = new System.Drawing.Size(392, 30);
+            this.flowLayoutPanel12.Size = new System.Drawing.Size(388, 30);
             this.flowLayoutPanel12.TabIndex = 14;
             // 
             // label44
@@ -649,9 +655,9 @@
             this.flowLayoutPanel11.Controls.Add(this.label41);
             this.flowLayoutPanel11.Controls.Add(this.label42);
             this.flowLayoutPanel11.Controls.Add(this.label43);
-            this.flowLayoutPanel11.Location = new System.Drawing.Point(323, 147);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(369, 147);
             this.flowLayoutPanel11.Name = "flowLayoutPanel11";
-            this.flowLayoutPanel11.Size = new System.Drawing.Size(392, 30);
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(388, 30);
             this.flowLayoutPanel11.TabIndex = 13;
             // 
             // label36
@@ -736,9 +742,9 @@
             this.flowLayoutPanel10.Controls.Add(this.label33);
             this.flowLayoutPanel10.Controls.Add(this.label34);
             this.flowLayoutPanel10.Controls.Add(this.label35);
-            this.flowLayoutPanel10.Location = new System.Drawing.Point(323, 111);
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(369, 111);
             this.flowLayoutPanel10.Name = "flowLayoutPanel10";
-            this.flowLayoutPanel10.Size = new System.Drawing.Size(392, 30);
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(388, 30);
             this.flowLayoutPanel10.TabIndex = 12;
             // 
             // label28
@@ -823,9 +829,9 @@
             this.flowLayoutPanel9.Controls.Add(this.label25);
             this.flowLayoutPanel9.Controls.Add(this.label26);
             this.flowLayoutPanel9.Controls.Add(this.label27);
-            this.flowLayoutPanel9.Location = new System.Drawing.Point(323, 75);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(369, 75);
             this.flowLayoutPanel9.Name = "flowLayoutPanel9";
-            this.flowLayoutPanel9.Size = new System.Drawing.Size(392, 30);
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(388, 30);
             this.flowLayoutPanel9.TabIndex = 11;
             // 
             // label18
@@ -911,9 +917,9 @@
             this.flowLayoutPanel8.Controls.Add(this.label12);
             this.flowLayoutPanel8.Controls.Add(this.label14);
             this.flowLayoutPanel8.Controls.Add(this.label16);
-            this.flowLayoutPanel8.Location = new System.Drawing.Point(323, 39);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(369, 39);
             this.flowLayoutPanel8.Name = "flowLayoutPanel8";
-            this.flowLayoutPanel8.Size = new System.Drawing.Size(392, 30);
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(388, 30);
             this.flowLayoutPanel8.TabIndex = 15;
             // 
             // label7
@@ -995,7 +1001,7 @@
             this.label48.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(496, 8);
+            this.label48.Location = new System.Drawing.Point(540, 8);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(45, 20);
             this.label48.TabIndex = 16;
@@ -1005,11 +1011,12 @@
             // 
             this.flowLayoutPanel7.Controls.Add(this.abilityValuesComboSix);
             this.flowLayoutPanel7.Controls.Add(this.abilityValueLabelSix);
+            this.flowLayoutPanel7.Controls.Add(this.abilityValueModifierSix);
             this.flowLayoutPanel7.Controls.Add(this.abilityValueSixSaveButton);
             this.flowLayoutPanel7.Controls.Add(this.abilityValueSixUndoButton);
             this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 219);
             this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(314, 30);
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(360, 30);
             this.flowLayoutPanel7.TabIndex = 7;
             // 
             // abilityValuesComboSix
@@ -1034,7 +1041,7 @@
             // 
             // abilityValueSixSaveButton
             // 
-            this.abilityValueSixSaveButton.Location = new System.Drawing.Point(149, 3);
+            this.abilityValueSixSaveButton.Location = new System.Drawing.Point(168, 3);
             this.abilityValueSixSaveButton.Name = "abilityValueSixSaveButton";
             this.abilityValueSixSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueSixSaveButton.TabIndex = 3;
@@ -1044,7 +1051,7 @@
             // 
             // abilityValueSixUndoButton
             // 
-            this.abilityValueSixUndoButton.Location = new System.Drawing.Point(230, 3);
+            this.abilityValueSixUndoButton.Location = new System.Drawing.Point(249, 3);
             this.abilityValueSixUndoButton.Name = "abilityValueSixUndoButton";
             this.abilityValueSixUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueSixUndoButton.TabIndex = 6;
@@ -1055,11 +1062,12 @@
             // 
             this.flowLayoutPanel6.Controls.Add(this.abilityValuesComboFive);
             this.flowLayoutPanel6.Controls.Add(this.abilityValueLabelFive);
+            this.flowLayoutPanel6.Controls.Add(this.abilityValueModifierFive);
             this.flowLayoutPanel6.Controls.Add(this.abilityValueFiveSaveButton);
             this.flowLayoutPanel6.Controls.Add(this.abilityValueFiveUndoButton);
             this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 183);
             this.flowLayoutPanel6.Name = "flowLayoutPanel6";
-            this.flowLayoutPanel6.Size = new System.Drawing.Size(314, 30);
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(360, 30);
             this.flowLayoutPanel6.TabIndex = 9;
             // 
             // abilityValuesComboFive
@@ -1084,7 +1092,7 @@
             // 
             // abilityValueFiveSaveButton
             // 
-            this.abilityValueFiveSaveButton.Location = new System.Drawing.Point(149, 3);
+            this.abilityValueFiveSaveButton.Location = new System.Drawing.Point(168, 3);
             this.abilityValueFiveSaveButton.Name = "abilityValueFiveSaveButton";
             this.abilityValueFiveSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueFiveSaveButton.TabIndex = 3;
@@ -1094,7 +1102,7 @@
             // 
             // abilityValueFiveUndoButton
             // 
-            this.abilityValueFiveUndoButton.Location = new System.Drawing.Point(230, 3);
+            this.abilityValueFiveUndoButton.Location = new System.Drawing.Point(249, 3);
             this.abilityValueFiveUndoButton.Name = "abilityValueFiveUndoButton";
             this.abilityValueFiveUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueFiveUndoButton.TabIndex = 6;
@@ -1105,11 +1113,12 @@
             // 
             this.flowLayoutPanel5.Controls.Add(this.abilityValuesComboFour);
             this.flowLayoutPanel5.Controls.Add(this.abilityValueLabelFour);
+            this.flowLayoutPanel5.Controls.Add(this.abilityValueModifierFour);
             this.flowLayoutPanel5.Controls.Add(this.abilityValueFourSaveButton);
             this.flowLayoutPanel5.Controls.Add(this.abilityValueFourUndoButton);
             this.flowLayoutPanel5.Location = new System.Drawing.Point(3, 147);
             this.flowLayoutPanel5.Name = "flowLayoutPanel5";
-            this.flowLayoutPanel5.Size = new System.Drawing.Size(314, 30);
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(360, 30);
             this.flowLayoutPanel5.TabIndex = 7;
             // 
             // abilityValuesComboFour
@@ -1134,7 +1143,7 @@
             // 
             // abilityValueFourSaveButton
             // 
-            this.abilityValueFourSaveButton.Location = new System.Drawing.Point(149, 3);
+            this.abilityValueFourSaveButton.Location = new System.Drawing.Point(168, 3);
             this.abilityValueFourSaveButton.Name = "abilityValueFourSaveButton";
             this.abilityValueFourSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueFourSaveButton.TabIndex = 3;
@@ -1144,7 +1153,7 @@
             // 
             // abilityValueFourUndoButton
             // 
-            this.abilityValueFourUndoButton.Location = new System.Drawing.Point(230, 3);
+            this.abilityValueFourUndoButton.Location = new System.Drawing.Point(249, 3);
             this.abilityValueFourUndoButton.Name = "abilityValueFourUndoButton";
             this.abilityValueFourUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueFourUndoButton.TabIndex = 6;
@@ -1155,11 +1164,12 @@
             // 
             this.flowLayoutPanel4.Controls.Add(this.abilityValuesComboThree);
             this.flowLayoutPanel4.Controls.Add(this.abilityValueLabelThree);
+            this.flowLayoutPanel4.Controls.Add(this.abilityValueModifierThree);
             this.flowLayoutPanel4.Controls.Add(this.abilityValueThreeSaveButton);
             this.flowLayoutPanel4.Controls.Add(this.abilityValueThreeUndoButton);
             this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 111);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(314, 30);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(360, 30);
             this.flowLayoutPanel4.TabIndex = 8;
             // 
             // abilityValuesComboThree
@@ -1184,7 +1194,7 @@
             // 
             // abilityValueThreeSaveButton
             // 
-            this.abilityValueThreeSaveButton.Location = new System.Drawing.Point(149, 3);
+            this.abilityValueThreeSaveButton.Location = new System.Drawing.Point(168, 3);
             this.abilityValueThreeSaveButton.Name = "abilityValueThreeSaveButton";
             this.abilityValueThreeSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueThreeSaveButton.TabIndex = 3;
@@ -1194,7 +1204,7 @@
             // 
             // abilityValueThreeUndoButton
             // 
-            this.abilityValueThreeUndoButton.Location = new System.Drawing.Point(230, 3);
+            this.abilityValueThreeUndoButton.Location = new System.Drawing.Point(249, 3);
             this.abilityValueThreeUndoButton.Name = "abilityValueThreeUndoButton";
             this.abilityValueThreeUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueThreeUndoButton.TabIndex = 6;
@@ -1205,11 +1215,12 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.abilityValuesComboTwo);
             this.flowLayoutPanel3.Controls.Add(this.abilityValueLabelTwo);
+            this.flowLayoutPanel3.Controls.Add(this.abilityValueModifierTwo);
             this.flowLayoutPanel3.Controls.Add(this.abilityValueTwoSaveButton);
             this.flowLayoutPanel3.Controls.Add(this.abilityValueTwoUndoButton);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 75);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(314, 30);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(360, 30);
             this.flowLayoutPanel3.TabIndex = 7;
             // 
             // abilityValuesComboTwo
@@ -1234,7 +1245,7 @@
             // 
             // abilityValueTwoSaveButton
             // 
-            this.abilityValueTwoSaveButton.Location = new System.Drawing.Point(149, 3);
+            this.abilityValueTwoSaveButton.Location = new System.Drawing.Point(168, 3);
             this.abilityValueTwoSaveButton.Name = "abilityValueTwoSaveButton";
             this.abilityValueTwoSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueTwoSaveButton.TabIndex = 3;
@@ -1244,7 +1255,7 @@
             // 
             // abilityValueTwoUndoButton
             // 
-            this.abilityValueTwoUndoButton.Location = new System.Drawing.Point(230, 3);
+            this.abilityValueTwoUndoButton.Location = new System.Drawing.Point(249, 3);
             this.abilityValueTwoUndoButton.Name = "abilityValueTwoUndoButton";
             this.abilityValueTwoUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueTwoUndoButton.TabIndex = 6;
@@ -1255,11 +1266,12 @@
             // 
             this.flowLayoutPanel2.Controls.Add(this.abilityValuesComboOne);
             this.flowLayoutPanel2.Controls.Add(this.abilityValueLabelOne);
+            this.flowLayoutPanel2.Controls.Add(this.abilityValueModifierOne);
             this.flowLayoutPanel2.Controls.Add(this.abilityValueOneSaveButton);
             this.flowLayoutPanel2.Controls.Add(this.abilityValueOneUndoButton);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 39);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(314, 30);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(360, 30);
             this.flowLayoutPanel2.TabIndex = 6;
             // 
             // abilityValuesComboOne
@@ -1284,7 +1296,7 @@
             // 
             // abilityValueOneSaveButton
             // 
-            this.abilityValueOneSaveButton.Location = new System.Drawing.Point(149, 3);
+            this.abilityValueOneSaveButton.Location = new System.Drawing.Point(168, 3);
             this.abilityValueOneSaveButton.Name = "abilityValueOneSaveButton";
             this.abilityValueOneSaveButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueOneSaveButton.TabIndex = 3;
@@ -1294,7 +1306,7 @@
             // 
             // abilityValueOneUndoButton
             // 
-            this.abilityValueOneUndoButton.Location = new System.Drawing.Point(230, 3);
+            this.abilityValueOneUndoButton.Location = new System.Drawing.Point(249, 3);
             this.abilityValueOneUndoButton.Name = "abilityValueOneUndoButton";
             this.abilityValueOneUndoButton.Size = new System.Drawing.Size(75, 23);
             this.abilityValueOneUndoButton.TabIndex = 5;
@@ -1309,14 +1321,14 @@
             this.tableLayoutPanel2.Controls.Add(this.speedLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.languagesLabel, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(323, 219);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(369, 219);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(392, 132);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(388, 132);
             this.tableLayoutPanel2.TabIndex = 19;
             // 
             // abilityScoreIncreaseLabel
@@ -1373,9 +1385,9 @@
             this.flowLayoutPanel1.Controls.Add(this.maxHPLabel);
             this.flowLayoutPanel1.Controls.Add(this.label3);
             this.flowLayoutPanel1.Controls.Add(this.hitDiceLabel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(721, 75);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(763, 75);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(381, 30);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(341, 30);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
             // label1
@@ -1419,9 +1431,9 @@
             // 
             this.flowLayoutPanel14.Controls.Add(this.label2);
             this.flowLayoutPanel14.Controls.Add(this.levelLabel);
-            this.flowLayoutPanel14.Location = new System.Drawing.Point(721, 39);
+            this.flowLayoutPanel14.Location = new System.Drawing.Point(763, 39);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
-            this.flowLayoutPanel14.Size = new System.Drawing.Size(381, 30);
+            this.flowLayoutPanel14.Size = new System.Drawing.Size(341, 30);
             this.flowLayoutPanel14.TabIndex = 21;
             // 
             // label2
@@ -1449,7 +1461,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(856, 116);
+            this.label6.Location = new System.Drawing.Point(877, 116);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 20);
             this.label6.TabIndex = 18;
@@ -1497,6 +1509,66 @@
             this.equipmentPage.TabIndex = 2;
             this.equipmentPage.Text = "Equipment, Items";
             this.equipmentPage.UseVisualStyleBackColor = true;
+            // 
+            // abilityValueModifierOne
+            // 
+            this.abilityValueModifierOne.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierOne.AutoSize = true;
+            this.abilityValueModifierOne.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierOne.Name = "abilityValueModifierOne";
+            this.abilityValueModifierOne.Size = new System.Drawing.Size(13, 13);
+            this.abilityValueModifierOne.TabIndex = 6;
+            this.abilityValueModifierOne.Text = "()";
+            // 
+            // abilityValueModifierTwo
+            // 
+            this.abilityValueModifierTwo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierTwo.AutoSize = true;
+            this.abilityValueModifierTwo.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierTwo.Name = "abilityValueModifierTwo";
+            this.abilityValueModifierTwo.Size = new System.Drawing.Size(13, 13);
+            this.abilityValueModifierTwo.TabIndex = 7;
+            this.abilityValueModifierTwo.Text = "()";
+            // 
+            // abilityValueModifierThree
+            // 
+            this.abilityValueModifierThree.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierThree.AutoSize = true;
+            this.abilityValueModifierThree.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierThree.Name = "abilityValueModifierThree";
+            this.abilityValueModifierThree.Size = new System.Drawing.Size(13, 13);
+            this.abilityValueModifierThree.TabIndex = 7;
+            this.abilityValueModifierThree.Text = "()";
+            // 
+            // abilityValueModifierFour
+            // 
+            this.abilityValueModifierFour.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierFour.AutoSize = true;
+            this.abilityValueModifierFour.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierFour.Name = "abilityValueModifierFour";
+            this.abilityValueModifierFour.Size = new System.Drawing.Size(13, 13);
+            this.abilityValueModifierFour.TabIndex = 7;
+            this.abilityValueModifierFour.Text = "()";
+            // 
+            // abilityValueModifierFive
+            // 
+            this.abilityValueModifierFive.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierFive.AutoSize = true;
+            this.abilityValueModifierFive.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierFive.Name = "abilityValueModifierFive";
+            this.abilityValueModifierFive.Size = new System.Drawing.Size(13, 13);
+            this.abilityValueModifierFive.TabIndex = 7;
+            this.abilityValueModifierFive.Text = "()";
+            // 
+            // abilityValueModifierSix
+            // 
+            this.abilityValueModifierSix.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierSix.AutoSize = true;
+            this.abilityValueModifierSix.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierSix.Name = "abilityValueModifierSix";
+            this.abilityValueModifierSix.Size = new System.Drawing.Size(13, 13);
+            this.abilityValueModifierSix.TabIndex = 7;
+            this.abilityValueModifierSix.Text = "()";
             // 
             // Form1
             // 
@@ -1677,6 +1749,12 @@
         private System.Windows.Forms.Label levelLabel;
         private System.Windows.Forms.Label xpLabel;
         private System.Windows.Forms.TextBox xpTextBox;
+        private System.Windows.Forms.Label abilityValueModifierSix;
+        private System.Windows.Forms.Label abilityValueModifierFive;
+        private System.Windows.Forms.Label abilityValueModifierFour;
+        private System.Windows.Forms.Label abilityValueModifierThree;
+        private System.Windows.Forms.Label abilityValueModifierTwo;
+        private System.Windows.Forms.Label abilityValueModifierOne;
     }
 }
 
