@@ -8,6 +8,19 @@ namespace DnD_Character_Sheet.Character_Classes
 {
     class Barbarian : CharacterClass
     {
+        public override Dictionary<string, List<string>> AdditionalFeaturesTable
+        {
+            get
+            {
+                return additionalFeaturesTable;
+            }
+
+            set
+            { }
+        }
+
+        private Dictionary<string, List<string>> additionalFeaturesTable = new Dictionary<string, List<string>>();
+
         //TODO finish adding the Barbarian features. I guess these will be strings somewhere that can be used in the Form?
         public Barbarian()
         {
@@ -109,6 +122,12 @@ namespace DnD_Character_Sheet.Character_Classes
 
             FeaturesDictionary.Add("Primal Champion", "At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your " +
                                                       "maximum for those scores is now 24.");
+
+            additionalFeaturesTable.Add("Rages", new List<string>(new string[] { "2", "2", "3", "3", "3", "4", "4", "4", "4", "4", "4", "5", "5", "5", "5", "5",
+                                                                                 "6", "6", "6", "Unlimited"}));
+
+            additionalFeaturesTable.Add("Rage Damage", new List<string>(new string[] { "+2", "+2", "+2", "+2", "+2", "+2", "+2", "+2", "+3", "+3", "+3", "+3", "+3", "+3",
+                                                                                       "+3", "+4", "+4", "+4", "+4", "+4"}));
         }
 
         //Level 1: 12 + Constitution Modifier

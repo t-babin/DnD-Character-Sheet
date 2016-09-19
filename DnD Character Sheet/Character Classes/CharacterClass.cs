@@ -27,6 +27,10 @@ namespace DnD_Character_Sheet
 
         public Dictionary<string, string> FeaturesDictionary { get; set; } = new Dictionary<string, string>();
 
+        abstract public Dictionary<string, List<string>> AdditionalFeaturesTable { get; set; }
+
+
+
         public int ProficiencyBonus { get; set; } = 0;
 
         abstract public int CalculateHitPoints(int level, AbilityScores scores);

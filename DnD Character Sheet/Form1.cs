@@ -536,11 +536,25 @@ namespace DnD_Character_Sheet
             raceFeaturesLabel.Text = character.Race.RaceName + " Features List";
             classFeaturesLabel.Text = character.CharClass.ClassName + " Features List";
 
-            foreach (Tuple<int, int, string> t in character.CharClass.FeaturesPerLevelTable)
+            List<string>[] additionalStatsLists = new List<string>[character.CharClass.AdditionalFeaturesTable.Keys.Count];
+            Console.WriteLine(character.CharClass.AdditionalFeaturesTable.Keys.Count);
+
+            int j = 0;
+            foreach (string s in character.CharClass.AdditionalFeaturesTable.Keys)
             {
-                ListViewItem l = new ListViewItem(t.Item1.ToString());
-                l.SubItems.Add(t.Item2.ToString());
-                l.SubItems.Add(t.Item3);
+                classFeaturesListView.Columns.Add(s);
+                additionalStatsLists[j++] = character.CharClass.AdditionalFeaturesTable[s];
+            }
+
+            for (int i = 0; i < 20; i++)
+            {
+                ListViewItem l = new ListViewItem(character.CharClass.FeaturesPerLevelTable[i].Item1.ToString());
+                l.SubItems.Add(character.CharClass.FeaturesPerLevelTable[i].Item2.ToString());
+                l.SubItems.Add(character.CharClass.FeaturesPerLevelTable[i].Item3);
+
+                for (int k = 0; k < j; k++)
+                    l.SubItems.Add(additionalStatsLists[k][i]);
+
                 classFeaturesListView.Items.Add(l);
             }
 
