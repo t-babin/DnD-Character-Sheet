@@ -58,6 +58,9 @@
             this.xpTextBox = new System.Windows.Forms.TextBox();
             this.saveBasicInfoButton = new System.Windows.Forms.Button();
             this.editBasicInformationButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
+            this.classAttributesAndFeaturesButton = new System.Windows.Forms.Button();
+            this.chooseSkillsLabel = new System.Windows.Forms.Label();
             this.additionalInfoTabControl = new System.Windows.Forms.TabControl();
             this.statsPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -158,11 +161,20 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.spellsPage = new System.Windows.Forms.TabPage();
             this.equipmentPage = new System.Windows.Forms.TabPage();
-            this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
-            this.classAttributesAndFeaturesButton = new System.Windows.Forms.Button();
-            this.chooseSkillsLabel = new System.Windows.Forms.Label();
+            this.classFeaturesListView = new System.Windows.Forms.ListView();
+            this.levelColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.proficiencyBonusColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.featuresColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.classLevelBreakdownLabel = new System.Windows.Forms.Label();
+            this.raceFeaturesListBox = new System.Windows.Forms.ListBox();
+            this.raceFeaturesLabel = new System.Windows.Forms.Label();
+            this.classFeaturesBox = new System.Windows.Forms.ListBox();
+            this.classFeaturesLabel = new System.Windows.Forms.Label();
+            this.selectedFeatureTitleLabel = new System.Windows.Forms.Label();
+            this.selectedFeatureDescriptionLabel = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.basicInfoPanel.SuspendLayout();
+            this.flowLayoutPanel15.SuspendLayout();
             this.additionalInfoTabControl.SuspendLayout();
             this.statsPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -182,7 +194,7 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel14.SuspendLayout();
             this.raceAndClassTab.SuspendLayout();
-            this.flowLayoutPanel15.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -540,6 +552,35 @@
             this.editBasicInformationButton.UseVisualStyleBackColor = true;
             this.editBasicInformationButton.Click += new System.EventHandler(this.editBasicInformationButton_Click);
             // 
+            // flowLayoutPanel15
+            // 
+            this.flowLayoutPanel15.Controls.Add(this.classAttributesAndFeaturesButton);
+            this.flowLayoutPanel15.Controls.Add(this.chooseSkillsLabel);
+            this.flowLayoutPanel15.Location = new System.Drawing.Point(3, 59);
+            this.flowLayoutPanel15.Name = "flowLayoutPanel15";
+            this.flowLayoutPanel15.Size = new System.Drawing.Size(1118, 49);
+            this.flowLayoutPanel15.TabIndex = 22;
+            // 
+            // classAttributesAndFeaturesButton
+            // 
+            this.classAttributesAndFeaturesButton.Enabled = false;
+            this.classAttributesAndFeaturesButton.Location = new System.Drawing.Point(3, 3);
+            this.classAttributesAndFeaturesButton.Name = "classAttributesAndFeaturesButton";
+            this.classAttributesAndFeaturesButton.Size = new System.Drawing.Size(199, 23);
+            this.classAttributesAndFeaturesButton.TabIndex = 0;
+            this.classAttributesAndFeaturesButton.Text = "Select Class Attributes and Features";
+            this.classAttributesAndFeaturesButton.UseVisualStyleBackColor = true;
+            // 
+            // chooseSkillsLabel
+            // 
+            this.chooseSkillsLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chooseSkillsLabel.AutoSize = true;
+            this.chooseSkillsLabel.Location = new System.Drawing.Point(208, 8);
+            this.chooseSkillsLabel.Name = "chooseSkillsLabel";
+            this.chooseSkillsLabel.Size = new System.Drawing.Size(282, 13);
+            this.chooseSkillsLabel.TabIndex = 1;
+            this.chooseSkillsLabel.Text = "Select a Class to Determine Which Skills You May Choose";
+            // 
             // additionalInfoTabControl
             // 
             this.additionalInfoTabControl.Controls.Add(this.statsPage);
@@ -576,17 +617,17 @@
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel9, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel8, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label48, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel7, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel6, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel13, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel14, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel7, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel14, 2, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -597,8 +638,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.96173F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.985025F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.314587F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.49561F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1107, 569);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -1379,22 +1420,21 @@
             this.tableLayoutPanel2.Controls.Add(this.abilityScoreIncreaseLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.speedLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.languagesLabel, 0, 2);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(369, 207);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 260);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(388, 124);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(360, 122);
             this.tableLayoutPanel2.TabIndex = 19;
             // 
             // abilityScoreIncreaseLabel
             // 
             this.abilityScoreIncreaseLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.abilityScoreIncreaseLabel.AutoSize = true;
-            this.abilityScoreIncreaseLabel.Location = new System.Drawing.Point(3, 9);
+            this.abilityScoreIncreaseLabel.Location = new System.Drawing.Point(3, 8);
             this.abilityScoreIncreaseLabel.Name = "abilityScoreIncreaseLabel";
             this.abilityScoreIncreaseLabel.Size = new System.Drawing.Size(117, 13);
             this.abilityScoreIncreaseLabel.TabIndex = 0;
@@ -1404,7 +1444,7 @@
             // 
             this.speedLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.speedLabel.AutoSize = true;
-            this.speedLabel.Location = new System.Drawing.Point(3, 40);
+            this.speedLabel.Location = new System.Drawing.Point(3, 38);
             this.speedLabel.Name = "speedLabel";
             this.speedLabel.Size = new System.Drawing.Size(41, 13);
             this.speedLabel.TabIndex = 1;
@@ -1414,7 +1454,7 @@
             // 
             this.languagesLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.languagesLabel.AutoSize = true;
-            this.languagesLabel.Location = new System.Drawing.Point(3, 71);
+            this.languagesLabel.Location = new System.Drawing.Point(3, 68);
             this.languagesLabel.Name = "languagesLabel";
             this.languagesLabel.Size = new System.Drawing.Size(63, 13);
             this.languagesLabel.TabIndex = 2;
@@ -1444,7 +1484,7 @@
             this.flowLayoutPanel1.Controls.Add(this.maxHPLabel);
             this.flowLayoutPanel1.Controls.Add(this.label3);
             this.flowLayoutPanel1.Controls.Add(this.hitDiceLabel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(763, 71);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(763, 139);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(341, 28);
             this.flowLayoutPanel1.TabIndex = 20;
@@ -1490,7 +1530,7 @@
             // 
             this.flowLayoutPanel14.Controls.Add(this.label2);
             this.flowLayoutPanel14.Controls.Add(this.levelLabel);
-            this.flowLayoutPanel14.Location = new System.Drawing.Point(763, 37);
+            this.flowLayoutPanel14.Location = new System.Drawing.Point(763, 173);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
             this.flowLayoutPanel14.Size = new System.Drawing.Size(341, 28);
             this.flowLayoutPanel14.TabIndex = 21;
@@ -1520,7 +1560,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(877, 109);
+            this.label6.Location = new System.Drawing.Point(877, 7);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 20);
             this.label6.TabIndex = 18;
@@ -1538,15 +1578,26 @@
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
+            this.tableLayoutPanel3.Controls.Add(this.classFeaturesListView, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.classLevelBreakdownLabel, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.raceFeaturesListBox, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.raceFeaturesLabel, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.classFeaturesBox, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.classFeaturesLabel, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.selectedFeatureTitleLabel, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.selectedFeatureDescriptionLabel, 1, 3);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1113, 575);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
@@ -1569,34 +1620,110 @@
             this.equipmentPage.Text = "Equipment, Items";
             this.equipmentPage.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel15
+            // classFeaturesListView
             // 
-            this.flowLayoutPanel15.Controls.Add(this.classAttributesAndFeaturesButton);
-            this.flowLayoutPanel15.Controls.Add(this.chooseSkillsLabel);
-            this.flowLayoutPanel15.Location = new System.Drawing.Point(3, 59);
-            this.flowLayoutPanel15.Name = "flowLayoutPanel15";
-            this.flowLayoutPanel15.Size = new System.Drawing.Size(1118, 49);
-            this.flowLayoutPanel15.TabIndex = 22;
+            this.classFeaturesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.levelColumn,
+            this.proficiencyBonusColumn,
+            this.featuresColumn});
+            this.classFeaturesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.classFeaturesListView.GridLines = true;
+            this.classFeaturesListView.Location = new System.Drawing.Point(3, 37);
+            this.classFeaturesListView.MultiSelect = false;
+            this.classFeaturesListView.Name = "classFeaturesListView";
+            this.tableLayoutPanel3.SetRowSpan(this.classFeaturesListView, 3);
+            this.classFeaturesListView.Size = new System.Drawing.Size(606, 535);
+            this.classFeaturesListView.TabIndex = 0;
+            this.classFeaturesListView.UseCompatibleStateImageBehavior = false;
+            this.classFeaturesListView.View = System.Windows.Forms.View.Details;
             // 
-            // classAttributesAndFeaturesButton
+            // levelColumn
             // 
-            this.classAttributesAndFeaturesButton.Enabled = false;
-            this.classAttributesAndFeaturesButton.Location = new System.Drawing.Point(3, 3);
-            this.classAttributesAndFeaturesButton.Name = "classAttributesAndFeaturesButton";
-            this.classAttributesAndFeaturesButton.Size = new System.Drawing.Size(199, 23);
-            this.classAttributesAndFeaturesButton.TabIndex = 0;
-            this.classAttributesAndFeaturesButton.Text = "Select Class Attributes and Features";
-            this.classAttributesAndFeaturesButton.UseVisualStyleBackColor = true;
+            this.levelColumn.Text = "Level";
+            this.levelColumn.Width = 40;
             // 
-            // chooseSkillsLabel
+            // proficiencyBonusColumn
             // 
-            this.chooseSkillsLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chooseSkillsLabel.AutoSize = true;
-            this.chooseSkillsLabel.Location = new System.Drawing.Point(208, 8);
-            this.chooseSkillsLabel.Name = "chooseSkillsLabel";
-            this.chooseSkillsLabel.Size = new System.Drawing.Size(282, 13);
-            this.chooseSkillsLabel.TabIndex = 1;
-            this.chooseSkillsLabel.Text = "Select a Class to Determine Which Skills You May Choose";
+            this.proficiencyBonusColumn.Text = "Proficiency Bonus";
+            this.proficiencyBonusColumn.Width = 98;
+            // 
+            // featuresColumn
+            // 
+            this.featuresColumn.Text = "Features";
+            this.featuresColumn.Width = 78;
+            // 
+            // classLevelBreakdownLabel
+            // 
+            this.classLevelBreakdownLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.classLevelBreakdownLabel.AutoSize = true;
+            this.classLevelBreakdownLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classLevelBreakdownLabel.Location = new System.Drawing.Point(123, 7);
+            this.classLevelBreakdownLabel.Name = "classLevelBreakdownLabel";
+            this.classLevelBreakdownLabel.Size = new System.Drawing.Size(365, 20);
+            this.classLevelBreakdownLabel.TabIndex = 1;
+            this.classLevelBreakdownLabel.Text = "Please Select a Class to See the Level Breakdown";
+            // 
+            // raceFeaturesListBox
+            // 
+            this.raceFeaturesListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.raceFeaturesListBox.FormattingEnabled = true;
+            this.raceFeaturesListBox.Location = new System.Drawing.Point(615, 37);
+            this.raceFeaturesListBox.Name = "raceFeaturesListBox";
+            this.raceFeaturesListBox.Size = new System.Drawing.Size(244, 264);
+            this.raceFeaturesListBox.TabIndex = 2;
+            // 
+            // raceFeaturesLabel
+            // 
+            this.raceFeaturesLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.raceFeaturesLabel.AutoSize = true;
+            this.raceFeaturesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.raceFeaturesLabel.Location = new System.Drawing.Point(649, 8);
+            this.raceFeaturesLabel.Name = "raceFeaturesLabel";
+            this.raceFeaturesLabel.Size = new System.Drawing.Size(175, 17);
+            this.raceFeaturesLabel.TabIndex = 3;
+            this.raceFeaturesLabel.Text = "Race Features Breakdown";
+            // 
+            // classFeaturesBox
+            // 
+            this.classFeaturesBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.classFeaturesBox.FormattingEnabled = true;
+            this.classFeaturesBox.Location = new System.Drawing.Point(865, 37);
+            this.classFeaturesBox.Name = "classFeaturesBox";
+            this.classFeaturesBox.Size = new System.Drawing.Size(245, 264);
+            this.classFeaturesBox.TabIndex = 4;
+            this.classFeaturesBox.SelectedIndexChanged += new System.EventHandler(this.classFeaturesBox_SelectedIndexChanged);
+            // 
+            // classFeaturesLabel
+            // 
+            this.classFeaturesLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.classFeaturesLabel.AutoSize = true;
+            this.classFeaturesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classFeaturesLabel.Location = new System.Drawing.Point(899, 8);
+            this.classFeaturesLabel.Name = "classFeaturesLabel";
+            this.classFeaturesLabel.Size = new System.Drawing.Size(176, 17);
+            this.classFeaturesLabel.TabIndex = 5;
+            this.classFeaturesLabel.Text = "Class Features Breakdown";
+            // 
+            // selectedFeatureTitleLabel
+            // 
+            this.selectedFeatureTitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.selectedFeatureTitleLabel.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.selectedFeatureTitleLabel, 2);
+            this.selectedFeatureTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectedFeatureTitleLabel.Location = new System.Drawing.Point(734, 312);
+            this.selectedFeatureTitleLabel.Name = "selectedFeatureTitleLabel";
+            this.selectedFeatureTitleLabel.Size = new System.Drawing.Size(257, 17);
+            this.selectedFeatureTitleLabel.TabIndex = 6;
+            this.selectedFeatureTitleLabel.Text = "Select a Feature to Learn More About It";
+            // 
+            // selectedFeatureDescriptionLabel
+            // 
+            this.selectedFeatureDescriptionLabel.AutoSize = true;
+            this.tableLayoutPanel3.SetColumnSpan(this.selectedFeatureDescriptionLabel, 2);
+            this.selectedFeatureDescriptionLabel.Location = new System.Drawing.Point(615, 338);
+            this.selectedFeatureDescriptionLabel.Name = "selectedFeatureDescriptionLabel";
+            this.selectedFeatureDescriptionLabel.Size = new System.Drawing.Size(0, 13);
+            this.selectedFeatureDescriptionLabel.TabIndex = 7;
             // 
             // Form1
             // 
@@ -1614,6 +1741,8 @@
             this.toolStrip1.PerformLayout();
             this.basicInfoPanel.ResumeLayout(false);
             this.basicInfoPanel.PerformLayout();
+            this.flowLayoutPanel15.ResumeLayout(false);
+            this.flowLayoutPanel15.PerformLayout();
             this.additionalInfoTabControl.ResumeLayout(false);
             this.statsPage.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -1648,8 +1777,8 @@
             this.flowLayoutPanel14.ResumeLayout(false);
             this.flowLayoutPanel14.PerformLayout();
             this.raceAndClassTab.ResumeLayout(false);
-            this.flowLayoutPanel15.ResumeLayout(false);
-            this.flowLayoutPanel15.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1788,6 +1917,17 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel15;
         private System.Windows.Forms.Button classAttributesAndFeaturesButton;
         private System.Windows.Forms.Label chooseSkillsLabel;
+        private System.Windows.Forms.ListView classFeaturesListView;
+        private System.Windows.Forms.ColumnHeader levelColumn;
+        private System.Windows.Forms.ColumnHeader proficiencyBonusColumn;
+        private System.Windows.Forms.ColumnHeader featuresColumn;
+        private System.Windows.Forms.Label classLevelBreakdownLabel;
+        private System.Windows.Forms.ListBox raceFeaturesListBox;
+        private System.Windows.Forms.Label raceFeaturesLabel;
+        private System.Windows.Forms.ListBox classFeaturesBox;
+        private System.Windows.Forms.Label classFeaturesLabel;
+        private System.Windows.Forms.Label selectedFeatureTitleLabel;
+        private System.Windows.Forms.Label selectedFeatureDescriptionLabel;
     }
 }
 

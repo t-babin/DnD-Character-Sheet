@@ -1,6 +1,8 @@
 ﻿Race and Class Features Tab
 ====
 - Shows Race features/abilities, such as "Darkvision", or other abilities that do not require specific coding
+- ListView of the Table in the DnD Players Handbook that shows breakdown of what's available at each level
+- to the right of that, add an area that shows the description of the selected feature (such as the barbarian's Rage ability)
 - Maybe have a breakdown of what the class acquires at each level?
 	- in a table of some sort I suppose
 - maybe have speed, languages on this page?

@@ -7,6 +7,7 @@ using DnD_Character_Sheet.Character_Classes;
 
 namespace DnD_Character_Sheet
 {
+    //TODO implement Background
     class Character
     {
         public string Name { get; set; } = "";

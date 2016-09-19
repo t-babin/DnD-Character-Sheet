@@ -8,6 +8,8 @@ namespace DnD_Character_Sheet
 {
     abstract class CharacterClass
     {
+        public string ClassName { get; set; } = "";
+
         public int HitPointDieType { get; set; } = 0;
 
         public List<string> ProficientArmors { get; set; } = new List<string>();
@@ -21,7 +23,7 @@ namespace DnD_Character_Sheet
         public Dictionary<int, string[]> SelectableSkills { get; set; } = new Dictionary<int, string[]>();
 
         //level, proficiency bonus, features
-        public List<Tuple<int, int, string[]>> FeaturesPerLevelTable { get; set; } = new List<Tuple<int, int, string[]>>();
+        public List<Tuple<int, int, string>> FeaturesPerLevelTable { get; set; } = new List<Tuple<int, int, string>>();
 
         public Dictionary<string, string> FeaturesDictionary { get; set; } = new Dictionary<string, string>();
 

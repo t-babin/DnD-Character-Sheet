@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DnD_Character_Sheet.Races;
+using DnD_Character_Sheet.Character_Classes;
 
 namespace DnD_Character_Sheet
 {    
@@ -77,6 +78,7 @@ namespace DnD_Character_Sheet
         private void Form1_Load(object sender, EventArgs e)
         {
             BasicInfoToolTip = new ToolTip();
+            BasicInfoToolTip.SetToolTip(classLevelBreakdownLabel, "Click on a Feature to Learn More About It.");
         }
 
         private void createCharacterButton_Click(object sender, EventArgs e)
@@ -103,6 +105,13 @@ namespace DnD_Character_Sheet
 	    {			
 			character.Name = characterNameBox.Text;
 			character.Age = int.Parse(ageTextBox.Text);
+            string charClass = classComboBox.SelectedItem.ToString();
+            switch (charClass)
+            {
+                case "Barbarian":
+                    character.CharClass = new Barbarian();
+                    break;
+            }
 			string race = raceComboBox.SelectedItem.ToString();
 			switch (race.ToLower())
 			{
@@ -187,6 +196,7 @@ namespace DnD_Character_Sheet
             xpTextBox.Enabled = false;
             editBasicInformationButton.Enabled = true;
             classAttributesAndFeaturesButton.Enabled = true;
+            fillClassAndRaceFeaturesTab();
         }
 
         private void rollStatsButton_Click(object sender, EventArgs e)
@@ -520,6 +530,28 @@ namespace DnD_Character_Sheet
             languagesLabel.Text = "Languages:";
         }
 
-        
+        private void fillClassAndRaceFeaturesTab()
+        {
+            classLevelBreakdownLabel.Text = character.CharClass.ClassName + " Level Breakdown";
+            raceFeaturesLabel.Text = character.Race.RaceName + " Features List";
+            classFeaturesLabel.Text = character.CharClass.ClassName + " Features List";
+
+            foreach (Tuple<int, int, string> t in character.CharClass.FeaturesPerLevelTable)
+            {
+                ListViewItem l = new ListViewItem(t.Item1.ToString());
+                l.SubItems.Add(t.Item2.ToString());
+                l.SubItems.Add(t.Item3);
+                classFeaturesListView.Items.Add(l);
+            }
+
+            foreach (string key in character.CharClass.FeaturesDictionary.Keys)
+                classFeaturesBox.Items.Add(key);
+        }
+
+        private void classFeaturesBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedFeatureTitleLabel.Text = classFeaturesBox.SelectedItem.ToString();
+            selectedFeatureDescriptionLabel.Text = character.CharClass.FeaturesDictionary[classFeaturesBox.SelectedItem.ToString()];
+        }
     }
 }
