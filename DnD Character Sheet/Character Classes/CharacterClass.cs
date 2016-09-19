@@ -20,8 +20,13 @@ namespace DnD_Character_Sheet
 
         public Dictionary<int, string[]> SelectableSkills { get; set; } = new Dictionary<int, string[]>();
 
+        //level, proficiency bonus, features
+        public List<Tuple<int, int, string[]>> FeaturesPerLevelTable { get; set; } = new List<Tuple<int, int, string[]>>();
+
         public int ProficiencyBonus { get; set; } = 0;
 
         abstract public int CalculateHitPoints(int level, AbilityScores scores);
+
+        abstract public void AddProficiencies();
     }
 }

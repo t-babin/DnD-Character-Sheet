@@ -51,14 +51,42 @@ namespace DnD_Character_Sheet.Character_Classes
         public Barbarian()
         {
             HitPointDieType = 12;
-            ProficientArmors = new List<string>(new string[] { "Light Armor", "Medium Armor", "Shields"});
+            //ProficiencyBonus = 2;
+            ProficientArmors = new List<string>(new string[] { "Light Armor", "Medium Armor", "Shields" });
+            AddProficiencies();            
+            SelectableSkills.Add(2, new string[] { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"});
+            FeaturesPerLevelTable = new List<Tuple<int, int, string[]>>(new Tuple<int, int, string[]>[]
+            {
+                new Tuple<int, int, string[]>(1, 2, new string[] { "Rage", "Unarmored Defense" }),
+                new Tuple<int, int, string[]>(2, 2, new string[] { "Reckless Attack", "Danger Sense" }),
+                new Tuple<int, int, string[]>(3, 2, new string[] { "Primal Path" }),
+                new Tuple<int, int, string[]>(4, 2, new string[] { "Ability Score Improvement" }),
+                new Tuple<int, int, string[]>(5, 3, new string[] { "Extra Attack", "Fast Movement" }),
+                new Tuple<int, int, string[]>(6, 3, new string[] { "Path Feature" }),
+                new Tuple<int, int, string[]>(7, 3, new string[] { "Feral Instinct" }),
+                new Tuple<int, int, string[]>(8, 3, new string[] { "Ability Score Improvement" }),
+                new Tuple<int, int, string[]>(9, 4, new string[] { "Brutal Critical (1 die)" }),
+                new Tuple<int, int, string[]>(10, 4, new string[] { "Path Feature" }),
+                new Tuple<int, int, string[]>(11, 4, new string[] { "Relentless Rage" }),
+                new Tuple<int, int, string[]>(12, 4, new string[] { "Ability Score Improvement" }),
+                new Tuple<int, int, string[]>(13, 5, new string[] { "Brutal Critical (2 dice)" }),
+                new Tuple<int, int, string[]>(14, 5, new string[] { "Path Feature" }),
+                new Tuple<int, int, string[]>(15, 5, new string[] { "Persistent Rage" }),
+                new Tuple<int, int, string[]>(16, 5, new string[] { "Ability Score Improvement" }),
+                new Tuple<int, int, string[]>(17, 6, new string[] { "Brutal Critical (3 dice)" }),
+                new Tuple<int, int, string[]>(18, 6, new string[] { "Indomitable Might" }),
+                new Tuple<int, int, string[]>(19, 6, new string[] { "Ability Score Improvement" }),
+                new Tuple<int, int, string[]>(20, 6, new string[] { "Primal Champion" })
+            });
+        }
+
+        public override void AddProficiencies()
+        {
             ProficientWeapons.AddRange(Weapons.SimpleMeleeWeapons);
             ProficientWeapons.AddRange(Weapons.MartialMeleeWeapons);
             ProficientTools.Add("None");
             SavingThrows.Add("Strength");
             SavingThrows.Add("Constitution");
-            SelectableSkills.Add(2, new string[] { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"});
-            ProficiencyBonus = 2;
         }
 
         //Level 1: 12 + Constitution Modifier
