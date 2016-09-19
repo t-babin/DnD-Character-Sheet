@@ -81,6 +81,8 @@ namespace DnD_Character_Sheet
             BasicInfoToolTip.SetToolTip(classLevelBreakdownLabel, "Click on a Feature to Learn More About It.");
         }
 
+        //TODO change this so that it will default to the Race and Class Features tab so that the use can see the features of
+        //each race/class when making their new character
         private void createCharacterButton_Click(object sender, EventArgs e)
         {
             character = new Character();
@@ -540,6 +542,7 @@ namespace DnD_Character_Sheet
             Console.WriteLine(character.CharClass.AdditionalFeaturesTable.Keys.Count);
 
             int j = 0;
+            //TODO change this so that if a new class is picked it will reset the table to the default 3 values (lvl, p.b., features)
             foreach (string s in character.CharClass.AdditionalFeaturesTable.Keys)
             {
                 classFeaturesListView.Columns.Add(s);
@@ -559,13 +562,22 @@ namespace DnD_Character_Sheet
             }
 
             foreach (string key in character.CharClass.FeaturesDictionary.Keys)
-                classFeaturesBox.Items.Add(key);
+                classFeaturesListBox.Items.Add(key);
+
+            foreach (string key in character.Race.FeaturesDictionary.Keys)
+                raceFeaturesListBox.Items.Add(key);
         }
 
         private void classFeaturesBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectedFeatureTitleLabel.Text = classFeaturesBox.SelectedItem.ToString();
-            selectedFeatureDescriptionLabel.Text = character.CharClass.FeaturesDictionary[classFeaturesBox.SelectedItem.ToString()];
+            selectedFeatureTitleLabel.Text = classFeaturesListBox.SelectedItem.ToString();
+            selectedFeatureDescriptionLabel.Text = character.CharClass.FeaturesDictionary[classFeaturesListBox.SelectedItem.ToString()];
+        }
+
+        private void raceFeaturesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            selectedFeatureTitleLabel.Text = raceFeaturesListBox.SelectedItem.ToString();
+            selectedFeatureDescriptionLabel.Text = character.Race.FeaturesDictionary[raceFeaturesListBox.SelectedItem.ToString()];
         }
     }
 }

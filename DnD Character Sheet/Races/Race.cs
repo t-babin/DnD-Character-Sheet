@@ -29,6 +29,8 @@ namespace DnD_Character_Sheet
 
         public virtual int MaximumHeight { get; set; } = 0;
 
+        public Dictionary<string, string> FeaturesDictionary { get; set; } = new Dictionary<string, string>();
+
         public static Dictionary<string, List<string>> SubraceDictionary = new Dictionary<string, List<string>>()
         {
             { "Dwarf", new List<string>(new string[] {"Hill Dwarf", "Mountain Dwarf"}) },

@@ -29,7 +29,7 @@ namespace DnD_Character_Sheet
 
         abstract public Dictionary<string, List<string>> AdditionalFeaturesTable { get; set; }
 
-
+        //TODO spell slots per level
 
         public int ProficiencyBonus { get; set; } = 0;
 

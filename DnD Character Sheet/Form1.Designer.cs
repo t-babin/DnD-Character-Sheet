@@ -106,12 +106,6 @@
             this.athleticsLabel = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
-            this.abilityValuesComboSix = new System.Windows.Forms.ComboBox();
-            this.abilityValueLabelSix = new System.Windows.Forms.Label();
-            this.abilityValueModifierSix = new System.Windows.Forms.Label();
-            this.abilityValueSixSaveButton = new System.Windows.Forms.Button();
-            this.abilityValueSixUndoButton = new System.Windows.Forms.Button();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
             this.abilityValuesComboFive = new System.Windows.Forms.ComboBox();
             this.abilityValueLabelFive = new System.Windows.Forms.Label();
@@ -142,12 +136,19 @@
             this.abilityValueModifierOne = new System.Windows.Forms.Label();
             this.abilityValueOneSaveButton = new System.Windows.Forms.Button();
             this.abilityValueOneUndoButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel13 = new System.Windows.Forms.FlowLayoutPanel();
+            this.rollStatsButton = new System.Windows.Forms.Button();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
+            this.abilityValuesComboSix = new System.Windows.Forms.ComboBox();
+            this.abilityValueLabelSix = new System.Windows.Forms.Label();
+            this.abilityValueModifierSix = new System.Windows.Forms.Label();
+            this.abilityValueSixSaveButton = new System.Windows.Forms.Button();
+            this.abilityValueSixUndoButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.abilityScoreIncreaseLabel = new System.Windows.Forms.Label();
             this.speedLabel = new System.Windows.Forms.Label();
             this.languagesLabel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel13 = new System.Windows.Forms.FlowLayoutPanel();
-            this.rollStatsButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.maxHPLabel = new System.Windows.Forms.Label();
@@ -156,11 +157,8 @@
             this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.levelLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.raceAndClassTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.spellsPage = new System.Windows.Forms.TabPage();
-            this.equipmentPage = new System.Windows.Forms.TabPage();
             this.classFeaturesListView = new System.Windows.Forms.ListView();
             this.levelColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.proficiencyBonusColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -168,10 +166,12 @@
             this.classLevelBreakdownLabel = new System.Windows.Forms.Label();
             this.raceFeaturesListBox = new System.Windows.Forms.ListBox();
             this.raceFeaturesLabel = new System.Windows.Forms.Label();
-            this.classFeaturesBox = new System.Windows.Forms.ListBox();
+            this.classFeaturesListBox = new System.Windows.Forms.ListBox();
             this.classFeaturesLabel = new System.Windows.Forms.Label();
             this.selectedFeatureTitleLabel = new System.Windows.Forms.Label();
             this.selectedFeatureDescriptionLabel = new System.Windows.Forms.Label();
+            this.spellsPage = new System.Windows.Forms.TabPage();
+            this.equipmentPage = new System.Windows.Forms.TabPage();
             this.toolStrip1.SuspendLayout();
             this.basicInfoPanel.SuspendLayout();
             this.flowLayoutPanel15.SuspendLayout();
@@ -183,14 +183,14 @@
             this.flowLayoutPanel10.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
             this.flowLayoutPanel8.SuspendLayout();
-            this.flowLayoutPanel7.SuspendLayout();
             this.flowLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel13.SuspendLayout();
+            this.flowLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel14.SuspendLayout();
             this.raceAndClassTab.SuspendLayout();
@@ -1053,66 +1053,6 @@
             this.label48.TabIndex = 16;
             this.label48.Text = "Skills";
             // 
-            // flowLayoutPanel7
-            // 
-            this.flowLayoutPanel7.Controls.Add(this.abilityValuesComboSix);
-            this.flowLayoutPanel7.Controls.Add(this.abilityValueLabelSix);
-            this.flowLayoutPanel7.Controls.Add(this.abilityValueModifierSix);
-            this.flowLayoutPanel7.Controls.Add(this.abilityValueSixSaveButton);
-            this.flowLayoutPanel7.Controls.Add(this.abilityValueSixUndoButton);
-            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 207);
-            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
-            this.flowLayoutPanel7.Size = new System.Drawing.Size(360, 30);
-            this.flowLayoutPanel7.TabIndex = 7;
-            // 
-            // abilityValuesComboSix
-            // 
-            this.abilityValuesComboSix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.abilityValuesComboSix.FormattingEnabled = true;
-            this.abilityValuesComboSix.Location = new System.Drawing.Point(3, 3);
-            this.abilityValuesComboSix.Name = "abilityValuesComboSix";
-            this.abilityValuesComboSix.Size = new System.Drawing.Size(121, 21);
-            this.abilityValuesComboSix.TabIndex = 5;
-            this.abilityValuesComboSix.SelectedIndexChanged += new System.EventHandler(this.abilityValuesComboBoxes_SelectedIndexChanged);
-            // 
-            // abilityValueLabelSix
-            // 
-            this.abilityValueLabelSix.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.abilityValueLabelSix.AutoSize = true;
-            this.abilityValueLabelSix.Location = new System.Drawing.Point(130, 8);
-            this.abilityValueLabelSix.Name = "abilityValueLabelSix";
-            this.abilityValueLabelSix.Size = new System.Drawing.Size(13, 13);
-            this.abilityValueLabelSix.TabIndex = 1;
-            this.abilityValueLabelSix.Text = "0";
-            // 
-            // abilityValueModifierSix
-            // 
-            this.abilityValueModifierSix.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.abilityValueModifierSix.AutoSize = true;
-            this.abilityValueModifierSix.Location = new System.Drawing.Point(149, 8);
-            this.abilityValueModifierSix.Name = "abilityValueModifierSix";
-            this.abilityValueModifierSix.Size = new System.Drawing.Size(0, 13);
-            this.abilityValueModifierSix.TabIndex = 7;
-            // 
-            // abilityValueSixSaveButton
-            // 
-            this.abilityValueSixSaveButton.Location = new System.Drawing.Point(155, 3);
-            this.abilityValueSixSaveButton.Name = "abilityValueSixSaveButton";
-            this.abilityValueSixSaveButton.Size = new System.Drawing.Size(75, 23);
-            this.abilityValueSixSaveButton.TabIndex = 3;
-            this.abilityValueSixSaveButton.Text = "Save";
-            this.abilityValueSixSaveButton.UseVisualStyleBackColor = true;
-            this.abilityValueSixSaveButton.Click += new System.EventHandler(this.saveAbilityRoll_handler);
-            // 
-            // abilityValueSixUndoButton
-            // 
-            this.abilityValueSixUndoButton.Location = new System.Drawing.Point(236, 3);
-            this.abilityValueSixUndoButton.Name = "abilityValueSixUndoButton";
-            this.abilityValueSixUndoButton.Size = new System.Drawing.Size(75, 23);
-            this.abilityValueSixUndoButton.TabIndex = 6;
-            this.abilityValueSixUndoButton.Text = "Undo";
-            this.abilityValueSixUndoButton.UseVisualStyleBackColor = true;
-            // 
             // flowLayoutPanel6
             // 
             this.flowLayoutPanel6.Controls.Add(this.abilityValuesComboFive);
@@ -1413,6 +1353,84 @@
             this.abilityValueOneUndoButton.Text = "Undo";
             this.abilityValueOneUndoButton.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel13
+            // 
+            this.flowLayoutPanel13.Controls.Add(this.rollStatsButton);
+            this.flowLayoutPanel13.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel13.Name = "flowLayoutPanel13";
+            this.flowLayoutPanel13.Size = new System.Drawing.Size(264, 28);
+            this.flowLayoutPanel13.TabIndex = 17;
+            // 
+            // rollStatsButton
+            // 
+            this.rollStatsButton.Location = new System.Drawing.Point(3, 3);
+            this.rollStatsButton.Name = "rollStatsButton";
+            this.rollStatsButton.Size = new System.Drawing.Size(75, 23);
+            this.rollStatsButton.TabIndex = 2;
+            this.rollStatsButton.Text = "Roll Stats";
+            this.rollStatsButton.UseVisualStyleBackColor = true;
+            this.rollStatsButton.Click += new System.EventHandler(this.rollStatsButton_Click);
+            // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.Controls.Add(this.abilityValuesComboSix);
+            this.flowLayoutPanel7.Controls.Add(this.abilityValueLabelSix);
+            this.flowLayoutPanel7.Controls.Add(this.abilityValueModifierSix);
+            this.flowLayoutPanel7.Controls.Add(this.abilityValueSixSaveButton);
+            this.flowLayoutPanel7.Controls.Add(this.abilityValueSixUndoButton);
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 207);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(360, 30);
+            this.flowLayoutPanel7.TabIndex = 7;
+            // 
+            // abilityValuesComboSix
+            // 
+            this.abilityValuesComboSix.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.abilityValuesComboSix.FormattingEnabled = true;
+            this.abilityValuesComboSix.Location = new System.Drawing.Point(3, 3);
+            this.abilityValuesComboSix.Name = "abilityValuesComboSix";
+            this.abilityValuesComboSix.Size = new System.Drawing.Size(121, 21);
+            this.abilityValuesComboSix.TabIndex = 5;
+            this.abilityValuesComboSix.SelectedIndexChanged += new System.EventHandler(this.abilityValuesComboBoxes_SelectedIndexChanged);
+            // 
+            // abilityValueLabelSix
+            // 
+            this.abilityValueLabelSix.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueLabelSix.AutoSize = true;
+            this.abilityValueLabelSix.Location = new System.Drawing.Point(130, 8);
+            this.abilityValueLabelSix.Name = "abilityValueLabelSix";
+            this.abilityValueLabelSix.Size = new System.Drawing.Size(13, 13);
+            this.abilityValueLabelSix.TabIndex = 1;
+            this.abilityValueLabelSix.Text = "0";
+            // 
+            // abilityValueModifierSix
+            // 
+            this.abilityValueModifierSix.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.abilityValueModifierSix.AutoSize = true;
+            this.abilityValueModifierSix.Location = new System.Drawing.Point(149, 8);
+            this.abilityValueModifierSix.Name = "abilityValueModifierSix";
+            this.abilityValueModifierSix.Size = new System.Drawing.Size(0, 13);
+            this.abilityValueModifierSix.TabIndex = 7;
+            // 
+            // abilityValueSixSaveButton
+            // 
+            this.abilityValueSixSaveButton.Location = new System.Drawing.Point(155, 3);
+            this.abilityValueSixSaveButton.Name = "abilityValueSixSaveButton";
+            this.abilityValueSixSaveButton.Size = new System.Drawing.Size(75, 23);
+            this.abilityValueSixSaveButton.TabIndex = 3;
+            this.abilityValueSixSaveButton.Text = "Save";
+            this.abilityValueSixSaveButton.UseVisualStyleBackColor = true;
+            this.abilityValueSixSaveButton.Click += new System.EventHandler(this.saveAbilityRoll_handler);
+            // 
+            // abilityValueSixUndoButton
+            // 
+            this.abilityValueSixUndoButton.Location = new System.Drawing.Point(236, 3);
+            this.abilityValueSixUndoButton.Name = "abilityValueSixUndoButton";
+            this.abilityValueSixUndoButton.Size = new System.Drawing.Size(75, 23);
+            this.abilityValueSixUndoButton.TabIndex = 6;
+            this.abilityValueSixUndoButton.Text = "Undo";
+            this.abilityValueSixUndoButton.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
@@ -1460,23 +1478,16 @@
             this.languagesLabel.TabIndex = 2;
             this.languagesLabel.Text = "Languages:";
             // 
-            // flowLayoutPanel13
+            // label6
             // 
-            this.flowLayoutPanel13.Controls.Add(this.rollStatsButton);
-            this.flowLayoutPanel13.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel13.Name = "flowLayoutPanel13";
-            this.flowLayoutPanel13.Size = new System.Drawing.Size(264, 28);
-            this.flowLayoutPanel13.TabIndex = 17;
-            // 
-            // rollStatsButton
-            // 
-            this.rollStatsButton.Location = new System.Drawing.Point(3, 3);
-            this.rollStatsButton.Name = "rollStatsButton";
-            this.rollStatsButton.Size = new System.Drawing.Size(75, 23);
-            this.rollStatsButton.TabIndex = 2;
-            this.rollStatsButton.Text = "Roll Stats";
-            this.rollStatsButton.UseVisualStyleBackColor = true;
-            this.rollStatsButton.Click += new System.EventHandler(this.rollStatsButton_Click);
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(877, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(112, 20);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Saving Throws";
             // 
             // flowLayoutPanel1
             // 
@@ -1555,17 +1566,6 @@
             this.levelLabel.TabIndex = 1;
             this.levelLabel.Text = "-";
             // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(877, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(112, 20);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Saving Throws";
-            // 
             // raceAndClassTab
             // 
             this.raceAndClassTab.Controls.Add(this.tableLayoutPanel3);
@@ -1586,7 +1586,7 @@
             this.tableLayoutPanel3.Controls.Add(this.classLevelBreakdownLabel, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.raceFeaturesListBox, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.raceFeaturesLabel, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.classFeaturesBox, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.classFeaturesListBox, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.classFeaturesLabel, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.selectedFeatureTitleLabel, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.selectedFeatureDescriptionLabel, 1, 3);
@@ -1600,25 +1600,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1113, 575);
             this.tableLayoutPanel3.TabIndex = 0;
-            // 
-            // spellsPage
-            // 
-            this.spellsPage.Location = new System.Drawing.Point(4, 22);
-            this.spellsPage.Name = "spellsPage";
-            this.spellsPage.Padding = new System.Windows.Forms.Padding(3);
-            this.spellsPage.Size = new System.Drawing.Size(1113, 575);
-            this.spellsPage.TabIndex = 1;
-            this.spellsPage.Text = "Cantrips, Spells";
-            this.spellsPage.UseVisualStyleBackColor = true;
-            // 
-            // equipmentPage
-            // 
-            this.equipmentPage.Location = new System.Drawing.Point(4, 22);
-            this.equipmentPage.Name = "equipmentPage";
-            this.equipmentPage.Size = new System.Drawing.Size(1113, 575);
-            this.equipmentPage.TabIndex = 2;
-            this.equipmentPage.Text = "Equipment, Items";
-            this.equipmentPage.UseVisualStyleBackColor = true;
             // 
             // classFeaturesListView
             // 
@@ -1671,6 +1652,7 @@
             this.raceFeaturesListBox.Name = "raceFeaturesListBox";
             this.raceFeaturesListBox.Size = new System.Drawing.Size(244, 264);
             this.raceFeaturesListBox.TabIndex = 2;
+            this.raceFeaturesListBox.SelectedIndexChanged += new System.EventHandler(this.raceFeaturesListBox_SelectedIndexChanged);
             // 
             // raceFeaturesLabel
             // 
@@ -1683,15 +1665,15 @@
             this.raceFeaturesLabel.TabIndex = 3;
             this.raceFeaturesLabel.Text = "Race Features Breakdown";
             // 
-            // classFeaturesBox
+            // classFeaturesListBox
             // 
-            this.classFeaturesBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.classFeaturesBox.FormattingEnabled = true;
-            this.classFeaturesBox.Location = new System.Drawing.Point(865, 37);
-            this.classFeaturesBox.Name = "classFeaturesBox";
-            this.classFeaturesBox.Size = new System.Drawing.Size(245, 264);
-            this.classFeaturesBox.TabIndex = 4;
-            this.classFeaturesBox.SelectedIndexChanged += new System.EventHandler(this.classFeaturesBox_SelectedIndexChanged);
+            this.classFeaturesListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.classFeaturesListBox.FormattingEnabled = true;
+            this.classFeaturesListBox.Location = new System.Drawing.Point(865, 37);
+            this.classFeaturesListBox.Name = "classFeaturesListBox";
+            this.classFeaturesListBox.Size = new System.Drawing.Size(245, 264);
+            this.classFeaturesListBox.TabIndex = 4;
+            this.classFeaturesListBox.SelectedIndexChanged += new System.EventHandler(this.classFeaturesBox_SelectedIndexChanged);
             // 
             // classFeaturesLabel
             // 
@@ -1725,6 +1707,25 @@
             this.selectedFeatureDescriptionLabel.Size = new System.Drawing.Size(0, 13);
             this.selectedFeatureDescriptionLabel.TabIndex = 7;
             // 
+            // spellsPage
+            // 
+            this.spellsPage.Location = new System.Drawing.Point(4, 22);
+            this.spellsPage.Name = "spellsPage";
+            this.spellsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.spellsPage.Size = new System.Drawing.Size(1113, 575);
+            this.spellsPage.TabIndex = 1;
+            this.spellsPage.Text = "Cantrips, Spells";
+            this.spellsPage.UseVisualStyleBackColor = true;
+            // 
+            // equipmentPage
+            // 
+            this.equipmentPage.Location = new System.Drawing.Point(4, 22);
+            this.equipmentPage.Name = "equipmentPage";
+            this.equipmentPage.Size = new System.Drawing.Size(1113, 575);
+            this.equipmentPage.TabIndex = 2;
+            this.equipmentPage.Text = "Equipment, Items";
+            this.equipmentPage.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1757,8 +1758,6 @@
             this.flowLayoutPanel9.PerformLayout();
             this.flowLayoutPanel8.ResumeLayout(false);
             this.flowLayoutPanel8.PerformLayout();
-            this.flowLayoutPanel7.ResumeLayout(false);
-            this.flowLayoutPanel7.PerformLayout();
             this.flowLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel6.PerformLayout();
             this.flowLayoutPanel5.ResumeLayout(false);
@@ -1769,9 +1768,11 @@
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            this.flowLayoutPanel13.ResumeLayout(false);
+            this.flowLayoutPanel7.ResumeLayout(false);
+            this.flowLayoutPanel7.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.flowLayoutPanel13.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel14.ResumeLayout(false);
@@ -1924,7 +1925,7 @@
         private System.Windows.Forms.Label classLevelBreakdownLabel;
         private System.Windows.Forms.ListBox raceFeaturesListBox;
         private System.Windows.Forms.Label raceFeaturesLabel;
-        private System.Windows.Forms.ListBox classFeaturesBox;
+        private System.Windows.Forms.ListBox classFeaturesListBox;
         private System.Windows.Forms.Label classFeaturesLabel;
         private System.Windows.Forms.Label selectedFeatureTitleLabel;
         private System.Windows.Forms.Label selectedFeatureDescriptionLabel;
