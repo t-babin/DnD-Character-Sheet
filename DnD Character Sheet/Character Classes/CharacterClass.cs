@@ -12,7 +12,7 @@ namespace DnD_Character_Sheet
 
         public List<string> ProficientArmors { get; set; } = new List<string>();
 
-        public List<List<Tuple<string, string, string, string>>> ProficientWeapons { get; set; } = new List<List<Tuple<string, string, string, string>>>();
+        public List<string> ProficientWeapons { get; set; } = new List<string>();
 
         public List<string> ProficientTools { get; set; } = new List<string>();
 

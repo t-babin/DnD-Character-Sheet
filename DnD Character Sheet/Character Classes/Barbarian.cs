@@ -52,8 +52,8 @@ namespace DnD_Character_Sheet.Character_Classes
         {
             HitPointDieType = 12;
             ProficientArmors = new List<string>(new string[] { "Light Armor", "Medium Armor", "Shields"});
-            ProficientWeapons.Add(Weapons.SimpleMeleeWeapons);
-            //ProficientWeapons.Add(Weapons.MartialMeleeWeapons);
+            ProficientWeapons.AddRange(Weapons.SimpleMeleeWeapons);
+            ProficientWeapons.AddRange(Weapons.MartialMeleeWeapons);
             ProficientTools.Add("None");
             SavingThrows.Add("Strength");
             SavingThrows.Add("Constitution");

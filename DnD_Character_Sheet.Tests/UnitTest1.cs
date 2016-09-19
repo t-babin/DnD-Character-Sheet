@@ -14,8 +14,7 @@ namespace DnD_Character_Sheet.Tests
             int i = 4;
             int[] testScore = new int[2] { i, -3 };
             scores.SetStat("Strength", i);
-            Assert.AreEqual(testScore[1], scores.Scores["Strength"][1]);
-            
+            Assert.AreEqual(testScore[1], scores.Scores["Strength"][1]);            
         }
     }
 }
