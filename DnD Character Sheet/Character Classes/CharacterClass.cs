@@ -23,10 +23,14 @@ namespace DnD_Character_Sheet
         //level, proficiency bonus, features
         public List<Tuple<int, int, string[]>> FeaturesPerLevelTable { get; set; } = new List<Tuple<int, int, string[]>>();
 
+        public Dictionary<string, string> FeaturesDictionary { get; set; } = new Dictionary<string, string>();
+
         public int ProficiencyBonus { get; set; } = 0;
 
         abstract public int CalculateHitPoints(int level, AbilityScores scores);
 
         abstract public void AddProficiencies();
+
+        abstract public void AddClassFeatures();
     }
 }
