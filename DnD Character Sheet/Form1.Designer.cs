@@ -228,6 +228,7 @@
             this.loadCharacterButton.Name = "loadCharacterButton";
             this.loadCharacterButton.Size = new System.Drawing.Size(91, 22);
             this.loadCharacterButton.Text = "Load Character";
+            this.loadCharacterButton.Click += new System.EventHandler(this.loadCharacterButton_Click);
             // 
             // editCharacterButton
             // 
@@ -287,6 +288,7 @@
             this.characterNameBox.Name = "characterNameBox";
             this.characterNameBox.Size = new System.Drawing.Size(187, 20);
             this.characterNameBox.TabIndex = 1;
+            this.characterNameBox.Text = "ads";
             this.characterNameBox.TextChanged += new System.EventHandler(this.characterNameBox_TextChanged);
             // 
             // ageLabel
@@ -305,6 +307,7 @@
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.Size = new System.Drawing.Size(47, 20);
             this.ageTextBox.TabIndex = 11;
+            this.ageTextBox.Text = "1";
             this.ageTextBox.TextChanged += new System.EventHandler(this.ageTextBox_TextChanged);
             // 
             // classLabel
@@ -470,6 +473,7 @@
             this.heightTextBox.Name = "heightTextBox";
             this.heightTextBox.Size = new System.Drawing.Size(47, 20);
             this.heightTextBox.TabIndex = 13;
+            this.heightTextBox.Text = "1";
             this.heightTextBox.TextChanged += new System.EventHandler(this.heightTextBox_TextChanged);
             // 
             // basicWeightLabel
@@ -488,6 +492,7 @@
             this.weightTextBox.Name = "weightTextBox";
             this.weightTextBox.Size = new System.Drawing.Size(50, 20);
             this.weightTextBox.TabIndex = 15;
+            this.weightTextBox.Text = "1";
             this.weightTextBox.TextChanged += new System.EventHandler(this.weightTextBox_TextChanged);
             // 
             // sexLabel
@@ -530,6 +535,7 @@
             this.xpTextBox.Name = "xpTextBox";
             this.xpTextBox.Size = new System.Drawing.Size(52, 20);
             this.xpTextBox.TabIndex = 3;
+            this.xpTextBox.Text = "1";
             this.xpTextBox.TextChanged += new System.EventHandler(this.xpTextBox_TextChanged);
             // 
             // saveBasicInfoButton

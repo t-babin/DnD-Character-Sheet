@@ -103,10 +103,38 @@ namespace DnD_Character_Sheet
             //additionalInfoTabControl.Enabled = true;
         }
 
-	    private void saveBasicInfoButton_Click(object sender, EventArgs e)
-	    {			
-			character.Name = characterNameBox.Text;
-			character.Age = int.Parse(ageTextBox.Text);
+        private void loadCharacterButton_Click(object sender, EventArgs e)
+        {
+            character = new Character();
+            resetClassAndRaceFeaturesTab();
+            classComboBox.SelectedIndex = 0;
+            raceComboBox.SelectedIndex = 0;
+
+            backgroundComboBox.SelectedIndex = 0;
+            alignmentComboBox.SelectedIndex = 0;
+            sexComboBox.SelectedIndex = 0;
+            characterNameBox_TextChanged(null, null);
+            classComboBox_SelectedIndexChanged(null, null);
+            raceComboBox_SelectedIndexChanged(null, null);
+            subraceComboBox_SelectedIndexChanged(null, null);
+            backgroundComboBox_SelectedIndexChanged(null, null);
+            alignmentComboBox_SelectedIndexChanged(null, null);
+            sexComboBox_SelectedIndexChanged(null, null);
+            ageTextBox_TextChanged(null, null);
+            heightTextBox_TextChanged(null, null);
+            weightTextBox_TextChanged(null, null);
+            xpTextBox_TextChanged(null, null);
+            subraceComboBox.SelectedIndex = 0;
+            additionalInfoTabControl.Enabled = true;
+            editBasicInformationButton.Enabled = true;
+            saveCharacter();
+            fillClassAndRaceFeaturesTab();
+        }
+
+        private void saveCharacter()
+        {
+            character.Name = characterNameBox.Text;
+            character.Age = int.Parse(ageTextBox.Text);
             string charClass = classComboBox.SelectedItem.ToString();
             switch (charClass)
             {
@@ -114,29 +142,14 @@ namespace DnD_Character_Sheet
                     character.CharClass = new Barbarian();
                     break;
             }
-			string race = raceComboBox.SelectedItem.ToString();
-			switch (race.ToLower())
-			{
-				case "dwarf":
-					character.Race = new Dwarf();                    
-					speedLabel.Text += " 25 base (Dwarf)";
-					languagesLabel.Text += " Common, Dwarvish (Dwarf)";
-                    //TODO: Fix subraces.                    
-					//switch (subrace.ToLower())
-					//{
-					//	case "hill dwarf":
-					//		//Dwarven Toughness: Your hit point maximum increases by 1, and it increases by 1 every time you gain a level
-					//		//character.abilityScores.Wisdom[0] += 1;
-     //                       //character.race.Subrace = 
-					//		abilityScoreIncreaseLabel.Text += " +1 Wisd (Hill Dwarf)";
-					//		break;
-					//	case "mountain dwarf":
-					//		//Dwarven Armor Training: You have proficiency with light and medium armor.
-					//		//character.abilityScores.Strength[0] += 2;
-					//		abilityScoreIncreaseLabel.Text += " +2 Str (Mntn Dwarf)";
-					//		break;
-					//}
-					break;
+            string race = raceComboBox.SelectedItem.ToString();
+            switch (race.ToLower())
+            {
+                case "dwarf":
+                    character.Race = new Dwarf();
+                    speedLabel.Text += " 25 base (Dwarf)";
+                    languagesLabel.Text += " Common, Dwarvish (Dwarf)";
+                    break;
                 case "elf":
                     character.Race = new Elf();
                     //TODO: fix this shit so that it's a part of each class and not typed here manually
@@ -171,7 +184,7 @@ namespace DnD_Character_Sheet
                     character.Race = new HalfOrc();
                     speedLabel.Text += " 30 base (Half Orc)";
                     break;
-			}
+            }
             character.Race.Subrace = (subraceComboBox.SelectedItem.ToString() != "NONE" ? subraceComboBox.SelectedItem.ToString() : "");
             character.Race.AddSubraceBonuses(character.Race.Subrace);
             character.Alignment = alignmentComboBox.SelectedItem.ToString();
@@ -180,6 +193,11 @@ namespace DnD_Character_Sheet
             character.Sex = sexComboBox.SelectedItem.ToString();
             character.ExperiencePoints = int.Parse(xpTextBox.Text);
             character.DetermineLevel();
+        }
+
+	    private void saveBasicInfoButton_Click(object sender, EventArgs e)
+	    {
+            saveCharacter();
             levelLabel.Text = character.Level.ToString();
             abilityScoreIncreaseLabel.Text += character.Race.AbilityIncreasePrintString();
 
@@ -598,6 +616,6 @@ namespace DnD_Character_Sheet
                 selectedFeatureDescriptionLabel.Text = character.Race.FeaturesDictionary[raceFeaturesListBox.SelectedItem.ToString()];
             else
                 selectedFeatureDescriptionLabel.Text = character.Race.SubraceFeaturesDictionary[raceFeaturesListBox.SelectedItem.ToString()];
-        }
+        }        
     }
 }
