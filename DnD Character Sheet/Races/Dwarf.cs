@@ -34,13 +34,7 @@ namespace DnD_Character_Sheet
 
             FeaturesDictionary.Add("Stonecutting", "Whenever you make an Intelligence (History) check related to the origin of stonework, " +
                                                    "you are considered proficient in the History skill and add double your proficiency " +
-                                                   "bonus to the check, instead of your normal proficiency bonus.");
-
-            //TODO: How should I do this? Maybe when computing HP I just have a check to see if race instanceof Dwarf?
-            FeaturesDictionary.Add("Dwarven Toughness (Hill Dwarf)", "Your hit point maximum increases by 1, and it increases by 1 every time " +
-                                                                     "you gain a level.");
-
-            FeaturesDictionary.Add("Dwarven Armor Training (Mountain Dwarf)", "You have proficiency with light and medium armor.");
+                                                   "bonus to the check, instead of your normal proficiency bonus.");            
         }
 
         public override void AddSubraceBonuses(string subrace)
@@ -48,11 +42,15 @@ namespace DnD_Character_Sheet
             if (subrace == "Hill Dwarf")
             {
                 SubraceAbilityScoreIncrease = new Tuple<string, int>("Wisdom", 1);
+                //TODO: How should I do this? Maybe when computing HP I just have a check to see if race instanceof Dwarf?
+                SubraceFeaturesDictionary.Add("Dwarven Toughness (Hill Dwarf)", "Your hit point maximum increases by 1, and it increases by 1 every time " +
+                                                                     "you gain a level.");
             }
 
             if (subrace == "Mountain Dwarf")
             {
                 SubraceAbilityScoreIncrease = new Tuple<string, int>("Strength", 2);
+                SubraceFeaturesDictionary.Add("Dwarven Armor Training (Mountain Dwarf)", "You have proficiency with light and medium armor.");
             }
         }
 

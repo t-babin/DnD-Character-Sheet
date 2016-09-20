@@ -1659,11 +1659,11 @@
             this.raceFeaturesLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.raceFeaturesLabel.AutoSize = true;
             this.raceFeaturesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.raceFeaturesLabel.Location = new System.Drawing.Point(649, 8);
+            this.raceFeaturesLabel.Location = new System.Drawing.Point(673, 8);
             this.raceFeaturesLabel.Name = "raceFeaturesLabel";
-            this.raceFeaturesLabel.Size = new System.Drawing.Size(175, 17);
+            this.raceFeaturesLabel.Size = new System.Drawing.Size(127, 17);
             this.raceFeaturesLabel.TabIndex = 3;
-            this.raceFeaturesLabel.Text = "Race Features Breakdown";
+            this.raceFeaturesLabel.Text = "Race Features List";
             // 
             // classFeaturesListBox
             // 
@@ -1680,11 +1680,11 @@
             this.classFeaturesLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.classFeaturesLabel.AutoSize = true;
             this.classFeaturesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classFeaturesLabel.Location = new System.Drawing.Point(899, 8);
+            this.classFeaturesLabel.Location = new System.Drawing.Point(936, 8);
             this.classFeaturesLabel.Name = "classFeaturesLabel";
-            this.classFeaturesLabel.Size = new System.Drawing.Size(176, 17);
+            this.classFeaturesLabel.Size = new System.Drawing.Size(102, 17);
             this.classFeaturesLabel.TabIndex = 5;
-            this.classFeaturesLabel.Text = "Class Features Breakdown";
+            this.classFeaturesLabel.Text = "Class Features";
             // 
             // selectedFeatureTitleLabel
             // 

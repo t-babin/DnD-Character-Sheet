@@ -530,6 +530,20 @@ namespace DnD_Character_Sheet
             abilityScoreIncreaseLabel.Text = "Ability Score Increases:";
             speedLabel.Text = "Speed:";
             languagesLabel.Text = "Languages:";
+
+            resetClassAndRaceFeaturesTab();
+        }
+
+        private void resetClassAndRaceFeaturesTab()
+        {
+            classLevelBreakdownLabel.Text = "Please Select a Class to See the Level Breakdown";
+            raceFeaturesLabel.Text = "Race Features List";
+            classFeaturesLabel.Text = "Class Features List";
+            selectedFeatureTitleLabel.Text = "Select a Feature to Learn More About It";
+            classFeaturesListView.Columns.Clear();
+            classFeaturesListView.Columns.Add("Level");
+            classFeaturesListView.Columns.Add("Proficiency Bonus");
+            classFeaturesListView.Columns.Add("Features");
         }
 
         private void fillClassAndRaceFeaturesTab()
@@ -566,6 +580,9 @@ namespace DnD_Character_Sheet
 
             foreach (string key in character.Race.FeaturesDictionary.Keys)
                 raceFeaturesListBox.Items.Add(key);
+
+            foreach (string key in character.Race.SubraceFeaturesDictionary.Keys)
+                raceFeaturesListBox.Items.Add(key);
         }
 
         private void classFeaturesBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -577,7 +594,10 @@ namespace DnD_Character_Sheet
         private void raceFeaturesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedFeatureTitleLabel.Text = raceFeaturesListBox.SelectedItem.ToString();
-            selectedFeatureDescriptionLabel.Text = character.Race.FeaturesDictionary[raceFeaturesListBox.SelectedItem.ToString()];
+            if (character.Race.FeaturesDictionary.ContainsKey(raceFeaturesListBox.SelectedItem.ToString()))
+                selectedFeatureDescriptionLabel.Text = character.Race.FeaturesDictionary[raceFeaturesListBox.SelectedItem.ToString()];
+            else
+                selectedFeatureDescriptionLabel.Text = character.Race.SubraceFeaturesDictionary[raceFeaturesListBox.SelectedItem.ToString()];
         }
     }
 }

@@ -33,32 +33,6 @@ namespace DnD_Character_Sheet
                                              "(The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such " +
                                              "dreams are actually mental exercises that have become reflexive through years of practice. After resting " +
                                              "in this way, you gain the same benefit that a human does from 8 hours of sleep.");
-
-            FeaturesDictionary.Add("Elf Weapon Training (High Elf)", "You have proficiency with the longsword, shortsword, shortbow, and longbow.");
-
-            FeaturesDictionary.Add("Cantrip (High Elf)", "You know one cantrip of your choice from the wizard spell list. Intelligence is your " +
-                                                         "spellcasting ability for it.");
-
-            FeaturesDictionary.Add("Extra Language (High Elf)", "You can speak, read, and write one extra language of your choice.");
-
-            FeaturesDictionary.Add("Elf Weapon Training (Wood Elf)", "You have proficiency with the longsword, shortsword, shortbow, and longbow.");
-            
-            FeaturesDictionary.Add("Fleet of Foot (Wood Elf)", "Your base walking speed increases to 35 feet.");
-
-            FeaturesDictionary.Add("Mask of the Wild (Wood Elf)", "You can attempt to hide even when you are only lightly obscured by foliage, heavy " +
-                                                                  "rain, falling snow, mist, and other natural phenomena.");
-
-            FeaturesDictionary.Add("Superior Darkvision (Dark Elf)", "Your darkvision has a radius of 120 feet.");
-
-            FeaturesDictionary.Add("Sunlight Sensitivity (Dark Elf)", "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely " +
-                                                                      "on sight when you, the target of your attcak, or whatever you are trying to perceive " +
-                                                                      "is in direct sunlight.");
-
-            FeaturesDictionary.Add("Drow Magic (Dark Elf)", "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire " +
-                                                            "spell once per day. When you reach 5th level, you can also cast the darkness spell once per " +
-                                                            "day. Charisma is your spellcasting ability for these spells.");
-
-            FeaturesDictionary.Add("Drow Weapon Training (Dark Elf)", "You have proficiency with rapiers, shortswords, and hand crossbows.");
         }
 
         public override void AddSubraceBonuses(string subrace)
@@ -67,16 +41,39 @@ namespace DnD_Character_Sheet
             {
                 SubraceAbilityScoreIncrease = new Tuple<string, int>("Intelligence", 1);
                 ProficientWeapons = new string[] { "Longsword", "Shortsword", "Shortbow", "Longbow" };
+                SubraceFeaturesDictionary.Add("Elf Weapon Training (High Elf)", "You have proficiency with the longsword, shortsword, shortbow, and longbow.");
+
+                SubraceFeaturesDictionary.Add("Cantrip (High Elf)", "You know one cantrip of your choice from the wizard spell list. Intelligence is your " +
+                                                             "spellcasting ability for it.");
+
+                SubraceFeaturesDictionary.Add("Extra Language (High Elf)", "You can speak, read, and write one extra language of your choice.");
             }
             if (subrace == "Wood Elf")
             {
                 SubraceAbilityScoreIncrease = new Tuple<string, int>("Wisdom", 1);
                 ProficientWeapons = new string[] { "Longsword", "Shortsword", "Shortbow", "Longbow" };
+                SubraceFeaturesDictionary.Add("Elf Weapon Training (Wood Elf)", "You have proficiency with the longsword, shortsword, shortbow, and longbow.");
+
+                SubraceFeaturesDictionary.Add("Fleet of Foot (Wood Elf)", "Your base walking speed increases to 35 feet.");
+
+                SubraceFeaturesDictionary.Add("Mask of the Wild (Wood Elf)", "You can attempt to hide even when you are only lightly obscured by foliage, heavy " +
+                                                                      "rain, falling snow, mist, and other natural phenomena.");
             }
             if (subrace == "Dark Elf")
             {
                 SubraceAbilityScoreIncrease = new Tuple<string, int>("Charisma", 1);
                 ProficientWeapons = new string[] { "Rapier", "Shortsword", "Hand Crossbow" };
+                SubraceFeaturesDictionary.Add("Superior Darkvision (Dark Elf)", "Your darkvision has a radius of 120 feet.");
+
+                SubraceFeaturesDictionary.Add("Sunlight Sensitivity (Dark Elf)", "You have disadvantage on attack rolls and on Wisdom (Perception) checks that rely " +
+                                                                          "on sight when you, the target of your attcak, or whatever you are trying to perceive " +
+                                                                          "is in direct sunlight.");
+
+                SubraceFeaturesDictionary.Add("Drow Magic (Dark Elf)", "You know the dancing lights cantrip. When you reach 3rd level, you can cast the faerie fire " +
+                                                                "spell once per day. When you reach 5th level, you can also cast the darkness spell once per " +
+                                                                "day. Charisma is your spellcasting ability for these spells.");
+
+                SubraceFeaturesDictionary.Add("Drow Weapon Training (Dark Elf)", "You have proficiency with rapiers, shortswords, and hand crossbows.");
             }
         }
 
