@@ -107,7 +107,7 @@ namespace DnD_Character_Sheet
         {
             character = new Character();
             resetClassAndRaceFeaturesTab();
-            classComboBox.SelectedIndex = 0;
+            classComboBox.SelectedIndex = 1;
             raceComboBox.SelectedIndex = 0;
 
             backgroundComboBox.SelectedIndex = 0;
@@ -140,6 +140,9 @@ namespace DnD_Character_Sheet
             {
                 case "Barbarian":
                     character.CharClass = new Barbarian();
+                    break;
+                case "Bard":
+                    character.CharClass = new Bard();
                     break;
             }
             string race = raceComboBox.SelectedItem.ToString();
@@ -215,7 +218,6 @@ namespace DnD_Character_Sheet
             sexComboBox.Enabled = false;
             xpTextBox.Enabled = false;
             editBasicInformationButton.Enabled = true;
-            classAttributesAndFeaturesButton.Enabled = true;
             fillClassAndRaceFeaturesTab();
         }
 
@@ -543,7 +545,6 @@ namespace DnD_Character_Sheet
             sexComboBox.Enabled = true;
             xpTextBox.Enabled = true;
             editBasicInformationButton.Enabled = false;
-            classAttributesAndFeaturesButton.Enabled = false;
 
             abilityScoreIncreaseLabel.Text = "Ability Score Increases:";
             speedLabel.Text = "Speed:";
@@ -591,6 +592,22 @@ namespace DnD_Character_Sheet
                     l.SubItems.Add(additionalStatsLists[k][i]);
 
                 classFeaturesListView.Items.Add(l);
+            }
+
+            for (int i = 0; i < 20; i++)
+            {
+                ListViewItem l = new ListViewItem((i + 1).ToString());
+                l.SubItems.Add(character.CharClass.SpellSlotsPerLevel[i, 0]);
+                l.SubItems.Add(character.CharClass.SpellSlotsPerLevel[i, 1]);
+                l.SubItems.Add(character.CharClass.SpellSlotsPerLevel[i, 2]);
+                l.SubItems.Add(character.CharClass.SpellSlotsPerLevel[i, 3]);
+                l.SubItems.Add(character.CharClass.SpellSlotsPerLevel[i, 4]);
+                l.SubItems.Add(character.CharClass.SpellSlotsPerLevel[i, 5]);
+                l.SubItems.Add(character.CharClass.SpellSlotsPerLevel[i, 6]);
+                l.SubItems.Add(character.CharClass.SpellSlotsPerLevel[i, 7]);
+                l.SubItems.Add(character.CharClass.SpellSlotsPerLevel[i, 8]);
+
+                spellSlotsPerLevelListView.Items.Add(l);
             }
 
             foreach (string key in character.CharClass.FeaturesDictionary.Keys)

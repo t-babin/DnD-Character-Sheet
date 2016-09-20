@@ -53,6 +53,13 @@ namespace DnD_Character_Sheet.Character_Classes
                 new Tuple<int, int, string>(19, 6, "Ability Score Improvement"),
                 new Tuple<int, int, string>(20, 6, "Primal Champion")
             });
+
+            for (int i = 0; i < 20; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                    SpellSlotsPerLevel[i, j] = "---";
+            }
+
             AddClassFeatures();
         }
 
