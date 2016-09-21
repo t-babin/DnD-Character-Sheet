@@ -10,10 +10,15 @@ namespace DnD_Character_Sheet.Character_Classes
     {
         public override Dictionary<string, List<string>> AdditionalFeaturesTable
         {
-            get
-            {
-                return additionalFeaturesTable;
-            }
+            get { return additionalFeaturesTable; }
+
+            set
+            { }
+        }
+
+        public override string SpellcastingAbility
+        {
+            get { return ""; }
 
             set
             { }

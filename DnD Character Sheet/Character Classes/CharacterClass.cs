@@ -29,6 +29,8 @@ namespace DnD_Character_Sheet
 
         abstract public Dictionary<string, List<string>> AdditionalFeaturesTable { get; set; }
 
+        abstract public string SpellcastingAbility { get; set; }
+
         public string[,] SpellSlotsPerLevel { get; set; } = new string[20, 9];
 
         public int ProficiencyBonus { get; set; } = 0;
