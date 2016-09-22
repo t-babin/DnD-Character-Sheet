@@ -49,6 +49,7 @@
     <Compile Include="AbilityScores.cs" />
     <Compile Include="Character Classes\Barbarian.cs" />
     <Compile Include="Character Classes\Bard.cs" />
+    <Compile Include="Character Classes\Cleric.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Character Classes\CharacterClass.cs" />
     <Compile Include="ClassCreationForm.cs">
