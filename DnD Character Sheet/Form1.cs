@@ -131,6 +131,28 @@ namespace DnD_Character_Sheet
             fillClassAndRaceFeaturesTab();
         }
 
+        private void saveCharacterToolStripButton_Click(object sender, EventArgs e)
+        {
+            using (XmlWriter writer = XmlWriter.Create(character.Name + ".xml"))
+            {
+                writer.WriteStartDocument();
+                writer.WriteStartElement("Character");
+                writer.WriteElementString("Name", character.Name);
+                writer.WriteElementString("Age", character.Age.ToString());
+                writer.WriteElementString("Class", character.CharClass.ClassName);
+                writer.WriteElementString("Race", character.Race.RaceName);
+                writer.WriteElementString("Subrace", character.Race.Subrace);
+                writer.WriteElementString("Background", "TODO");
+                writer.WriteElementString("Alignment", character.Alignment);
+                writer.WriteElementString("Height", character.Height.ToString());
+                writer.WriteElementString("Weight", character.Weight.ToString());
+                writer.WriteElementString("Sex", character.Sex);
+                writer.WriteElementString("XP", character.ExperiencePoints.ToString());
+                writer.WriteEndElement();
+                writer.WriteEndDocument();
+            }
+        }
+
         private void saveCharacter()
         {
             character.Name = characterNameBox.Text;
@@ -248,6 +270,7 @@ namespace DnD_Character_Sheet
             sexComboBox.Enabled = false;
             xpTextBox.Enabled = false;
             editBasicInformationButton.Enabled = true;
+            saveCharacterToolStripButton.Enabled = true;
             fillClassAndRaceFeaturesTab();
         }
 

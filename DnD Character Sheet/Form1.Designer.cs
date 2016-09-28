@@ -33,6 +33,7 @@
             this.createCharacterButton = new System.Windows.Forms.ToolStripButton();
             this.loadCharacterButton = new System.Windows.Forms.ToolStripButton();
             this.editCharacterButton = new System.Windows.Forms.ToolStripButton();
+            this.saveCharacterToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.basicInfoPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.characterNameLabel = new System.Windows.Forms.Label();
             this.characterNameBox = new System.Windows.Forms.TextBox();
@@ -212,7 +213,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createCharacterButton,
             this.loadCharacterButton,
-            this.editCharacterButton});
+            this.editCharacterButton,
+            this.saveCharacterToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1121, 25);
@@ -247,6 +249,16 @@
             this.editCharacterButton.Name = "editCharacterButton";
             this.editCharacterButton.Size = new System.Drawing.Size(85, 22);
             this.editCharacterButton.Text = "Edit Character";
+            // 
+            // saveCharacterToolStripButton
+            // 
+            this.saveCharacterToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.saveCharacterToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveCharacterToolStripButton.Image")));
+            this.saveCharacterToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveCharacterToolStripButton.Name = "saveCharacterToolStripButton";
+            this.saveCharacterToolStripButton.Size = new System.Drawing.Size(89, 22);
+            this.saveCharacterToolStripButton.Text = "Save Character";
+            this.saveCharacterToolStripButton.Click += new System.EventHandler(this.saveCharacterToolStripButton_Click);
             // 
             // basicInfoPanel
             // 
@@ -2008,6 +2020,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.TabPage notesPage;
+        private System.Windows.Forms.ToolStripButton saveCharacterToolStripButton;
     }
 }
 
