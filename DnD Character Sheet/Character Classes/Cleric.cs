@@ -8,6 +8,7 @@ namespace DnD_Character_Sheet.Character_Classes
 {
     class Cleric : CharacterClass
     {
+        private Dictionary<string, List<string>> additionalFeaturesTable = new Dictionary<string, List<string>>();
         public override Dictionary<string, List<string>> AdditionalFeaturesTable
         {
             get
@@ -17,9 +18,7 @@ namespace DnD_Character_Sheet.Character_Classes
 
             set
             { }
-        }
-
-        private Dictionary<string, List<string>> additionalFeaturesTable = new Dictionary<string, List<string>>();
+        }        
 
         public Cleric()
         {

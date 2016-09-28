@@ -144,6 +144,36 @@ namespace DnD_Character_Sheet
                 case "Bard":
                     character.CharClass = new Bard();
                     break;
+                case "Cleric":
+                    character.CharClass = new Cleric();
+                    break;
+                case "Druid":
+                    character.CharClass = new Druid();
+                    break;
+                case "Fighter":
+                    character.CharClass = new Fighter();
+                    break;
+                case "Monk":
+                    character.CharClass = new Monk();
+                    break;
+                case "Paladin":
+                    character.CharClass = new Paladin();
+                    break;
+                case "Ranger":
+                    character.CharClass = new Ranger();
+                    break;
+                case "Rogue":
+                    character.CharClass = new Rogue();
+                    break;
+                case "Sorcerer":
+                    character.CharClass = new Sorcerer();
+                    break;
+                case "Warlock":
+                    character.CharClass = new Warlock();
+                    break;
+                case "Wizard":
+                    character.CharClass = new Wizard();
+                    break;
             }
             string race = raceComboBox.SelectedItem.ToString();
             switch (race.ToLower())

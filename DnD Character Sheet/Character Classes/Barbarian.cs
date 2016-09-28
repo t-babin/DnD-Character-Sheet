@@ -8,6 +8,7 @@ namespace DnD_Character_Sheet.Character_Classes
 {
     class Barbarian : CharacterClass
     {
+        private Dictionary<string, List<string>> additionalFeaturesTable = new Dictionary<string, List<string>>();
         public override Dictionary<string, List<string>> AdditionalFeaturesTable
         {
             get { return additionalFeaturesTable; }
@@ -22,9 +23,7 @@ namespace DnD_Character_Sheet.Character_Classes
 
             set
             { }
-        }
-
-        private Dictionary<string, List<string>> additionalFeaturesTable = new Dictionary<string, List<string>>();
+        }        
 
         //TODO finish adding the Barbarian features. I guess these will be strings somewhere that can be used in the Form?
         public Barbarian()
