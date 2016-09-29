@@ -118,6 +118,8 @@ namespace DnD_Character_Sheet.Character_Classes
                                                        "and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you " +
                                                        "regain your expended uses.");
 
+            FeaturesDictionary.Add("Skills That You May be Proficient in", "History, Insight, Medicine, Persuasion, Religion");
+
             additionalFeaturesTable.Add("Cantrips Known", new List<string>(new string[] { "3", "3", "3", "4", "4", "4", "4", "4", "4", "5", "5", "5", "5", "5", "5", "5",
                                                                                  "5", "5", "5", "5"}));
         }

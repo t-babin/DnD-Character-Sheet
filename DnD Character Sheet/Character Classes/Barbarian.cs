@@ -150,6 +150,8 @@ namespace DnD_Character_Sheet.Character_Classes
             FeaturesDictionary.Add("Primal Champion", "At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your " +
                                                       "maximum for those scores is now 24.");
 
+            FeaturesDictionary.Add("Skills That You May be Proficient in", "Animal Handling, Athletics, Intimidation, Nature, Perception, Survival");
+
             additionalFeaturesTable.Add("Rages", new List<string>(new string[] { "2", "2", "3", "3", "3", "4", "4", "4", "4", "4", "4", "5", "5", "5", "5", "5",
                                                                                  "6", "6", "6", "Unlimited"}));
 

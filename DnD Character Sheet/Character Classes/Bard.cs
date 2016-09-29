@@ -145,6 +145,10 @@ namespace DnD_Character_Sheet.Character_Classes
 
             FeaturesDictionary.Add("Superior Inspiration", "At 20th level, when you roll initiative and have no uses of Bardic Inspiration left, you regain one use.");
 
+            FeaturesDictionary.Add("Skills That You May be Proficient in", @"Acrobatics, AnimalHandling, Arcana, Athletics, Deception, History, Insight, Intimidation,
+                                                   Investigation, Medicine, Nature, Perception, Performance, Persuasion, Religion, SleightOfHand,
+                                                   Stealth, Survival");
+
             additionalFeaturesTable.Add("Cantrips Known", new List<string>(new string[] { "2", "2", "2", "3", "3", "3", "3", "3", "3", "4", "4", "4", "4", "4", "4", "4",
                                                                                  "4", "4", "4", "4"}));
 
