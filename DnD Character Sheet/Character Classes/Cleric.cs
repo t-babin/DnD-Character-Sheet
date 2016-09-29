@@ -18,7 +18,21 @@ namespace DnD_Character_Sheet.Character_Classes
 
             set
             { }
-        }        
+        }
+
+        private Tuple<int, string[]> selectableSkills = new Tuple<int, string[]>(2, new string[] { "History", "Insight", "Medicine", "Persuasion", "Religion" });
+        public override Tuple<int, string[]> SelectableSkills
+        {
+            get
+            {
+                return selectableSkills;
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public Cleric()
         {
@@ -26,7 +40,7 @@ namespace DnD_Character_Sheet.Character_Classes
             HitPointDieType = 8;
             ProficientArmors = new List<string>(new string[] { "Light Armor", "Medium Armor", "Shields" });
             AddProficiencies();
-            SelectableSkills.Add(2, new string[] { "History", "Insight", "Medicine", "Persuasion", "Religion" });
+            //SelectableSkills.Add(2, new string[] { "History", "Insight", "Medicine", "Persuasion", "Religion" });
 
             FeaturesPerLevelTable = new List<Tuple<int, int, string>>(new Tuple<int, int, string>[]
             {
@@ -81,6 +95,8 @@ namespace DnD_Character_Sheet.Character_Classes
             set
             { }
         }
+
+        
 
         public override void AddClassFeatures()
         {

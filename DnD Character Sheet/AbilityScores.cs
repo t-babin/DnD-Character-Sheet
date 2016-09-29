@@ -19,9 +19,17 @@ namespace DnD_Character_Sheet
             { "Charisma", new int[2] }
         };
 
-        public AbilityScores()
+        public Dictionary<string, string[]> RelatedSkills = new Dictionary<string, string[]>()
         {
-        }
+            { "Strength", new [] { "Athletics" } },
+            { "Dexterity", new [] { "Acrobatics", "Sleight of Hand", "Stealth" } },
+            { "Constitution", new [] { "" } },
+            { "Intelligence", new [] { "Arcana", "History", "Investigation", "Nature", "Religion" } },
+            { "Wisdom", new [] { "Animal Handling", "Insight", "Medicine", "Perception", "Survival" } },
+            { "Charisma", new [] { "Deception", "Intimidation", "Performance", "Persuasion" } },
+        };
+
+        public AbilityScores() { }
 
         public void SetStat(string stat, int statValue)
         {

@@ -8,6 +8,8 @@ namespace DnD_Character_Sheet.Character_Classes
 {
     class Barbarian : CharacterClass
     {
+        //SelectableSkills = new Dictionary<int, string[]>(2, new string[] { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"}));
+
         private Dictionary<string, List<string>> additionalFeaturesTable = new Dictionary<string, List<string>>();
         public override Dictionary<string, List<string>> AdditionalFeaturesTable
         {
@@ -23,7 +25,22 @@ namespace DnD_Character_Sheet.Character_Classes
 
             set
             { }
-        }        
+        }
+
+        private Tuple<int, string[]> selectableSkills = new Tuple<int, string[]>(2, new[] { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival" });
+        public override Tuple<int, string[]> SelectableSkills
+        {
+            get
+            {
+                return selectableSkills;
+            }
+
+            set
+            {
+            }
+        }
+
+
 
         //TODO finish adding the Barbarian features. I guess these will be strings somewhere that can be used in the Form?
         public Barbarian()
@@ -33,7 +50,6 @@ namespace DnD_Character_Sheet.Character_Classes
             //ProficiencyBonus = 2;
             ProficientArmors = new List<string>(new string[] { "Light Armor", "Medium Armor", "Shields" });
             AddProficiencies();            
-            SelectableSkills.Add(2, new string[] { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"});
             FeaturesPerLevelTable = new List<Tuple<int, int, string>>(new Tuple<int, int, string>[]
             {
                 new Tuple<int, int, string>(1, 2, "Rage, Unarmored Defense"),

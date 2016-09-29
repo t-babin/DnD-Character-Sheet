@@ -133,10 +133,14 @@ namespace DnD_Character_Sheet
 
         private void saveCharacterToolStripButton_Click(object sender, EventArgs e)
         {
-            using (XmlWriter writer = XmlWriter.Create(character.Name + ".xml"))
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.NewLineOnAttributes = true;
+            using (XmlWriter writer = XmlWriter.Create(character.Name + ".xml", settings))
             {
                 writer.WriteStartDocument();
-                writer.WriteStartElement("Character");
+                writer.WriteStartElement("CharacterInfo");
+                writer.WriteStartElement("BasicInfo");
                 writer.WriteElementString("Name", character.Name);
                 writer.WriteElementString("Age", character.Age.ToString());
                 writer.WriteElementString("Class", character.CharClass.ClassName);
@@ -149,6 +153,25 @@ namespace DnD_Character_Sheet
                 writer.WriteElementString("Sex", character.Sex);
                 writer.WriteElementString("XP", character.ExperiencePoints.ToString());
                 writer.WriteEndElement();
+
+                writer.WriteStartElement("Stats");
+                writer.WriteElementString("Strength", character.AbilityScores.Scores["Strength"][0].ToString());
+                writer.WriteElementString("Dexterity", character.AbilityScores.Scores["Dexterity"][0].ToString());
+                writer.WriteElementString("Constitution", character.AbilityScores.Scores["Constitution"][0].ToString());
+                writer.WriteElementString("Intelligence", character.AbilityScores.Scores["Intelligence"][0].ToString());
+                writer.WriteElementString("Wisdom", character.AbilityScores.Scores["Wisdom"][0].ToString());
+                writer.WriteElementString("Charisma", character.AbilityScores.Scores["Charisma"][0].ToString());
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("Spells");
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("Equipment");
+                writer.WriteEndElement();
+
+                writer.WriteStartElement("Notes");
+                writer.WriteEndElement();
+
                 writer.WriteEndDocument();
             }
         }
@@ -271,6 +294,17 @@ namespace DnD_Character_Sheet
             xpTextBox.Enabled = false;
             editBasicInformationButton.Enabled = true;
             saveCharacterToolStripButton.Enabled = true;
+
+            string skills = "";
+            for (int i = 0; i < character.CharClass.SelectableSkills.Item2.Length; i++)
+            {
+                if (i == character.CharClass.SelectableSkills.Item2.Length - 1)
+                    skills += character.CharClass.SelectableSkills.Item2[i];
+                else
+                    skills += character.CharClass.SelectableSkills.Item2[i] + ", ";
+            }
+            selectableSkillsNotificationLabel.Text = "You May Select " + character.CharClass.SelectableSkills.Item1 + " Skills From: " + skills;
+
             fillClassAndRaceFeaturesTab();
         }
 
@@ -368,6 +402,44 @@ namespace DnD_Character_Sheet
             tuple.Item4.Text = "(" + character.AbilityScores.Scores[ability][1].ToString() + ")";
             tuple.Item3.Enabled = false;
             ((Button) sender).Enabled = false;
+            updateSkillModifiers(ability);
+        }
+
+        private void updateSkillModifiers(string ability)
+        {
+            switch (ability)
+            {
+                case "Strength":
+                    athleticsValueLabel.Text = character.AbilityScores.Scores["Strength"][1].ToString();
+                    break;
+                case "Dexterity":
+                    acrobaticsValueLabel.Text = character.AbilityScores.Scores["Dexterity"][1].ToString();
+                    sleightOfHandValueLabel.Text = character.AbilityScores.Scores["Dexterity"][1].ToString();
+                    stealthValueLabel.Text = character.AbilityScores.Scores["Dexterity"][1].ToString();
+                    break;
+                case "Intelligence":
+                    arcanaValueLabel.Text = character.AbilityScores.Scores["Intelligence"][1].ToString();
+                    historyValueLabel.Text = character.AbilityScores.Scores["Intelligence"][1].ToString();
+                    investigationValueLabel.Text = character.AbilityScores.Scores["Intelligence"][1].ToString();
+                    natureValueLabel.Text = character.AbilityScores.Scores["Intelligence"][1].ToString();
+                    religionValueLabel.Text = character.AbilityScores.Scores["Intelligence"][1].ToString();
+                    break;
+                case "Wisdom":
+                    animalHandlingValueLabel.Text = character.AbilityScores.Scores["Wisdom"][1].ToString();
+                    insightValueLabel.Text = character.AbilityScores.Scores["Wisdom"][1].ToString();
+                    medicineValueLabel.Text = character.AbilityScores.Scores["Wisdom"][1].ToString();
+                    perceptionValueLabel.Text = character.AbilityScores.Scores["Wisdom"][1].ToString();
+                    survivalValueLabel.Text = character.AbilityScores.Scores["Wisdom"][1].ToString();
+                    break;
+                case "Charisma":
+                    deceptionValueLabel.Text = character.AbilityScores.Scores["Charisma"][1].ToString();
+                    intimidationValueLabel.Text = character.AbilityScores.Scores["Charisma"][1].ToString();
+                    performanceValueLabel.Text = character.AbilityScores.Scores["Charisma"][1].ToString();
+                    persuasionValueLabel.Text = character.AbilityScores.Scores["Charisma"][1].ToString();
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void abilityValuesComboBoxes_SelectedIndexChanged(object sender, EventArgs e)
@@ -451,6 +523,8 @@ namespace DnD_Character_Sheet
             classLabel.ForeColor = Color.Black;
             validBasicInfo[1] = true;
             checkIfBasicInfoVerified();
+            //selectableSkillsNotificationLabel.Text = Barbarian.
+            //selectableSkillsNotificationLabel.Text = classComboBox.SelectedItem.ToString() + " can select " +  + " skills to be proficient in from "
         }
 
         private void subraceComboBox_SelectedIndexChanged(object sender, EventArgs e)

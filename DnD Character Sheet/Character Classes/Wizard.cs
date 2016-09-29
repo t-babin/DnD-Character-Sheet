@@ -19,6 +19,19 @@ namespace DnD_Character_Sheet.Character_Classes
             }
         }
 
+        public override Tuple<int, string[]> SelectableSkills
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public override string SpellcastingAbility
         {
             get

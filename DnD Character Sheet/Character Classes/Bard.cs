@@ -23,16 +23,32 @@ namespace DnD_Character_Sheet.Character_Classes
 
             set
             { }
-        }        
+        }
+
+        private Tuple<int, string[]> selectableSkills = new Tuple<int, string[]>(3, new string[] { "Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation",
+                                                   "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SleightOfHand",
+                                                   "Stealth", "Survival"});
+        public override Tuple<int, string[]> SelectableSkills
+        {
+            get
+            {
+                return selectableSkills;
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public Bard()
         {
             ClassName = "Bard";
             HitPointDieType = 8;
             ProficientArmors = new List<string>(new string[] { "Light Armor" });
-            SelectableSkills.Add(3, new string[] { "Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation",
-                                                   "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SleightOfHand",
-                                                   "Stealth", "Survival"});
+            //SelectableSkills.Add(3, new string[] { "Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation",
+            //                                       "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SleightOfHand",
+            //                                       "Stealth", "Survival"});
             FeaturesPerLevelTable = new List<Tuple<int, int, string>>(new Tuple<int, int, string>[]
             {
                 new Tuple<int, int, string>(1, 2, "Spellcasting, Bardic Inspiration (d6)"),

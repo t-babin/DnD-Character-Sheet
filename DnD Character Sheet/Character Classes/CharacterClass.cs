@@ -20,7 +20,9 @@ namespace DnD_Character_Sheet
 
         public List<string> SavingThrows { get; set; } = new List<string>();
 
-        public Dictionary<int, string[]> SelectableSkills { get; set; } = new Dictionary<int, string[]>();
+        abstract public Tuple<int, string[]> SelectableSkills { get; set; }
+
+        //public static Dictionary<int, string[]> SelectableSkills { get; set; }/* = new Dictionary<int, string[]>();*/
 
         //level, proficiency bonus, features
         public List<Tuple<int, int, string>> FeaturesPerLevelTable { get; set; } = new List<Tuple<int, int, string>>();
