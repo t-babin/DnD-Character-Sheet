@@ -303,7 +303,7 @@ namespace DnD_Character_Sheet
                 else
                     skills += character.CharClass.SelectableSkills.Item2[i] + ", ";
             }
-            selectableSkillsNotificationLabel.Text = "You May Select " + character.CharClass.SelectableSkills.Item1 + " Skills From: " + skills;
+            selectableSkillsNotificationLabel.Text = character.CharClass.ClassName + "s May Select " + character.CharClass.SelectableSkills.Item1 + " Skills From: " + skills;
 
             fillClassAndRaceFeaturesTab();
         }

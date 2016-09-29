@@ -1816,7 +1816,7 @@
             this.selectableSkillsNotificationLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.selectableSkillsNotificationLabel.AutoSize = true;
             this.selectableSkillsNotificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectableSkillsNotificationLabel.ForeColor = System.Drawing.Color.Red;
+            this.selectableSkillsNotificationLabel.ForeColor = System.Drawing.Color.Black;
             this.selectableSkillsNotificationLabel.Location = new System.Drawing.Point(401, 216);
             this.selectableSkillsNotificationLabel.Name = "selectableSkillsNotificationLabel";
             this.selectableSkillsNotificationLabel.Size = new System.Drawing.Size(323, 17);
