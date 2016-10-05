@@ -29,6 +29,44 @@ namespace DnD_Character_Sheet
             { "Charisma", new [] { "Deception", "Intimidation", "Performance", "Persuasion" } },
         };
 
+        private Dictionary<string, int> skillsDictionary = new Dictionary<string, int>()
+        {
+            { "Acrobatics", 0 },
+            { "Animal Handling", 0 },
+            { "Arcana", 0 },
+            { "Athletics", 0 },
+            { "Deception", 0 },
+            { "History", 0 },
+            { "Insight", 0 },
+            { "Intimidation", 0 },
+            { "Investigation", 0 },
+            { "Medicine", 0 },
+            { "Nature", 0 },
+            { "Perception", 0 },
+            { "Performance", 0 },
+            { "Persuasion", 0 },
+            { "Religion", 0 },
+            { "Sleight of Hand", 0 },
+            { "Stealth", 0 },
+            { "Survival", 0 }
+        };
+        public Dictionary<string, int> SkillsDictionary
+        {
+            get
+            {
+                return skillsDictionary;
+            }
+        }
+
+        private List<string> selectedSkills = new List<string>();
+        public List<string> SelectedSkills
+        {
+            get
+            {
+                return selectedSkills;
+            }
+        }
+
         public AbilityScores() { }
 
         public void SetStat(string stat, int statValue)

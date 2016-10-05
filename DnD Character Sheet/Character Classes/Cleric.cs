@@ -20,8 +20,8 @@ namespace DnD_Character_Sheet.Character_Classes
             { }
         }
 
-        private Tuple<int, string[]> selectableSkills = new Tuple<int, string[]>(2, new string[] { "History", "Insight", "Medicine", "Persuasion", "Religion" });
-        public override Tuple<int, string[]> SelectableSkills
+        private List<string> selectableSkills = new List<string>(new [] { "History", "Insight", "Medicine", "Persuasion", "Religion" });
+        public override List<string> SelectableSkills
         {
             get
             {
@@ -96,7 +96,18 @@ namespace DnD_Character_Sheet.Character_Classes
             { }
         }
 
-        
+        public override int NumberOfSelectableSkills
+        {
+            get
+            {
+                return 2;
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public override void AddClassFeatures()
         {

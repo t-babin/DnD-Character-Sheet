@@ -27,8 +27,21 @@ namespace DnD_Character_Sheet.Character_Classes
             { }
         }
 
-        private Tuple<int, string[]> selectableSkills = new Tuple<int, string[]>(2, new[] { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival" });
-        public override Tuple<int, string[]> SelectableSkills
+        private int numberOfSkills = 2;
+        public override int NumberOfSelectableSkills
+        {
+            get
+            {
+                return numberOfSkills;
+            }
+            set
+            {
+                numberOfSkills = value;
+            }
+        }
+
+        private List<string> selectableSkills = new List<string>(new[] { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival" });
+        public override List<string> SelectableSkills
         {
             get
             {
@@ -49,7 +62,7 @@ namespace DnD_Character_Sheet.Character_Classes
             HitPointDieType = 12;
             //ProficiencyBonus = 2;
             ProficientArmors = new List<string>(new string[] { "Light Armor", "Medium Armor", "Shields" });
-            AddProficiencies();            
+            AddProficiencies();
             FeaturesPerLevelTable = new List<Tuple<int, int, string>>(new Tuple<int, int, string>[]
             {
                 new Tuple<int, int, string>(1, 2, "Rage, Unarmored Defense"),

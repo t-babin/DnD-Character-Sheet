@@ -17,6 +17,7 @@ namespace DnD_Character_Sheet
     {
         ToolTip BasicInfoToolTip;
         List<String> abilities = new List<string>(new string[] { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" });
+        Dictionary<Label, string> skillsDictionary = new Dictionary<Label, string>();
         List<Button> saveButtons = new List<Button>();
         List<Label> abilityLabels = new List<Label>();
         List<ComboBox> abilityCombos = new List<ComboBox>();
@@ -35,6 +36,25 @@ namespace DnD_Character_Sheet
             abilityScoreFormTuples.Add(new Tuple<Button, Label, ComboBox, Label>(abilityValueFourSaveButton, abilityValueLabelFour, abilityValuesComboFour, abilityValueModifierFour));
             abilityScoreFormTuples.Add(new Tuple<Button, Label, ComboBox, Label>(abilityValueFiveSaveButton, abilityValueLabelFive, abilityValuesComboFive, abilityValueModifierFive));
             abilityScoreFormTuples.Add(new Tuple<Button, Label, ComboBox, Label>(abilityValueSixSaveButton, abilityValueLabelSix, abilityValuesComboSix, abilityValueModifierSix));
+
+            skillsDictionary.Add(acrobaticsLabel, "Acrobatics");
+            skillsDictionary.Add(animalHandlingLabel, "Animal Handling");
+            skillsDictionary.Add(arcanaLabel, "Arcana");
+            skillsDictionary.Add(athleticsLabel, "Athletics");
+            skillsDictionary.Add(deceptionLabel, "Deception");
+            skillsDictionary.Add(historyLabel, "History");
+            skillsDictionary.Add(insightLabel, "Insight");
+            skillsDictionary.Add(intimidationLabel, "Intimidation");
+            skillsDictionary.Add(investigationLabel, "Investigation");
+            skillsDictionary.Add(medicineLabel, "Medicine");
+            skillsDictionary.Add(natureLabel, "Nature");
+            skillsDictionary.Add(perceptionLabel, "Perception");
+            skillsDictionary.Add(performanceLabel, "Performance");
+            skillsDictionary.Add(persuasionLabel, "Persuasion");
+            skillsDictionary.Add(religionLabel, "Religion");
+            skillsDictionary.Add(sleightOfHandLabel, "Sleight of Hand");
+            skillsDictionary.Add(stealthLabel, "Stealth");
+            skillsDictionary.Add(survivalLabel, "Survival");
 
             saveButtons.Add(abilityValueOneSaveButton);
             saveButtons.Add(abilityValueTwoSaveButton);
@@ -163,6 +183,14 @@ namespace DnD_Character_Sheet
                 writer.WriteElementString("Charisma", character.AbilityScores.Scores["Charisma"][0].ToString());
                 writer.WriteEndElement();
 
+                writer.WriteStartElement("Skills");
+                foreach (var item in character.AbilityScores.SelectedSkills)
+                {
+                    writer.WriteElementString(item.Replace(" ", ""), item);
+                }
+
+                writer.WriteEndElement();
+
                 writer.WriteStartElement("Spells");
                 writer.WriteEndElement();
 
@@ -271,6 +299,7 @@ namespace DnD_Character_Sheet
             character.Sex = sexComboBox.SelectedItem.ToString();
             character.ExperiencePoints = int.Parse(xpTextBox.Text);
             character.DetermineLevel();
+            character.CharClass.ProficiencyBonus = character.CharClass.FeaturesPerLevelTable[character.Level - 1].Item2;
         }
 
 	    private void saveBasicInfoButton_Click(object sender, EventArgs e)
@@ -295,17 +324,32 @@ namespace DnD_Character_Sheet
             editBasicInformationButton.Enabled = true;
             saveCharacterToolStripButton.Enabled = true;
 
-            string skills = "";
-            for (int i = 0; i < character.CharClass.SelectableSkills.Item2.Length; i++)
-            {
-                if (i == character.CharClass.SelectableSkills.Item2.Length - 1)
-                    skills += character.CharClass.SelectableSkills.Item2[i];
-                else
-                    skills += character.CharClass.SelectableSkills.Item2[i] + ", ";
-            }
-            selectableSkillsNotificationLabel.Text = character.CharClass.ClassName + "s May Select " + character.CharClass.SelectableSkills.Item1 + " Skills From: " + skills;
+            //string skills = "";
+            //for (int i = 0; i < character.CharClass.SelectableSkills.Item2.Length; i++)
+            //{
+            //    if (i == character.CharClass.SelectableSkills.Item2.Length - 1)
+            //        skills += character.CharClass.SelectableSkills.Item2[i];
+            //    else
+            //        skills += character.CharClass.SelectableSkills.Item2[i] + ", ";
+            //}
+            //selectableSkillsNotificationLabel.Text = "You May Select " + character.CharClass.SelectableSkills.Item1 + " Skills From: " + skills;
+
+            updateSkillsNotificationLabel();
 
             fillClassAndRaceFeaturesTab();
+        }
+
+        private void updateSkillsNotificationLabel()
+        {
+            string skills = "";
+            for (int i = 0; i < character.CharClass.SelectableSkills.Count; i++)
+            {
+                if (i == character.CharClass.SelectableSkills.Count - 1)
+                    skills += character.CharClass.SelectableSkills[i];
+                else
+                    skills += character.CharClass.SelectableSkills[i] + ", ";
+            }
+            selectableSkillsNotificationLabel.Text = "You May Select " + character.CharClass.NumberOfSelectableSkills + " Skills From: " + skills;
         }
 
         private void rollStatsButton_Click(object sender, EventArgs e)
@@ -393,6 +437,7 @@ namespace DnD_Character_Sheet
         //TODO: Make the save buttons only clickable when the associated combobox has an item selected
         private void saveAbilityRoll_handler(object sender, EventArgs e)
         {
+            // TODO after all save buttons have been clicked, enable the skills labels
             //int tmp = triple.IndexOf()
             Tuple<Button, Label, ComboBox, Label> tuple = getSaveTuple((Button) sender);
             string ability = tuple.Item3.Text;
@@ -402,20 +447,24 @@ namespace DnD_Character_Sheet
             tuple.Item4.Text = "(" + character.AbilityScores.Scores[ability][1].ToString() + ")";
             tuple.Item3.Enabled = false;
             ((Button) sender).Enabled = false;
-            updateSkillModifiers(ability);
+            updateInitialSkillLabels(ability);
         }
 
-        private void updateSkillModifiers(string ability)
+        private void updateInitialSkillLabels(string ability)
         {
             switch (ability)
             {
                 case "Strength":
                     athleticsValueLabel.Text = character.AbilityScores.Scores["Strength"][1].ToString();
+                    foreach (var item in character.AbilityScores.RelatedSkills["Strength"])
+                        character.AbilityScores.SkillsDictionary[item] = character.AbilityScores.Scores["Strength"][1];
                     break;
                 case "Dexterity":
                     acrobaticsValueLabel.Text = character.AbilityScores.Scores["Dexterity"][1].ToString();
                     sleightOfHandValueLabel.Text = character.AbilityScores.Scores["Dexterity"][1].ToString();
                     stealthValueLabel.Text = character.AbilityScores.Scores["Dexterity"][1].ToString();
+                    foreach (var item in character.AbilityScores.RelatedSkills["Dexterity"])
+                        character.AbilityScores.SkillsDictionary[item] = character.AbilityScores.Scores["Dexterity"][1];
                     break;
                 case "Intelligence":
                     arcanaValueLabel.Text = character.AbilityScores.Scores["Intelligence"][1].ToString();
@@ -423,6 +472,8 @@ namespace DnD_Character_Sheet
                     investigationValueLabel.Text = character.AbilityScores.Scores["Intelligence"][1].ToString();
                     natureValueLabel.Text = character.AbilityScores.Scores["Intelligence"][1].ToString();
                     religionValueLabel.Text = character.AbilityScores.Scores["Intelligence"][1].ToString();
+                    foreach (var item in character.AbilityScores.RelatedSkills["Intelligence"])
+                        character.AbilityScores.SkillsDictionary[item] = character.AbilityScores.Scores["Intelligence"][1];
                     break;
                 case "Wisdom":
                     animalHandlingValueLabel.Text = character.AbilityScores.Scores["Wisdom"][1].ToString();
@@ -430,16 +481,42 @@ namespace DnD_Character_Sheet
                     medicineValueLabel.Text = character.AbilityScores.Scores["Wisdom"][1].ToString();
                     perceptionValueLabel.Text = character.AbilityScores.Scores["Wisdom"][1].ToString();
                     survivalValueLabel.Text = character.AbilityScores.Scores["Wisdom"][1].ToString();
+                    foreach (var item in character.AbilityScores.RelatedSkills["Wisdom"])
+                        character.AbilityScores.SkillsDictionary[item] = character.AbilityScores.Scores["Wisdom"][1];
                     break;
                 case "Charisma":
                     deceptionValueLabel.Text = character.AbilityScores.Scores["Charisma"][1].ToString();
                     intimidationValueLabel.Text = character.AbilityScores.Scores["Charisma"][1].ToString();
                     performanceValueLabel.Text = character.AbilityScores.Scores["Charisma"][1].ToString();
                     persuasionValueLabel.Text = character.AbilityScores.Scores["Charisma"][1].ToString();
+                    foreach (var item in character.AbilityScores.RelatedSkills["Charisma"])
+                        character.AbilityScores.SkillsDictionary[item] = character.AbilityScores.Scores["Charisma"][1];
                     break;
                 default:
                     break;
             }
+        }
+
+        private void updateSkillsLabels()
+        {
+            athleticsValueLabel.Text = character.AbilityScores.SkillsDictionary["Athletics"].ToString();
+            acrobaticsValueLabel.Text = character.AbilityScores.SkillsDictionary["Acrobatics"].ToString();
+            sleightOfHandValueLabel.Text = character.AbilityScores.SkillsDictionary["Sleight of Hand"].ToString();
+            stealthValueLabel.Text = character.AbilityScores.SkillsDictionary["Stealth"].ToString();
+            arcanaValueLabel.Text = character.AbilityScores.SkillsDictionary["Arcana"].ToString();
+            historyValueLabel.Text = character.AbilityScores.SkillsDictionary["History"].ToString();
+            investigationValueLabel.Text = character.AbilityScores.SkillsDictionary["Investigation"].ToString();
+            natureValueLabel.Text = character.AbilityScores.SkillsDictionary["Nature"].ToString();
+            religionValueLabel.Text = character.AbilityScores.SkillsDictionary["Religion"].ToString();
+            animalHandlingValueLabel.Text = character.AbilityScores.SkillsDictionary["Animal Handling"].ToString();
+            insightValueLabel.Text = character.AbilityScores.SkillsDictionary["Insight"].ToString();
+            medicineValueLabel.Text = character.AbilityScores.SkillsDictionary["Medicine"].ToString();
+            perceptionValueLabel.Text = character.AbilityScores.SkillsDictionary["Perception"].ToString();
+            survivalValueLabel.Text = character.AbilityScores.SkillsDictionary["Survival"].ToString();
+            deceptionValueLabel.Text = character.AbilityScores.SkillsDictionary["Deception"].ToString();
+            intimidationValueLabel.Text = character.AbilityScores.SkillsDictionary["Intimidation"].ToString();
+            performanceValueLabel.Text = character.AbilityScores.SkillsDictionary["Performance"].ToString();
+            persuasionValueLabel.Text = character.AbilityScores.SkillsDictionary["Persuasion"].ToString();
         }
 
         private void abilityValuesComboBoxes_SelectedIndexChanged(object sender, EventArgs e)
@@ -760,6 +837,25 @@ namespace DnD_Character_Sheet
                 selectedFeatureDescriptionLabel.Text = character.Race.FeaturesDictionary[raceFeaturesListBox.SelectedItem.ToString()];
             else
                 selectedFeatureDescriptionLabel.Text = character.Race.SubraceFeaturesDictionary[raceFeaturesListBox.SelectedItem.ToString()];
-        }        
+        }
+
+        private void skillsLabel_click(object sender, EventArgs e)
+        {
+            if (character.CharClass.NumberOfSelectableSkills > 0)
+            {
+                if (character.CharClass.SelectableSkills.Contains(skillsDictionary[(Label)sender]))
+                {
+                    character.AbilityScores.SelectedSkills.Add(skillsDictionary[(Label)sender]);
+                    character.AbilityScores.SkillsDictionary[skillsDictionary[(Label)sender]] += character.CharClass.ProficiencyBonus;
+                    updateSkillsLabels();
+                    ((Label)sender).Enabled = false;
+                    character.CharClass.NumberOfSelectableSkills--;
+                    character.CharClass.SelectableSkills.Remove(skillsDictionary[(Label)sender]);
+                    updateSkillsNotificationLabel();
+                    ((Label)sender).Font = new Font(((Label)sender).Font, FontStyle.Bold | FontStyle.Underline);
+                    Console.WriteLine(skillsDictionary[(Label)sender]);
+                }
+            }
+        }
     }
 }

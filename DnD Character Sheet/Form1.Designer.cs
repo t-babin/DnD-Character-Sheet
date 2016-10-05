@@ -155,6 +155,7 @@
             this.flowLayoutPanel14 = new System.Windows.Forms.FlowLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.levelLabel = new System.Windows.Forms.Label();
+            this.selectableSkillsNotificationLabel = new System.Windows.Forms.Label();
             this.raceAndClassTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.classFeaturesListView = new System.Windows.Forms.ListView();
@@ -183,7 +184,6 @@
             this.spellsPage = new System.Windows.Forms.TabPage();
             this.equipmentPage = new System.Windows.Forms.TabPage();
             this.notesPage = new System.Windows.Forms.TabPage();
-            this.selectableSkillsNotificationLabel = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.basicInfoPanel.SuspendLayout();
             this.additionalInfoTabControl.SuspendLayout();
@@ -663,6 +663,7 @@
             this.stealthLabel.Size = new System.Drawing.Size(43, 13);
             this.stealthLabel.TabIndex = 1;
             this.stealthLabel.Text = "Stealth:";
+            this.stealthLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // stealthValueLabel
             // 
@@ -681,6 +682,7 @@
             this.survivalLabel.Size = new System.Drawing.Size(48, 13);
             this.survivalLabel.TabIndex = 3;
             this.survivalLabel.Text = "Survival:";
+            this.survivalLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // survivalValueLabel
             // 
@@ -714,6 +716,7 @@
             this.performanceLabel.Size = new System.Drawing.Size(70, 13);
             this.performanceLabel.TabIndex = 1;
             this.performanceLabel.Text = "Performance:";
+            this.performanceLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // performanceValueLabel
             // 
@@ -732,6 +735,7 @@
             this.persuasionLabel.Size = new System.Drawing.Size(62, 13);
             this.persuasionLabel.TabIndex = 3;
             this.persuasionLabel.Text = "Persuasion:";
+            this.persuasionLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // persuasionValueLabel
             // 
@@ -750,6 +754,7 @@
             this.religionLabel.Size = new System.Drawing.Size(48, 13);
             this.religionLabel.TabIndex = 5;
             this.religionLabel.Text = "Religion:";
+            this.religionLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // religionValueLabel
             // 
@@ -768,6 +773,7 @@
             this.sleightOfHandLabel.Size = new System.Drawing.Size(83, 13);
             this.sleightOfHandLabel.TabIndex = 7;
             this.sleightOfHandLabel.Text = "Sleight of Hand:";
+            this.sleightOfHandLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // sleightOfHandValueLabel
             // 
@@ -801,6 +807,7 @@
             this.investigationLabel.Size = new System.Drawing.Size(70, 13);
             this.investigationLabel.TabIndex = 0;
             this.investigationLabel.Text = "Investigation:";
+            this.investigationLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // investigationValueLabel
             // 
@@ -819,6 +826,7 @@
             this.medicineLabel.Size = new System.Drawing.Size(53, 13);
             this.medicineLabel.TabIndex = 2;
             this.medicineLabel.Text = "Medicine:";
+            this.medicineLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // medicineValueLabel
             // 
@@ -837,6 +845,7 @@
             this.natureLabel.Size = new System.Drawing.Size(42, 13);
             this.natureLabel.TabIndex = 4;
             this.natureLabel.Text = "Nature:";
+            this.natureLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // natureValueLabel
             // 
@@ -855,6 +864,7 @@
             this.perceptionLabel.Size = new System.Drawing.Size(61, 13);
             this.perceptionLabel.TabIndex = 6;
             this.perceptionLabel.Text = "Perception:";
+            this.perceptionLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // perceptionValueLabel
             // 
@@ -889,6 +899,7 @@
             this.deceptionLabel.Size = new System.Drawing.Size(59, 13);
             this.deceptionLabel.TabIndex = 0;
             this.deceptionLabel.Text = "Deception:";
+            this.deceptionLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // deceptionValueLabel
             // 
@@ -907,6 +918,7 @@
             this.historyLabel.Size = new System.Drawing.Size(42, 13);
             this.historyLabel.TabIndex = 2;
             this.historyLabel.Text = "History:";
+            this.historyLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // historyValueLabel
             // 
@@ -925,6 +937,7 @@
             this.insightLabel.Size = new System.Drawing.Size(41, 13);
             this.insightLabel.TabIndex = 4;
             this.insightLabel.Text = "Insight:";
+            this.insightLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // insightValueLabel
             // 
@@ -943,6 +956,7 @@
             this.intimidationLabel.Size = new System.Drawing.Size(63, 13);
             this.intimidationLabel.TabIndex = 6;
             this.intimidationLabel.Text = "Intimidation:";
+            this.intimidationLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // intimidationValueLabel
             // 
@@ -977,6 +991,7 @@
             this.acrobaticsLabel.Size = new System.Drawing.Size(60, 13);
             this.acrobaticsLabel.TabIndex = 0;
             this.acrobaticsLabel.Text = "Acrobatics:";
+            this.acrobaticsLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // acrobaticsValueLabel
             // 
@@ -995,6 +1010,7 @@
             this.animalHandlingLabel.Size = new System.Drawing.Size(86, 13);
             this.animalHandlingLabel.TabIndex = 2;
             this.animalHandlingLabel.Text = "Animal Handling:";
+            this.animalHandlingLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // animalHandlingValueLabel
             // 
@@ -1013,6 +1029,7 @@
             this.arcanaLabel.Size = new System.Drawing.Size(44, 13);
             this.arcanaLabel.TabIndex = 4;
             this.arcanaLabel.Text = "Arcana:";
+            this.arcanaLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // arcanaValueLabel
             // 
@@ -1031,6 +1048,7 @@
             this.athleticsLabel.Size = new System.Drawing.Size(50, 13);
             this.athleticsLabel.TabIndex = 6;
             this.athleticsLabel.Text = "Athletics:";
+            this.athleticsLabel.Click += new System.EventHandler(this.skillsLabel_click);
             // 
             // athleticsValueLabel
             // 
@@ -1566,6 +1584,18 @@
             this.levelLabel.TabIndex = 1;
             this.levelLabel.Text = "-";
             // 
+            // selectableSkillsNotificationLabel
+            // 
+            this.selectableSkillsNotificationLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.selectableSkillsNotificationLabel.AutoSize = true;
+            this.selectableSkillsNotificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectableSkillsNotificationLabel.ForeColor = System.Drawing.Color.Black;
+            this.selectableSkillsNotificationLabel.Location = new System.Drawing.Point(401, 216);
+            this.selectableSkillsNotificationLabel.Name = "selectableSkillsNotificationLabel";
+            this.selectableSkillsNotificationLabel.Size = new System.Drawing.Size(323, 17);
+            this.selectableSkillsNotificationLabel.TabIndex = 22;
+            this.selectableSkillsNotificationLabel.Text = "Select a Class to See Which Skills You May Select";
+            // 
             // raceAndClassTab
             // 
             this.raceAndClassTab.Controls.Add(this.tableLayoutPanel3);
@@ -1810,18 +1840,6 @@
             this.notesPage.TabIndex = 4;
             this.notesPage.Text = "Notes";
             this.notesPage.UseVisualStyleBackColor = true;
-            // 
-            // selectableSkillsNotificationLabel
-            // 
-            this.selectableSkillsNotificationLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.selectableSkillsNotificationLabel.AutoSize = true;
-            this.selectableSkillsNotificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectableSkillsNotificationLabel.ForeColor = System.Drawing.Color.Black;
-            this.selectableSkillsNotificationLabel.Location = new System.Drawing.Point(401, 216);
-            this.selectableSkillsNotificationLabel.Name = "selectableSkillsNotificationLabel";
-            this.selectableSkillsNotificationLabel.Size = new System.Drawing.Size(323, 17);
-            this.selectableSkillsNotificationLabel.TabIndex = 22;
-            this.selectableSkillsNotificationLabel.Text = "Select a Class to See Which Skills You May Select";
             // 
             // Form1
             // 

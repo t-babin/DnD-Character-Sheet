@@ -25,16 +25,28 @@ namespace DnD_Character_Sheet.Character_Classes
             { }
         }
 
-        private Tuple<int, string[]> selectableSkills = new Tuple<int, string[]>(3, new string[] { "Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation",
+        private List<string> selectableSkills = new List<string>(new [] { "Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation",
                                                    "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SleightOfHand",
                                                    "Stealth", "Survival"});
-        public override Tuple<int, string[]> SelectableSkills
+        public override List<string> SelectableSkills
         {
             get
             {
                 return selectableSkills;
             }
 
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public override int NumberOfSelectableSkills
+        {
+            get
+            {
+                return 3;
+            }
             set
             {
                 throw new NotImplementedException();
