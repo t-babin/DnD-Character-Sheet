@@ -11,12 +11,12 @@ namespace DnD_Character_Sheet
         public int[] finalStats { get; set; } = new int[6];
         public Dictionary<string, int[]> Scores = new Dictionary<string, int[]>()
         {
-            { "Strength", new int[2] },
-            { "Dexterity", new int[2] },
-            { "Constitution", new int[2] },
-            { "Intelligence", new int[2] },
-            { "Wisdom", new int[2] },
-            { "Charisma", new int[2] }
+            { "Strength", new [] { -1, 0 } },
+            { "Dexterity", new [] { -1, 0 } },
+            { "Constitution", new [] { -1, 0 } },
+            { "Intelligence", new [] { -1, 0 } },
+            { "Wisdom", new [] { -1, 0 } },
+            { "Charisma", new [] { -1, 0 } }
         };
 
         public Dictionary<string, string[]> RelatedSkills = new Dictionary<string, string[]>()
@@ -72,8 +72,8 @@ namespace DnD_Character_Sheet
         public void SetStat(string stat, int statValue)
         {
             int[] values = Scores[stat];
-            values[0] = statValue;
-            values[1] = computeModifier(values[0]);
+            Scores[stat][0] = statValue;
+            Scores[stat][1] = computeModifier(Scores[stat][0]);
         }
 
         private int computeModifier(int v)
@@ -101,6 +101,17 @@ namespace DnD_Character_Sheet
                 finalStats[i] = tmpStats[1] + tmpStats[2] + tmpStats[3];
             }
             return finalStats;
+        }
+
+        public bool AllStatsChosen()
+        {
+            foreach (var item in Scores.Values)
+            {
+                if (item[0] == -1)
+                    return false;
+            }
+
+            return true;
         }
     }
 }

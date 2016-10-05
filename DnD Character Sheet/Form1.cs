@@ -17,7 +17,7 @@ namespace DnD_Character_Sheet
     {
         ToolTip BasicInfoToolTip;
         List<String> abilities = new List<string>(new string[] { "Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma" });
-        Dictionary<Label, string> skillsDictionary = new Dictionary<Label, string>();
+        List<Tuple<Label, string, Label>> skillsDictionary = new List<Tuple<Label, string, Label>>();
         List<Button> saveButtons = new List<Button>();
         List<Label> abilityLabels = new List<Label>();
         List<ComboBox> abilityCombos = new List<ComboBox>();
@@ -37,24 +37,24 @@ namespace DnD_Character_Sheet
             abilityScoreFormTuples.Add(new Tuple<Button, Label, ComboBox, Label>(abilityValueFiveSaveButton, abilityValueLabelFive, abilityValuesComboFive, abilityValueModifierFive));
             abilityScoreFormTuples.Add(new Tuple<Button, Label, ComboBox, Label>(abilityValueSixSaveButton, abilityValueLabelSix, abilityValuesComboSix, abilityValueModifierSix));
 
-            skillsDictionary.Add(acrobaticsLabel, "Acrobatics");
-            skillsDictionary.Add(animalHandlingLabel, "Animal Handling");
-            skillsDictionary.Add(arcanaLabel, "Arcana");
-            skillsDictionary.Add(athleticsLabel, "Athletics");
-            skillsDictionary.Add(deceptionLabel, "Deception");
-            skillsDictionary.Add(historyLabel, "History");
-            skillsDictionary.Add(insightLabel, "Insight");
-            skillsDictionary.Add(intimidationLabel, "Intimidation");
-            skillsDictionary.Add(investigationLabel, "Investigation");
-            skillsDictionary.Add(medicineLabel, "Medicine");
-            skillsDictionary.Add(natureLabel, "Nature");
-            skillsDictionary.Add(perceptionLabel, "Perception");
-            skillsDictionary.Add(performanceLabel, "Performance");
-            skillsDictionary.Add(persuasionLabel, "Persuasion");
-            skillsDictionary.Add(religionLabel, "Religion");
-            skillsDictionary.Add(sleightOfHandLabel, "Sleight of Hand");
-            skillsDictionary.Add(stealthLabel, "Stealth");
-            skillsDictionary.Add(survivalLabel, "Survival");
+            skillsDictionary.Add(new Tuple<Label, string, Label>(acrobaticsLabel, "Acrobatics", acrobaticsValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(animalHandlingLabel, "Animal Handling", animalHandlingValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(arcanaLabel, "Arcana", arcanaValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(athleticsLabel, "Athletics", athleticsValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(deceptionLabel, "Deception", deceptionValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(historyLabel, "History", historyValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(insightLabel, "Insight", insightValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(intimidationLabel, "Intimidation", intimidationValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(investigationLabel, "Investigation", investigationValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(medicineLabel, "Medicine", medicineValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(natureLabel, "Nature", natureValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(perceptionLabel, "Perception", perceptionValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(performanceLabel, "Performance", performanceValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(persuasionLabel, "Persuasion", persuasionValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(religionLabel, "Religion", religionValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(sleightOfHandLabel, "Sleight of Hand", sleightOfHandValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(stealthLabel, "Stealth", stealthValueLabel));
+            skillsDictionary.Add(new Tuple<Label, string, Label>(survivalLabel, "Survival", survivalValueLabel));
 
             saveButtons.Add(abilityValueOneSaveButton);
             saveButtons.Add(abilityValueTwoSaveButton);
@@ -324,18 +324,7 @@ namespace DnD_Character_Sheet
             editBasicInformationButton.Enabled = true;
             saveCharacterToolStripButton.Enabled = true;
 
-            //string skills = "";
-            //for (int i = 0; i < character.CharClass.SelectableSkills.Item2.Length; i++)
-            //{
-            //    if (i == character.CharClass.SelectableSkills.Item2.Length - 1)
-            //        skills += character.CharClass.SelectableSkills.Item2[i];
-            //    else
-            //        skills += character.CharClass.SelectableSkills.Item2[i] + ", ";
-            //}
-            //selectableSkillsNotificationLabel.Text = "You May Select " + character.CharClass.SelectableSkills.Item1 + " Skills From: " + skills;
-
             updateSkillsNotificationLabel();
-
             fillClassAndRaceFeaturesTab();
         }
 
@@ -448,6 +437,20 @@ namespace DnD_Character_Sheet
             tuple.Item3.Enabled = false;
             ((Button) sender).Enabled = false;
             updateInitialSkillLabels(ability);
+            if (character.AbilityScores.AllStatsChosen())
+            {
+                foreach (var i in skillsDictionary)
+                {
+                    i.Item1.Enabled = false;
+                    i.Item3.Enabled = false;
+                }
+                foreach (var item in character.CharClass.SelectableSkills)
+                {
+                    var skill = skillsDictionary.Find(i => i.Item2.Equals(item));
+                    skill.Item1.Enabled = true;
+                    skill.Item3.Enabled = true;
+                }
+            }
         }
 
         private void updateInitialSkillLabels(string ability)
@@ -839,21 +842,37 @@ namespace DnD_Character_Sheet
                 selectedFeatureDescriptionLabel.Text = character.Race.SubraceFeaturesDictionary[raceFeaturesListBox.SelectedItem.ToString()];
         }
 
+        private void updateSkillLabels()
+        {
+            foreach (var item in skillsDictionary)
+            {
+                item.Item1.Enabled = true;
+                item.Item3.Enabled = true;
+            }
+            selectableSkillsNotificationLabel.Text = "";
+        }
+
         private void skillsLabel_click(object sender, EventArgs e)
         {
             if (character.CharClass.NumberOfSelectableSkills > 0)
             {
-                if (character.CharClass.SelectableSkills.Contains(skillsDictionary[(Label)sender]))
+                var tuple = skillsDictionary.Find(i => i.Item1.Equals((Label)sender));
+                var skill = tuple.Item2;
+                
+                if (character.CharClass.SelectableSkills.Contains(skill))
                 {
-                    character.AbilityScores.SelectedSkills.Add(skillsDictionary[(Label)sender]);
-                    character.AbilityScores.SkillsDictionary[skillsDictionary[(Label)sender]] += character.CharClass.ProficiencyBonus;
+                    character.AbilityScores.SelectedSkills.Add(skill);
+                    character.AbilityScores.SkillsDictionary[skill] += character.CharClass.ProficiencyBonus;
                     updateSkillsLabels();
                     ((Label)sender).Enabled = false;
+                    tuple.Item3.Enabled = false;
                     character.CharClass.NumberOfSelectableSkills--;
-                    character.CharClass.SelectableSkills.Remove(skillsDictionary[(Label)sender]);
+                    character.CharClass.SelectableSkills.Remove(skill);
                     updateSkillsNotificationLabel();
                     ((Label)sender).Font = new Font(((Label)sender).Font, FontStyle.Bold | FontStyle.Underline);
-                    Console.WriteLine(skillsDictionary[(Label)sender]);
+                    tuple.Item3.Font = new Font(tuple.Item3.Font, FontStyle.Bold);
+                    if (character.CharClass.NumberOfSelectableSkills == 0)
+                        updateSkillLabels();
                 }
             }
         }
