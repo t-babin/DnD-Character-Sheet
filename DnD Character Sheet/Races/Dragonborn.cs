@@ -40,6 +40,10 @@ namespace DnD_Character_Sheet.Races
                                                     "16th level. After you use your breath weapon, you can't use it again until you complete a short or long rest.");
 
             FeaturesDictionary.Add("Damage Resistance", "You have resitance to the damage type associated with your draconic ancestry.");
+
+            FeaturesDictionary.Add("Languages Known", "You can speak, read, and write Common and Draconic. Draconic is thought to be one of the oldest languages and " +
+                                                      "is often used in the study of magic. The language sounds harsh to most other creatures and includes numerous " +
+                                                      "hard consonants and sibilants");
         }
 
         public override string AbilityIncreasePrintString()

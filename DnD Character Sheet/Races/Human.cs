@@ -18,6 +18,11 @@ namespace DnD_Character_Sheet
             MinimumHeight = 4;
             MaximumHeight = 7;
             Size = 2;
+
+            FeaturesDictionary.Add("Languages Known", "You can speak, read, and write Common and one extra language of your choice. Humans typically " +
+                                                      "learn the languages of other peoples they deal with, including obscure dialects. They are fond of " +
+                                                      "sprinking their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, " +
+                                                      "Dwarvish military phrases, and so on.");
         }
 
         public override string AbilityIncreasePrintString()

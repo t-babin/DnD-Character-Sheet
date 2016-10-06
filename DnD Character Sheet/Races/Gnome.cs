@@ -9,13 +9,13 @@ namespace DnD_Character_Sheet.Races
     class Gnome : Race
     {
         //TODO: Implement Gnome Special Abilities
-        
+
         //Forest Gnome
         //Natural Illusionist: You know the minor illusion cantrip. Intelligence is your spellcasting ability for it.
         //Speak with Small Beasts: Through sounds and gestures, you an communicate simple ideas with Small or smaller beasts. Forest
         //                         Gnomes love animals and often keep squirrels, badgers, rabbits, moles, woodpeckers, and other creatures
         //                         as beloved pets.
-        
+
         //Rock Gnome
         //Artificer's Lore: Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological
         //                  devices, you can add twice your proficiency bonus, instead of any proficiency bonus you normally apply.
@@ -46,6 +46,10 @@ namespace DnD_Character_Sheet.Races
                                                  "as if it were dim light. You can't discern color in darkness, only shades of gray.");
 
             FeaturesDictionary.Add("Gnome Cunning", "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic.");
+
+            FeaturesDictionary.Add("Languages Known", "You can speak, read, and write Common and Gnomish. The Gnomish language, which uses " +
+                                                       "the Dwarvish script, is renowned for its technical treatises and its catalogs of knowledge about " +
+                                                       "the natural world.");
         }
 
         public override string AbilityIncreasePrintString()

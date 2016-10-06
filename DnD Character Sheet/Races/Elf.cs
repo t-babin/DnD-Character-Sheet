@@ -33,6 +33,10 @@ namespace DnD_Character_Sheet
                                              "(The Common word for such meditation is \"trance.\") While meditating, you can dream after a fashion; such " +
                                              "dreams are actually mental exercises that have become reflexive through years of practice. After resting " +
                                              "in this way, you gain the same benefit that a human does from 8 hours of sleep.");
+
+            FeaturesDictionary.Add("Languages Known", "You can speak, read, and write Common and Elvish. Elvish is fluid, with subtle intonations and intricate " +
+                                                      "grammar. Elven literature is rich and varied, and their songs and poems are famous among other races. Many " +
+                                                      "bards learn their language so they can add Elvish ballads to their repertoires.");
         }
 
         public override void AddSubraceBonuses(string subrace)

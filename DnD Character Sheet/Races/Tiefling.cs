@@ -14,7 +14,7 @@ namespace DnD_Character_Sheet.Races
             RaceName = "Tiefling";
             AbilityScoreIncrease = new Tuple<string, int>("Intelligence", 1);
             BaseSpeed = 30;
-            Languages = new string[2] { "Common", "Orc" };
+            Languages = new string[2] { "Common", "Infernal" };
             MinimumHeight = 4;
             MaximumHeight = 7;
             Size = 2;
@@ -27,6 +27,8 @@ namespace DnD_Character_Sheet.Races
             FeaturesDictionary.Add("Infernal Legacy", "You know the thaumaturgy cantrip. Once you reach 3rd level, you can cast the hellish rebuke " +
                                                       "spell once per day as a 2nd-level spell. Once you reach 5th level, you can also cast " +
                                                       "the darkness spell once per day. Charisma is your spellcasting ability for these spells.");
+
+            FeaturesDictionary.Add("Languages Known", "You can speak, read, and write Common and Infernal");
         }
 
         public override string AbilityIncreasePrintString()

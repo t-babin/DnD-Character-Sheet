@@ -34,7 +34,11 @@ namespace DnD_Character_Sheet
 
             FeaturesDictionary.Add("Stonecutting", "Whenever you make an Intelligence (History) check related to the origin of stonework, " +
                                                    "you are considered proficient in the History skill and add double your proficiency " +
-                                                   "bonus to the check, instead of your normal proficiency bonus.");            
+                                                   "bonus to the check, instead of your normal proficiency bonus.");
+
+            FeaturesDictionary.Add("Languages Known", "You can speak, read, and write Common and Dwarvish. Dwarvish is full of hard " +
+                                                      "consonants and guttural sounds, and those characteristics spill over itno whatever other " +
+                                                      "language a dwarf might speak.");
         }
 
         public override void AddSubraceBonuses(string subrace)

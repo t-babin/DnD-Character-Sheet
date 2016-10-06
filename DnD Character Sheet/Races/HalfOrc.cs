@@ -29,6 +29,9 @@ namespace DnD_Character_Sheet.Races
 
             FeaturesDictionary.Add("Savage Attacks", "When you scorea critical hit with a melee weapon attack, you can roll one of the weapon's " +
                                                      "damage dice one additional time and add it to the extra damage of the critical hit.");
+
+            FeaturesDictionary.Add("Languages Known", "You can speak, read, and write Common and Orc. Orc is a harsh, grating language with hard " +
+                                                       "consonants. It has no script of its own but is written in the Dwarvish script.");
         }
 
         public override string AbilityIncreasePrintString()

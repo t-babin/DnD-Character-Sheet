@@ -26,6 +26,8 @@ namespace DnD_Character_Sheet.Races
             FeaturesDictionary.Add("Fey Ancestry", "You have advantage on saving throws against being charmed, and magic can't put you to sleep.");
 
             FeaturesDictionary.Add("Skill Versatility", "You gain proficiency in two skills of your choice.");
+
+            FeaturesDictionary.Add("Languages Known", "You can speak, read, and write Common, Elvish, and one extra language of your choice.");
         }
 
         public override string AbilityIncreasePrintString()

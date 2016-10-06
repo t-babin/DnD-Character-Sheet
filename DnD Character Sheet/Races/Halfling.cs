@@ -24,6 +24,11 @@ namespace DnD_Character_Sheet
             FeaturesDictionary.Add("Brave", "You have advantage on saving throws against being frightened.");
 
             FeaturesDictionary.Add("Halfling Nimbleness", "You can move through the space of any creature that is of a size larger than yours.");
+
+            FeaturesDictionary.Add("Languages Known", "You can speak, read, and write Common and Halfling. The Halfling language isn't secret, but halflings " +
+                                                       "are loath to share it with others. They write very little, so they don't have a rich body of literature. " +
+                                                       "Their oral tradidition, however, is very strong. Almost all halflings speak Common to converse with the " +
+                                                       "people in whose lands they dwell or through which they are traveling.");
         }
 
         public override void AddSubraceBonuses(string subrace)
