@@ -184,6 +184,22 @@
             this.spellsPage = new System.Windows.Forms.TabPage();
             this.equipmentPage = new System.Windows.Forms.TabPage();
             this.notesPage = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.strengthSavingThrowLabel = new System.Windows.Forms.Label();
+            this.strengthSavingThrowValueLabel = new System.Windows.Forms.Label();
+            this.dexteritySavingThrowLabel = new System.Windows.Forms.Label();
+            this.dexteritySavingThrowValueLabel = new System.Windows.Forms.Label();
+            this.constitutionSavingThrowLabel = new System.Windows.Forms.Label();
+            this.constitutionSavingThrowValueLabel = new System.Windows.Forms.Label();
+            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
+            this.intelligenceSavingThrowLabel = new System.Windows.Forms.Label();
+            this.intelligenceSavingThrowValueLabel = new System.Windows.Forms.Label();
+            this.wisdomSavingThrowLabel = new System.Windows.Forms.Label();
+            this.wisdomSavingThrowValueLabel = new System.Windows.Forms.Label();
+            this.charismaSavingThrowLabel = new System.Windows.Forms.Label();
+            this.charismaSavingThrowValueLabel = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.basicInfoPanel.SuspendLayout();
             this.additionalInfoTabControl.SuspendLayout();
@@ -206,6 +222,10 @@
             this.flowLayoutPanel14.SuspendLayout();
             this.raceAndClassTab.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel8.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.flowLayoutPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -610,12 +630,6 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.15266F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.68202F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25565F));
-            this.tableLayoutPanel1.Controls.Add(this.skillsFlowPanelFive, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.skillsFlowPanelFour, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.skillsFlowPanelThree, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.skillsFlowPanelTwo, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.skillsFlowPanelOne, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.skillsTitleLabel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel6, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel5, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel4, 0, 3);
@@ -624,10 +638,11 @@
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel13, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel7, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel14, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.selectableSkillsNotificationLabel, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox2, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel14, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 2, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -650,7 +665,7 @@
             this.skillsFlowPanelFive.Controls.Add(this.stealthValueLabel);
             this.skillsFlowPanelFive.Controls.Add(this.survivalLabel);
             this.skillsFlowPanelFive.Controls.Add(this.survivalValueLabel);
-            this.skillsFlowPanelFive.Location = new System.Drawing.Point(369, 183);
+            this.skillsFlowPanelFive.Location = new System.Drawing.Point(0, 173);
             this.skillsFlowPanelFive.Name = "skillsFlowPanelFive";
             this.skillsFlowPanelFive.Size = new System.Drawing.Size(388, 28);
             this.skillsFlowPanelFive.TabIndex = 14;
@@ -703,7 +718,7 @@
             this.skillsFlowPanelFour.Controls.Add(this.religionValueLabel);
             this.skillsFlowPanelFour.Controls.Add(this.sleightOfHandLabel);
             this.skillsFlowPanelFour.Controls.Add(this.sleightOfHandValueLabel);
-            this.skillsFlowPanelFour.Location = new System.Drawing.Point(369, 147);
+            this.skillsFlowPanelFour.Location = new System.Drawing.Point(0, 141);
             this.skillsFlowPanelFour.Name = "skillsFlowPanelFour";
             this.skillsFlowPanelFour.Size = new System.Drawing.Size(388, 28);
             this.skillsFlowPanelFour.TabIndex = 13;
@@ -794,7 +809,7 @@
             this.skillsFlowPanelThree.Controls.Add(this.natureValueLabel);
             this.skillsFlowPanelThree.Controls.Add(this.perceptionLabel);
             this.skillsFlowPanelThree.Controls.Add(this.perceptionValueLabel);
-            this.skillsFlowPanelThree.Location = new System.Drawing.Point(369, 111);
+            this.skillsFlowPanelThree.Location = new System.Drawing.Point(0, 107);
             this.skillsFlowPanelThree.Name = "skillsFlowPanelThree";
             this.skillsFlowPanelThree.Size = new System.Drawing.Size(388, 28);
             this.skillsFlowPanelThree.TabIndex = 12;
@@ -885,7 +900,7 @@
             this.skillsFlowPanelTwo.Controls.Add(this.insightValueLabel);
             this.skillsFlowPanelTwo.Controls.Add(this.intimidationLabel);
             this.skillsFlowPanelTwo.Controls.Add(this.intimidationValueLabel);
-            this.skillsFlowPanelTwo.Location = new System.Drawing.Point(369, 75);
+            this.skillsFlowPanelTwo.Location = new System.Drawing.Point(0, 73);
             this.skillsFlowPanelTwo.Name = "skillsFlowPanelTwo";
             this.skillsFlowPanelTwo.Size = new System.Drawing.Size(388, 28);
             this.skillsFlowPanelTwo.TabIndex = 11;
@@ -977,7 +992,7 @@
             this.skillsFlowPanelOne.Controls.Add(this.arcanaValueLabel);
             this.skillsFlowPanelOne.Controls.Add(this.athleticsLabel);
             this.skillsFlowPanelOne.Controls.Add(this.athleticsValueLabel);
-            this.skillsFlowPanelOne.Location = new System.Drawing.Point(369, 39);
+            this.skillsFlowPanelOne.Location = new System.Drawing.Point(0, 39);
             this.skillsFlowPanelOne.Name = "skillsFlowPanelOne";
             this.skillsFlowPanelOne.Size = new System.Drawing.Size(388, 28);
             this.skillsFlowPanelOne.TabIndex = 15;
@@ -1065,7 +1080,7 @@
             this.skillsTitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.skillsTitleLabel.AutoSize = true;
             this.skillsTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skillsTitleLabel.Location = new System.Drawing.Point(540, 8);
+            this.skillsTitleLabel.Location = new System.Drawing.Point(171, 8);
             this.skillsTitleLabel.Name = "skillsTitleLabel";
             this.skillsTitleLabel.Size = new System.Drawing.Size(45, 20);
             this.skillsTitleLabel.TabIndex = 16;
@@ -1501,7 +1516,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(877, 8);
+            this.label6.Location = new System.Drawing.Point(113, 8);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(112, 20);
             this.label6.TabIndex = 18;
@@ -1559,7 +1574,7 @@
             // 
             this.flowLayoutPanel14.Controls.Add(this.label2);
             this.flowLayoutPanel14.Controls.Add(this.levelLabel);
-            this.flowLayoutPanel14.Location = new System.Drawing.Point(763, 183);
+            this.flowLayoutPanel14.Location = new System.Drawing.Point(763, 111);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
             this.flowLayoutPanel14.Size = new System.Drawing.Size(341, 28);
             this.flowLayoutPanel14.TabIndex = 21;
@@ -1841,6 +1856,169 @@
             this.notesPage.Text = "Notes";
             this.notesPage.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanel8
+            // 
+            this.flowLayoutPanel8.Controls.Add(this.strengthSavingThrowLabel);
+            this.flowLayoutPanel8.Controls.Add(this.strengthSavingThrowValueLabel);
+            this.flowLayoutPanel8.Controls.Add(this.dexteritySavingThrowLabel);
+            this.flowLayoutPanel8.Controls.Add(this.dexteritySavingThrowValueLabel);
+            this.flowLayoutPanel8.Controls.Add(this.constitutionSavingThrowLabel);
+            this.flowLayoutPanel8.Controls.Add(this.constitutionSavingThrowValueLabel);
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 39);
+            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(341, 31);
+            this.flowLayoutPanel8.TabIndex = 23;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.skillsFlowPanelFive);
+            this.groupBox1.Controls.Add(this.skillsTitleLabel);
+            this.groupBox1.Controls.Add(this.skillsFlowPanelFour);
+            this.groupBox1.Controls.Add(this.skillsFlowPanelOne);
+            this.groupBox1.Controls.Add(this.skillsFlowPanelThree);
+            this.groupBox1.Controls.Add(this.skillsFlowPanelTwo);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(369, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.tableLayoutPanel1.SetRowSpan(this.groupBox1, 6);
+            this.groupBox1.Size = new System.Drawing.Size(388, 210);
+            this.groupBox1.TabIndex = 24;
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.flowLayoutPanel9);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.flowLayoutPanel8);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(763, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.tableLayoutPanel1.SetRowSpan(this.groupBox2, 3);
+            this.groupBox2.Size = new System.Drawing.Size(341, 102);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            // 
+            // strengthSavingThrowLabel
+            // 
+            this.strengthSavingThrowLabel.AutoSize = true;
+            this.strengthSavingThrowLabel.Location = new System.Drawing.Point(3, 0);
+            this.strengthSavingThrowLabel.Name = "strengthSavingThrowLabel";
+            this.strengthSavingThrowLabel.Size = new System.Drawing.Size(50, 13);
+            this.strengthSavingThrowLabel.TabIndex = 0;
+            this.strengthSavingThrowLabel.Text = "Strength:";
+            // 
+            // strengthSavingThrowValueLabel
+            // 
+            this.strengthSavingThrowValueLabel.AutoSize = true;
+            this.strengthSavingThrowValueLabel.Location = new System.Drawing.Point(59, 0);
+            this.strengthSavingThrowValueLabel.Name = "strengthSavingThrowValueLabel";
+            this.strengthSavingThrowValueLabel.Size = new System.Drawing.Size(10, 13);
+            this.strengthSavingThrowValueLabel.TabIndex = 1;
+            this.strengthSavingThrowValueLabel.Text = "-";
+            // 
+            // dexteritySavingThrowLabel
+            // 
+            this.dexteritySavingThrowLabel.AutoSize = true;
+            this.dexteritySavingThrowLabel.Location = new System.Drawing.Point(75, 0);
+            this.dexteritySavingThrowLabel.Name = "dexteritySavingThrowLabel";
+            this.dexteritySavingThrowLabel.Size = new System.Drawing.Size(51, 13);
+            this.dexteritySavingThrowLabel.TabIndex = 2;
+            this.dexteritySavingThrowLabel.Text = "Dexterity:";
+            // 
+            // dexteritySavingThrowValueLabel
+            // 
+            this.dexteritySavingThrowValueLabel.AutoSize = true;
+            this.dexteritySavingThrowValueLabel.Location = new System.Drawing.Point(132, 0);
+            this.dexteritySavingThrowValueLabel.Name = "dexteritySavingThrowValueLabel";
+            this.dexteritySavingThrowValueLabel.Size = new System.Drawing.Size(10, 13);
+            this.dexteritySavingThrowValueLabel.TabIndex = 3;
+            this.dexteritySavingThrowValueLabel.Text = "-";
+            // 
+            // constitutionSavingThrowLabel
+            // 
+            this.constitutionSavingThrowLabel.AutoSize = true;
+            this.constitutionSavingThrowLabel.Location = new System.Drawing.Point(148, 0);
+            this.constitutionSavingThrowLabel.Name = "constitutionSavingThrowLabel";
+            this.constitutionSavingThrowLabel.Size = new System.Drawing.Size(65, 13);
+            this.constitutionSavingThrowLabel.TabIndex = 4;
+            this.constitutionSavingThrowLabel.Text = "Constitution:";
+            // 
+            // constitutionSavingThrowValueLabel
+            // 
+            this.constitutionSavingThrowValueLabel.AutoSize = true;
+            this.constitutionSavingThrowValueLabel.Location = new System.Drawing.Point(219, 0);
+            this.constitutionSavingThrowValueLabel.Name = "constitutionSavingThrowValueLabel";
+            this.constitutionSavingThrowValueLabel.Size = new System.Drawing.Size(10, 13);
+            this.constitutionSavingThrowValueLabel.TabIndex = 5;
+            this.constitutionSavingThrowValueLabel.Text = "-";
+            // 
+            // flowLayoutPanel9
+            // 
+            this.flowLayoutPanel9.Controls.Add(this.intelligenceSavingThrowLabel);
+            this.flowLayoutPanel9.Controls.Add(this.intelligenceSavingThrowValueLabel);
+            this.flowLayoutPanel9.Controls.Add(this.wisdomSavingThrowLabel);
+            this.flowLayoutPanel9.Controls.Add(this.wisdomSavingThrowValueLabel);
+            this.flowLayoutPanel9.Controls.Add(this.charismaSavingThrowLabel);
+            this.flowLayoutPanel9.Controls.Add(this.charismaSavingThrowValueLabel);
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(3, 73);
+            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(338, 28);
+            this.flowLayoutPanel9.TabIndex = 24;
+            // 
+            // intelligenceSavingThrowLabel
+            // 
+            this.intelligenceSavingThrowLabel.AutoSize = true;
+            this.intelligenceSavingThrowLabel.Location = new System.Drawing.Point(3, 0);
+            this.intelligenceSavingThrowLabel.Name = "intelligenceSavingThrowLabel";
+            this.intelligenceSavingThrowLabel.Size = new System.Drawing.Size(64, 13);
+            this.intelligenceSavingThrowLabel.TabIndex = 0;
+            this.intelligenceSavingThrowLabel.Text = "Intelligence:";
+            // 
+            // intelligenceSavingThrowValueLabel
+            // 
+            this.intelligenceSavingThrowValueLabel.AutoSize = true;
+            this.intelligenceSavingThrowValueLabel.Location = new System.Drawing.Point(73, 0);
+            this.intelligenceSavingThrowValueLabel.Name = "intelligenceSavingThrowValueLabel";
+            this.intelligenceSavingThrowValueLabel.Size = new System.Drawing.Size(10, 13);
+            this.intelligenceSavingThrowValueLabel.TabIndex = 1;
+            this.intelligenceSavingThrowValueLabel.Text = "-";
+            // 
+            // wisdomSavingThrowLabel
+            // 
+            this.wisdomSavingThrowLabel.AutoSize = true;
+            this.wisdomSavingThrowLabel.Location = new System.Drawing.Point(89, 0);
+            this.wisdomSavingThrowLabel.Name = "wisdomSavingThrowLabel";
+            this.wisdomSavingThrowLabel.Size = new System.Drawing.Size(48, 13);
+            this.wisdomSavingThrowLabel.TabIndex = 2;
+            this.wisdomSavingThrowLabel.Text = "Wisdom:";
+            // 
+            // wisdomSavingThrowValueLabel
+            // 
+            this.wisdomSavingThrowValueLabel.AutoSize = true;
+            this.wisdomSavingThrowValueLabel.Location = new System.Drawing.Point(143, 0);
+            this.wisdomSavingThrowValueLabel.Name = "wisdomSavingThrowValueLabel";
+            this.wisdomSavingThrowValueLabel.Size = new System.Drawing.Size(10, 13);
+            this.wisdomSavingThrowValueLabel.TabIndex = 3;
+            this.wisdomSavingThrowValueLabel.Text = "-";
+            // 
+            // charismaSavingThrowLabel
+            // 
+            this.charismaSavingThrowLabel.AutoSize = true;
+            this.charismaSavingThrowLabel.Location = new System.Drawing.Point(159, 0);
+            this.charismaSavingThrowLabel.Name = "charismaSavingThrowLabel";
+            this.charismaSavingThrowLabel.Size = new System.Drawing.Size(53, 13);
+            this.charismaSavingThrowLabel.TabIndex = 4;
+            this.charismaSavingThrowLabel.Text = "Charisma:";
+            // 
+            // charismaSavingThrowValueLabel
+            // 
+            this.charismaSavingThrowValueLabel.AutoSize = true;
+            this.charismaSavingThrowValueLabel.Location = new System.Drawing.Point(218, 0);
+            this.charismaSavingThrowValueLabel.Name = "charismaSavingThrowValueLabel";
+            this.charismaSavingThrowValueLabel.Size = new System.Drawing.Size(10, 13);
+            this.charismaSavingThrowValueLabel.TabIndex = 5;
+            this.charismaSavingThrowValueLabel.Text = "-";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1893,6 +2071,14 @@
             this.raceAndClassTab.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel8.ResumeLayout(false);
+            this.flowLayoutPanel8.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.flowLayoutPanel9.ResumeLayout(false);
+            this.flowLayoutPanel9.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2054,6 +2240,22 @@
         private System.Windows.Forms.TabPage notesPage;
         private System.Windows.Forms.ToolStripButton saveCharacterToolStripButton;
         private System.Windows.Forms.Label selectableSkillsNotificationLabel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
+        private System.Windows.Forms.Label intelligenceSavingThrowLabel;
+        private System.Windows.Forms.Label intelligenceSavingThrowValueLabel;
+        private System.Windows.Forms.Label wisdomSavingThrowLabel;
+        private System.Windows.Forms.Label wisdomSavingThrowValueLabel;
+        private System.Windows.Forms.Label charismaSavingThrowLabel;
+        private System.Windows.Forms.Label charismaSavingThrowValueLabel;
+        private System.Windows.Forms.Label strengthSavingThrowLabel;
+        private System.Windows.Forms.Label strengthSavingThrowValueLabel;
+        private System.Windows.Forms.Label dexteritySavingThrowLabel;
+        private System.Windows.Forms.Label dexteritySavingThrowValueLabel;
+        private System.Windows.Forms.Label constitutionSavingThrowLabel;
+        private System.Windows.Forms.Label constitutionSavingThrowValueLabel;
     }
 }
 

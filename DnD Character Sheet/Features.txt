@@ -1,10 +1,10 @@
 ﻿Race and Class Features Tab
 ====
-- Shows Race features/abilities, such as "Darkvision", or other abilities that do not require specific coding
-- ListView of the Table in the DnD Players Handbook that shows breakdown of what's available at each level
-- to the right of that, add an area that shows the description of the selected feature (such as the barbarian's Rage ability)
-- Maybe have a breakdown of what the class acquires at each level?
-	- in a table of some sort I suppose
+- (done) Shows Race features/abilities, such as "Darkvision", or other abilities that do not require specific coding (done)
+- (done) ListView of the Table in the DnD Players Handbook that shows breakdown of what's available at each level (done)
+- (done) to the right of that, add an area that shows the description of the selected feature (such as the barbarian's Rage ability) (done)
+- (done) Maybe have a breakdown of what the class acquires at each level? (done)
+	- (done) in a table of some sort I suppose (done)
 - maybe have speed, languages on this page?
 - should probably have a section here to select what languages you want to be able to speak (instead of having them set to the default values)
 
@@ -14,6 +14,8 @@ Stats, Skills, Abilities Tab
 - have an area that shows what the character is proficient in (armor, weapons, etc)
 - armor class
 - current HP should be bigger, more noticeable
+- need an area that allows for the user to apply their ability score bonus when their character reaches lvl 4, etc.
+- (done) saving throws (done)
 
 Cantrips, Spells Tab
 ====

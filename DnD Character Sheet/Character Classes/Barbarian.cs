@@ -133,6 +133,7 @@ namespace DnD_Character_Sheet.Character_Classes
                                                   "Path of the Totem Warrior, both detailed at the end of the class description. Your choise grants you features " +
                                                   "at 3rd level and again at 6th, 10th, and 14th levels.");
 
+            // TODO need to implement this somehow
             FeaturesDictionary.Add("Ability Score Improvement", "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one " +
                                                                 "ability score of your choice by 2, or you can increase two ability scores of your choice by 1. " +
                                                                 "As normal, you cant increase an ability score above 20 using this feature.");

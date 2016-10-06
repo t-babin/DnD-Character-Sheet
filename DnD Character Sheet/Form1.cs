@@ -21,6 +21,7 @@ namespace DnD_Character_Sheet
         List<Button> saveButtons = new List<Button>();
         List<Label> abilityLabels = new List<Label>();
         List<ComboBox> abilityCombos = new List<ComboBox>();
+        Dictionary<string, Label> savingThrowLabels = new Dictionary<string, Label>();
         bool[] validBasicInfo = new bool[11] { false, false, false, false, false, false, false, false, false, false, false };
 
         List<Tuple<Button, Label, ComboBox, Label>> abilityScoreFormTuples = new List<Tuple<Button, Label, ComboBox, Label>>();
@@ -93,6 +94,13 @@ namespace DnD_Character_Sheet
             abilityValuesComboFive.Enabled = false;
             abilityValuesComboSix.Enabled = false;
             editBasicInformationButton.Enabled = false;
+
+            savingThrowLabels.Add("Strength", strengthSavingThrowValueLabel);
+            savingThrowLabels.Add("Dexterity", dexteritySavingThrowValueLabel);
+            savingThrowLabels.Add("Constitution", constitutionSavingThrowValueLabel);
+            savingThrowLabels.Add("Intelligence", intelligenceSavingThrowValueLabel);
+            savingThrowLabels.Add("Wisdom", wisdomSavingThrowValueLabel);
+            savingThrowLabels.Add("Charisma", charismaSavingThrowValueLabel);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -172,6 +180,7 @@ namespace DnD_Character_Sheet
                 writer.WriteElementString("Weight", character.Weight.ToString());
                 writer.WriteElementString("Sex", character.Sex);
                 writer.WriteElementString("XP", character.ExperiencePoints.ToString());
+                writer.WriteElementString("Level", character.Level.ToString());
                 writer.WriteEndElement();
 
                 writer.WriteStartElement("Stats");
@@ -449,6 +458,17 @@ namespace DnD_Character_Sheet
                     var skill = skillsDictionary.Find(i => i.Item2.Equals(item));
                     skill.Item1.Enabled = true;
                     skill.Item3.Enabled = true;
+                }
+
+                foreach (var item in savingThrowLabels.Keys)
+                {
+                    if (character.CharClass.SavingThrows.Contains(item))
+                    {
+                        savingThrowLabels[item].Text = (character.AbilityScores.Scores[item][1] + character.CharClass.ProficiencyBonus).ToString();
+                        savingThrowLabels[item].Font = new Font(savingThrowLabels[item].Font, FontStyle.Bold);
+                    }
+                    else
+                        savingThrowLabels[item].Text = (character.AbilityScores.Scores[item][1]).ToString();
                 }
             }
         }
