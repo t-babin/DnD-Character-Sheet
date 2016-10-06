@@ -14,7 +14,7 @@ namespace DnD_Character_Sheet
             RaceName = "Human";
             AbilityScoreIncrease = new Tuple<string, int>("All", 1);
             BaseSpeed = 30;
-            Languages = new string[1] { "Common" };
+            Languages = new List<string>(new[] { "Common"});
             MinimumHeight = 4;
             MaximumHeight = 7;
             Size = 2;
@@ -23,6 +23,8 @@ namespace DnD_Character_Sheet
                                                       "learn the languages of other peoples they deal with, including obscure dialects. They are fond of " +
                                                       "sprinking their speech with words borrowed from other tongues: Orc curses, Elvish musical expressions, " +
                                                       "Dwarvish military phrases, and so on.");
+
+            CanHaveExtraLanguages = true;
         }
 
         public override string AbilityIncreasePrintString()

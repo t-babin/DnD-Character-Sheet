@@ -20,7 +20,7 @@ namespace DnD_Character_Sheet
             RaceName = "Dwarf";
             AbilityScoreIncrease = new Tuple<string, int>("Constitution", 2);
             BaseSpeed = 25;
-            Languages = new string[2] { "Common", "Dwarfish" };
+            Languages = new List<string>(new[] { "Common", "Dwarvish" });
             MinimumHeight = 4;
             MaximumHeight = 5;
             Size = 2;

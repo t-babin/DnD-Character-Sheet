@@ -200,6 +200,8 @@
             this.wisdomSavingThrowValueLabel = new System.Windows.Forms.Label();
             this.charismaSavingThrowLabel = new System.Windows.Forms.Label();
             this.charismaSavingThrowValueLabel = new System.Windows.Forms.Label();
+            this.extraLanguageComboBox = new System.Windows.Forms.ComboBox();
+            this.addExtraLanguageButton = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.basicInfoPanel.SuspendLayout();
             this.additionalInfoTabControl.SuspendLayout();
@@ -1466,11 +1468,14 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.61111F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.38889F));
             this.tableLayoutPanel2.Controls.Add(this.abilityScoreIncreaseLabel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.speedLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.languagesLabel, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.extraLanguageComboBox, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.addExtraLanguageButton, 1, 3);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 276);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
@@ -1485,6 +1490,7 @@
             // 
             this.abilityScoreIncreaseLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.abilityScoreIncreaseLabel.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.abilityScoreIncreaseLabel, 2);
             this.abilityScoreIncreaseLabel.Location = new System.Drawing.Point(3, 8);
             this.abilityScoreIncreaseLabel.Name = "abilityScoreIncreaseLabel";
             this.abilityScoreIncreaseLabel.Size = new System.Drawing.Size(117, 13);
@@ -1495,6 +1501,7 @@
             // 
             this.speedLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.speedLabel.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.speedLabel, 2);
             this.speedLabel.Location = new System.Drawing.Point(3, 38);
             this.speedLabel.Name = "speedLabel";
             this.speedLabel.Size = new System.Drawing.Size(41, 13);
@@ -1505,6 +1512,7 @@
             // 
             this.languagesLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.languagesLabel.AutoSize = true;
+            this.tableLayoutPanel2.SetColumnSpan(this.languagesLabel, 2);
             this.languagesLabel.Location = new System.Drawing.Point(3, 68);
             this.languagesLabel.Name = "languagesLabel";
             this.languagesLabel.Size = new System.Drawing.Size(63, 13);
@@ -2019,6 +2027,43 @@
             this.charismaSavingThrowValueLabel.TabIndex = 5;
             this.charismaSavingThrowValueLabel.Text = "-";
             // 
+            // extraLanguageComboBox
+            // 
+            this.extraLanguageComboBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.extraLanguageComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.extraLanguageComboBox.FormattingEnabled = true;
+            this.extraLanguageComboBox.Items.AddRange(new object[] {
+            "Common",
+            "Dwarvish",
+            "Elvish",
+            "Giant",
+            "Gnomish",
+            "Goblin",
+            "Halfling",
+            "Orc",
+            "Abyssal",
+            "Celestial",
+            "Draconic",
+            "Deep Speech",
+            "Infernal",
+            "Primordial",
+            "Sylvan",
+            "Undercommon"});
+            this.extraLanguageComboBox.Location = new System.Drawing.Point(3, 95);
+            this.extraLanguageComboBox.Name = "extraLanguageComboBox";
+            this.extraLanguageComboBox.Size = new System.Drawing.Size(121, 21);
+            this.extraLanguageComboBox.TabIndex = 3;
+            // 
+            // addExtraLanguageButton
+            // 
+            this.addExtraLanguageButton.Location = new System.Drawing.Point(141, 93);
+            this.addExtraLanguageButton.Name = "addExtraLanguageButton";
+            this.addExtraLanguageButton.Size = new System.Drawing.Size(123, 23);
+            this.addExtraLanguageButton.TabIndex = 4;
+            this.addExtraLanguageButton.Text = "Add Extra Language";
+            this.addExtraLanguageButton.UseVisualStyleBackColor = true;
+            this.addExtraLanguageButton.Click += new System.EventHandler(this.addExtraLanguageButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2256,6 +2301,8 @@
         private System.Windows.Forms.Label dexteritySavingThrowValueLabel;
         private System.Windows.Forms.Label constitutionSavingThrowLabel;
         private System.Windows.Forms.Label constitutionSavingThrowValueLabel;
+        private System.Windows.Forms.ComboBox extraLanguageComboBox;
+        private System.Windows.Forms.Button addExtraLanguageButton;
     }
 }
 

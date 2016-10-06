@@ -127,6 +127,12 @@ namespace DnD_Character_Sheet
             basicWeightLabel.ForeColor = Color.Red;
             sexLabel.ForeColor = Color.Red;
             xpLabel.ForeColor = Color.Red;
+
+            extraLanguageComboBox.Visible = false;
+            extraLanguageComboBox.Enabled = false;
+            addExtraLanguageButton.Visible = false;
+            addExtraLanguageButton.Enabled = false;
+
             checkIfBasicInfoVerified();
             //additionalInfoTabControl.Enabled = true;
         }
@@ -332,6 +338,18 @@ namespace DnD_Character_Sheet
             xpTextBox.Enabled = false;
             editBasicInformationButton.Enabled = true;
             saveCharacterToolStripButton.Enabled = true;
+
+            if (character.Race.CanHaveExtraLanguages)
+            {
+                addExtraLanguageButton.Enabled = true;
+                addExtraLanguageButton.Visible = true;
+                extraLanguageComboBox.Enabled = true;
+                extraLanguageComboBox.Visible = true;
+                foreach (var item in character.Race.Languages)
+                {
+                    extraLanguageComboBox.Items.Remove(item);
+                }
+            }
 
             updateSkillsNotificationLabel();
             fillClassAndRaceFeaturesTab();
@@ -895,6 +913,14 @@ namespace DnD_Character_Sheet
                         updateSkillLabels();
                 }
             }
+        }
+
+        private void addExtraLanguageButton_Click(object sender, EventArgs e)
+        {
+            character.Race.Languages.Add(extraLanguageComboBox.SelectedItem.ToString());
+            var old = languagesLabel.Text.ToString();
+            languagesLabel.Text = old + ", " + extraLanguageComboBox.SelectedItem.ToString() + " (Extra Language)";
+
         }
     }
 }

@@ -14,7 +14,7 @@ namespace DnD_Character_Sheet.Races
             RaceName = "Dragonborn";
             AbilityScoreIncrease = new Tuple<string, int>("Strength", 2);
             BaseSpeed = 30;
-            Languages = new string[2] { "Common", "Draconic" };
+            Languages = new List<string>(new[] { "Common", "Draconic" });
             MinimumHeight = 6;
             MaximumHeight = 8;
             Size = 2;

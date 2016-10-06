@@ -37,7 +37,7 @@ namespace DnD_Character_Sheet.Races
             RaceName = "Gnome";
             AbilityScoreIncrease = new Tuple<string, int>("Intelligence", 2);
             BaseSpeed = 25;
-            Languages = new string[2] { "Common", "Gnomish" };
+            Languages = new List<string>(new[] { "Common", "Gnomish" });
             MinimumHeight = 3;
             MaximumHeight = 4;
             Size = 1;

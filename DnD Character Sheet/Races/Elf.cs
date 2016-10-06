@@ -16,11 +16,11 @@ namespace DnD_Character_Sheet
             RaceName = "Elf";
             AbilityScoreIncrease = new Tuple<string, int>("Dexterity", 2);
             BaseSpeed = 30;
-            Languages = new string[2] { "Common", "Elvish" };
+            Languages = new List<string>(new [] { "Common", "Elvish" } );
             MinimumHeight = 4;
             MaximumHeight = 7;
             Size = 2;
-
+            
             FeaturesDictionary.Add("Darkvision", "Accustomed to twilit forests and the night sky, you have superior vision in dark and dim conditions. " +
                                                  "You can see in dim light within 60 feet of you as if it were bright light, and in darkness " +
                                                  "as if it were dim light. You can't discern color in darkness, only shades of gray.");
@@ -51,6 +51,8 @@ namespace DnD_Character_Sheet
                                                              "spellcasting ability for it.");
 
                 SubraceFeaturesDictionary.Add("Extra Language (High Elf)", "You can speak, read, and write one extra language of your choice.");
+
+                CanHaveExtraLanguages = true;
             }
             if (subrace == "Wood Elf")
             {

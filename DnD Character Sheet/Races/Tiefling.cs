@@ -14,7 +14,7 @@ namespace DnD_Character_Sheet.Races
             RaceName = "Tiefling";
             AbilityScoreIncrease = new Tuple<string, int>("Intelligence", 1);
             BaseSpeed = 30;
-            Languages = new string[2] { "Common", "Infernal" };
+            Languages = new List<string>(new[] { "Common", "Infernal" });
             MinimumHeight = 4;
             MaximumHeight = 7;
             Size = 2;

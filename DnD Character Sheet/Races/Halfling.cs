@@ -13,7 +13,7 @@ namespace DnD_Character_Sheet
             RaceName = "Halfling";
             AbilityScoreIncrease = new Tuple<string, int>("Dexterity", 2);
             BaseSpeed = 25;
-            Languages = new string[2] { "Common", "Halfling" };
+            Languages = new List<string>(new[] { "Common", "Halfling" });
             MinimumHeight = 2;
             MaximumHeight = 4;
             Size = 1;

@@ -14,7 +14,7 @@ namespace DnD_Character_Sheet
 
         public virtual int BaseSpeed { get; set; } = 0;
 
-        public virtual String[] Languages { get; set; } = null;
+        public virtual List<string> Languages { get; set; } = new List<string>();
 
         public virtual Race[] Subraces { get; set; } = null;
 
@@ -28,6 +28,8 @@ namespace DnD_Character_Sheet
         public virtual int MinimumHeight { get; set; } = 0;
 
         public virtual int MaximumHeight { get; set; } = 0;
+
+        public bool CanHaveExtraLanguages { get; set; } = false;
 
         public Dictionary<string, string> FeaturesDictionary { get; set; } = new Dictionary<string, string>();
 

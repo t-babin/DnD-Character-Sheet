@@ -14,7 +14,7 @@ namespace DnD_Character_Sheet.Races
             RaceName = "Half Orc";
             AbilityScoreIncrease = new Tuple<string, int>("Strength", 2);
             BaseSpeed = 30;
-            Languages = new string[2] { "Common", "Orc" };
+            Languages = new List<string>(new[] { "Common", "Orc" });
             MinimumHeight = 5;
             MaximumHeight = 7;
             Size = 2;

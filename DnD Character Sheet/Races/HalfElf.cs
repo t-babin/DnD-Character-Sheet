@@ -15,7 +15,7 @@ namespace DnD_Character_Sheet.Races
             AbilityScoreIncrease = new Tuple<string, int>("Charisma", 2);
             BaseSpeed = 30;
             //Also get a language of your choice
-            Languages = new string[3] { "Common", "Elvish", "" };
+            Languages = new List<string>(new[] { "Common", "Elvish" });
             MinimumHeight = 5;
             MaximumHeight = 6;
             Size = 2;
@@ -28,6 +28,8 @@ namespace DnD_Character_Sheet.Races
             FeaturesDictionary.Add("Skill Versatility", "You gain proficiency in two skills of your choice.");
 
             FeaturesDictionary.Add("Languages Known", "You can speak, read, and write Common, Elvish, and one extra language of your choice.");
+
+            CanHaveExtraLanguages = true;
         }
 
         public override string AbilityIncreasePrintString()
