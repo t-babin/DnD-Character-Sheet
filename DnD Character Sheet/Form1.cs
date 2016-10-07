@@ -101,6 +101,8 @@ namespace DnD_Character_Sheet
             savingThrowLabels.Add("Intelligence", intelligenceSavingThrowValueLabel);
             savingThrowLabels.Add("Wisdom", wisdomSavingThrowValueLabel);
             savingThrowLabels.Add("Charisma", charismaSavingThrowValueLabel);
+
+            tableLayoutPanel2.BorderStyle = BorderStyle.FixedSingle;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -297,11 +299,11 @@ namespace DnD_Character_Sheet
                     character.Race = new Gnome();
                     speedLabel.Text += " 25 base (Gnome)";
                     break;
-                case "half elf":
+                case "half-elf":
                     character.Race = new HalfElf();
                     speedLabel.Text += " 30 base (Half Elf)";
                     break;
-                case "half orc":
+                case "half-orc":
                     character.Race = new HalfOrc();
                     speedLabel.Text += " 30 base (Half Orc)";
                     break;
@@ -351,7 +353,7 @@ namespace DnD_Character_Sheet
                 }
             }
 
-            updateSkillsNotificationLabel();
+            selectableSkillsNotificationLabel.Text = "Please Assign Your Ability Scores Before Selecting Your Proficient Skills.";
             fillClassAndRaceFeaturesTab();
         }
 
@@ -365,7 +367,7 @@ namespace DnD_Character_Sheet
                 else
                     skills += character.CharClass.SelectableSkills[i] + ", ";
             }
-            selectableSkillsNotificationLabel.Text = "You May Select " + character.CharClass.NumberOfSelectableSkills + " Skills From: " + skills;
+            selectableSkillsNotificationLabel.Text = "You May Select " + character.CharClass.NumberOfSelectableSkills + " Skills From the Above Highlighted Ones.";
         }
 
         private void rollStatsButton_Click(object sender, EventArgs e)
@@ -466,6 +468,7 @@ namespace DnD_Character_Sheet
             updateInitialSkillLabels(ability);
             if (character.AbilityScores.AllStatsChosen())
             {
+                updateSkillsNotificationLabel();
                 foreach (var i in skillsDictionary)
                 {
                     i.Item1.Enabled = false;
@@ -474,8 +477,12 @@ namespace DnD_Character_Sheet
                 foreach (var item in character.CharClass.SelectableSkills)
                 {
                     var skill = skillsDictionary.Find(i => i.Item2.Equals(item));
-                    skill.Item1.Enabled = true;
-                    skill.Item3.Enabled = true;
+                    if (skill != null)
+                    {
+                        Console.WriteLine(skill.Item2);
+                        skill.Item1.Enabled = true;
+                        skill.Item3.Enabled = true;
+                    }
                 }
 
                 foreach (var item in savingThrowLabels.Keys)
@@ -921,6 +928,45 @@ namespace DnD_Character_Sheet
             var old = languagesLabel.Text.ToString();
             languagesLabel.Text = old + ", " + extraLanguageComboBox.SelectedItem.ToString() + " (Extra Language)";
 
+        }
+
+        private void groupBox_Paint(object sender, PaintEventArgs e)
+        {
+            GroupBox box = sender as GroupBox;
+            DrawGroupBox(box, e.Graphics, Color.Black);
+        }
+
+        private void DrawGroupBox(GroupBox box, Graphics g, Color borderColour)
+        {
+            if (box != null)
+            {
+                Brush textBrush = new SolidBrush(Color.Black);
+                Brush borderBrush = new SolidBrush(borderColour);
+                Pen borderPen = new Pen(borderBrush);
+                SizeF strSize = g.MeasureString(box.Text, box.Font);
+                Rectangle rect = new Rectangle(box.ClientRectangle.X,
+                                           box.ClientRectangle.Y + (int)(strSize.Height / 2),
+                                           box.ClientRectangle.Width - 1,
+                                           box.ClientRectangle.Height - (int)(strSize.Height / 2) - 1);
+
+                // Clear text and border
+                g.Clear(this.BackColor);
+
+                // Draw text
+                g.DrawString(box.Text, box.Font, textBrush, box.Padding.Left, 0);
+
+                // Drawing Border
+                //Left
+                g.DrawLine(borderPen, rect.Location, new Point(rect.X, rect.Y + rect.Height));
+                //Right
+                g.DrawLine(borderPen, new Point(rect.X + rect.Width, rect.Y), new Point(rect.X + rect.Width, rect.Y + rect.Height));
+                //Bottom
+                g.DrawLine(borderPen, new Point(rect.X, rect.Y + rect.Height), new Point(rect.X + rect.Width, rect.Y + rect.Height));
+                //Top1
+                g.DrawLine(borderPen, new Point(rect.X, rect.Y), new Point(rect.X + box.Padding.Left, rect.Y));
+                //Top2
+                g.DrawLine(borderPen, new Point(rect.X + box.Padding.Left + (int)(strSize.Width), rect.Y), new Point(rect.X + rect.Width, rect.Y));
+            }
         }
     }
 }

@@ -15,45 +15,31 @@ namespace DnD_Character_Sheet.Character_Classes
         {
             get { return additionalFeaturesTable; }
 
-            set
-            { }
+            set { }
         }
 
         public override string SpellcastingAbility
         {
             get { return ""; }
 
-            set
-            { }
+            set { }
         }
 
         private int numberOfSkills = 2;
         public override int NumberOfSelectableSkills
         {
-            get
-            {
-                return numberOfSkills;
-            }
-            set
-            {
-                numberOfSkills = value;
-            }
+            get { return numberOfSkills; }
+
+            set { numberOfSkills = value; }
         }
 
         private List<string> selectableSkills = new List<string>(new[] { "Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival" });
         public override List<string> SelectableSkills
         {
-            get
-            {
-                return selectableSkills;
-            }
+            get { return selectableSkills; }
 
-            set
-            {
-            }
+            set { }
         }
-
-
 
         //TODO finish adding the Barbarian features. I guess these will be strings somewhere that can be used in the Form?
         public Barbarian()

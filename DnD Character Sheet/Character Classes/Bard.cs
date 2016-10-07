@@ -13,44 +13,32 @@ namespace DnD_Character_Sheet.Character_Classes
         {
             get { return additionalFeaturesTable; }
 
-            set
-            { }
+            set { }
         }
 
         public override string SpellcastingAbility
         {
             get { return "Charisma"; }
 
-            set
-            { }
+            set { }
         }
 
-        private List<string> selectableSkills = new List<string>(new [] { "Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation",
-                                                   "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SleightOfHand",
+        private List<string> selectableSkills = new List<string>(new [] { "Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation",
+                                                   "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand",
                                                    "Stealth", "Survival"});
         public override List<string> SelectableSkills
         {
-            get
-            {
-                return selectableSkills;
-            }
+            get { return selectableSkills; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { }
         }
 
+        private int numberOfSkills = 3;
         public override int NumberOfSelectableSkills
         {
-            get
-            {
-                return 3;
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return numberOfSkills; }
+
+            set { numberOfSkills = value; }
         }
 
         public Bard()
@@ -157,9 +145,9 @@ namespace DnD_Character_Sheet.Character_Classes
 
             FeaturesDictionary.Add("Superior Inspiration", "At 20th level, when you roll initiative and have no uses of Bardic Inspiration left, you regain one use.");
 
-            FeaturesDictionary.Add("Skills That You May be Proficient in", @"Acrobatics, AnimalHandling, Arcana, Athletics, Deception, History, Insight, Intimidation,
-                                                   Investigation, Medicine, Nature, Perception, Performance, Persuasion, Religion, SleightOfHand,
-                                                   Stealth, Survival");
+            FeaturesDictionary.Add("Skills That You May be Proficient in", "Acrobatics, AnimalHandling, Arcana, Athletics, Deception, History, Insight, Intimidation, " +
+                                                                           "Investigation, Medicine, Nature, Perception, Performance, Persuasion, Religion, SleightOfHand, " +
+                                                                           "Stealth, Survival");
 
             additionalFeaturesTable.Add("Cantrips Known", new List<string>(new string[] { "2", "2", "2", "3", "3", "3", "3", "3", "3", "4", "4", "4", "4", "4", "4", "4",
                                                                                  "4", "4", "4", "4"}));
