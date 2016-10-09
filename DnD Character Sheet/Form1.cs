@@ -353,7 +353,29 @@ namespace DnD_Character_Sheet
                 }
             }
 
+            var weapons = "";
+            foreach (var item in character.CharClass.ProficientWeaponTypes)
+            {
+                weapons += item + ", ";
+            }
+            proficientWeaponsLabel.Text = weapons.Substring(0, weapons.Length - 2);
+
+            var armor = "";
+            foreach (var item in character.CharClass.ProficientArmors)
+            {
+                armor += item + ", ";
+            }
+            proficientArmorLabel.Text = armor.Substring(0, armor.Length - 2);
+
+            var tools = "";
+            foreach (var item in character.CharClass.ProficientTools)
+            {
+                tools += item + ", ";
+            }
+            proficientToolsLabel.Text = tools.Substring(0, tools.Length - 2);
+
             selectableSkillsNotificationLabel.Text = "Please Assign Your Ability Scores Before Selecting Your Proficient Skills.";
+            proficiencyBonusValueLabel.Text = character.ProficiencyBonus.ToString();
             fillClassAndRaceFeaturesTab();
         }
 
@@ -927,6 +949,8 @@ namespace DnD_Character_Sheet
             character.Race.Languages.Add(extraLanguageComboBox.SelectedItem.ToString());
             var old = languagesLabel.Text.ToString();
             languagesLabel.Text = old + ", " + extraLanguageComboBox.SelectedItem.ToString() + " (Extra Language)";
+            ((Button)sender).Enabled = false;
+            extraLanguageComboBox.Enabled = false;
 
         }
 

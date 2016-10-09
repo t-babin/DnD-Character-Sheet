@@ -22,7 +22,7 @@ namespace DnD_Character_Sheet
 
         public int Weight { get; set; } = 0;
 
-        public CharacterClass CharClass { get; set; }
+        public CharacterClass CharClass { get; set; } = null;
 
         public int Level { get; set; } = 1;
 
@@ -35,6 +35,19 @@ namespace DnD_Character_Sheet
         public Skills Skills { get; set; }
 
         public string Sex { get; set; } = "";
+
+        private int proficiencyBonus = 0;
+        public int ProficiencyBonus
+        {
+            get
+            {
+                return DetermineProficiencyBonus();
+            }
+            set
+            {
+                proficiencyBonus = DetermineProficiencyBonus();
+            }
+        }
 
         public Character()
         {
@@ -51,6 +64,17 @@ namespace DnD_Character_Sheet
                 if (ExperiencePoints >= xpList[i])
                     Level = i + 1;
             }
+        }
+
+        private int DetermineProficiencyBonus()
+        {
+            var pb = 0;
+            if (CharClass != null)
+            {
+                pb = CharClass.FeaturesPerLevelTable[Level - 1].Item2;
+            }
+
+            return pb;
         }
     }
 }

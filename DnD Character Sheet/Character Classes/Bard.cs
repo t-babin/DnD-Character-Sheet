@@ -45,7 +45,7 @@ namespace DnD_Character_Sheet.Character_Classes
         {
             ClassName = "Bard";
             HitPointDieType = 8;
-            ProficientArmors = new List<string>(new string[] { "Light Armor" });
+            
             //SelectableSkills.Add(3, new string[] { "Acrobatics", "AnimalHandling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation",
             //                                       "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "SleightOfHand",
             //                                       "Stealth", "Survival"});
@@ -163,6 +163,8 @@ namespace DnD_Character_Sheet.Character_Classes
             ProficientWeapons.Add("Longsword");
             ProficientWeapons.Add("Rapier");
             ProficientWeapons.Add("Shortsword");
+            ProficientWeaponTypes = new List<string>(new[] { "Simple Melee Weapons", "Crossbow, Hand", "Longsword", "Rapier", "Shortsword" });
+            ProficientArmors = new List<string>(new string[] { "Light Armor" });
             ProficientTools.Add("First Instrument of Your Choice");
             ProficientTools.Add("Second Instrument of Your Choice");
             ProficientTools.Add("Third Instrument of Your Choice");

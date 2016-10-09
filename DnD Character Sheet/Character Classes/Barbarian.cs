@@ -46,8 +46,7 @@ namespace DnD_Character_Sheet.Character_Classes
         {
             ClassName = "Barbarian";
             HitPointDieType = 12;
-            //ProficiencyBonus = 2;
-            ProficientArmors = new List<string>(new string[] { "Light Armor", "Medium Armor", "Shields" });
+            //ProficiencyBonus = 2;            
             AddProficiencies();
             FeaturesPerLevelTable = new List<Tuple<int, int, string>>(new Tuple<int, int, string>[]
             {
@@ -86,6 +85,9 @@ namespace DnD_Character_Sheet.Character_Classes
         {
             ProficientWeapons.AddRange(Weapons.SimpleMeleeWeapons);
             ProficientWeapons.AddRange(Weapons.MartialMeleeWeapons);
+            ProficientWeaponTypes.Add("Simple Melee Weapons");
+            ProficientWeaponTypes.Add("Martial Melee Weapons");
+            ProficientArmors = new List<string>(new string[] { "Light Armor", "Medium Armor", "Shields" });
             ProficientTools.Add("None");
             SavingThrows.Add("Strength");
             SavingThrows.Add("Constitution");

@@ -16,6 +16,8 @@ namespace DnD_Character_Sheet
 
         public List<string> ProficientWeapons { get; set; } = new List<string>();
 
+        public List<string> ProficientWeaponTypes { get; set; } = new List<string>();
+
         public List<string> ProficientTools { get; set; } = new List<string>();
 
         public List<string> SavingThrows { get; set; } = new List<string>();

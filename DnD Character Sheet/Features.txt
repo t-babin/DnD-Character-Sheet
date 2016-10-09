@@ -10,8 +10,8 @@
 
 Stats, Skills, Abilities Tab
 ====
-- proficiency bonuses from the class chosen should probably appear on the Stats, Skills, Abilities tab
-- have an area that shows what the character is proficient in (armor, weapons, etc)
+- (done) proficiency bonuses from the class chosen should probably appear on the Stats, Skills, Abilities tab (done)
+- (done) have an area that shows what the character is proficient in (armor, weapons, etc) (done)
 - armor class
 - current HP should be bigger, more noticeable
 - need an area that allows for the user to apply their ability score bonus when their character reaches lvl 4, etc.

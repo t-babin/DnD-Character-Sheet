@@ -204,6 +204,22 @@
             this.spellsPage = new System.Windows.Forms.TabPage();
             this.equipmentPage = new System.Windows.Forms.TabPage();
             this.notesPage = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.proficiencyBonusValueLabel = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel10 = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel11 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.proficientWeaponsLabel = new System.Windows.Forms.Label();
+            this.flowLayoutPanel12 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.proficientArmorLabel = new System.Windows.Forms.Label();
+            this.flowLayoutPanel15 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.proficientToolsLabel = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.basicInfoPanel.SuspendLayout();
             this.additionalInfoTabControl.SuspendLayout();
@@ -231,6 +247,12 @@
             this.flowLayoutPanel5.SuspendLayout();
             this.raceAndClassTab.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.flowLayoutPanel10.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.flowLayoutPanel11.SuspendLayout();
+            this.flowLayoutPanel12.SuspendLayout();
+            this.flowLayoutPanel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -636,12 +658,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.68202F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.25565F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.selectableSkillsNotificationLabel, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel14, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox4, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox5, 1, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -653,8 +674,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.314587F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.49561F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.38499F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.24307F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1107, 613);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -668,7 +689,7 @@
             this.tableLayoutPanel2.Controls.Add(this.languagesLabel, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.extraLanguageComboBox, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.addExtraLanguageButton, 1, 3);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 276);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 275);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -754,7 +775,7 @@
             this.selectableSkillsNotificationLabel.AutoSize = true;
             this.selectableSkillsNotificationLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectableSkillsNotificationLabel.ForeColor = System.Drawing.Color.Black;
-            this.selectableSkillsNotificationLabel.Location = new System.Drawing.Point(401, 216);
+            this.selectableSkillsNotificationLabel.Location = new System.Drawing.Point(3, 0);
             this.selectableSkillsNotificationLabel.Name = "selectableSkillsNotificationLabel";
             this.selectableSkillsNotificationLabel.Size = new System.Drawing.Size(323, 17);
             this.selectableSkillsNotificationLabel.TabIndex = 22;
@@ -762,6 +783,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.flowLayoutPanel10);
             this.groupBox1.Controls.Add(this.skillsFlowPanelFive);
             this.groupBox1.Controls.Add(this.skillsTitleLabel);
             this.groupBox1.Controls.Add(this.skillsFlowPanelFour);
@@ -771,14 +793,16 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(369, 3);
             this.groupBox1.Name = "groupBox1";
-            this.tableLayoutPanel1.SetRowSpan(this.groupBox1, 6);
-            this.groupBox1.Size = new System.Drawing.Size(388, 210);
+            this.tableLayoutPanel1.SetRowSpan(this.groupBox1, 7);
+            this.groupBox1.Size = new System.Drawing.Size(388, 266);
             this.groupBox1.TabIndex = 24;
             this.groupBox1.TabStop = false;
             this.groupBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox_Paint);
             // 
             // skillsFlowPanelFive
             // 
+            this.skillsFlowPanelFive.Controls.Add(this.sleightOfHandLabel);
+            this.skillsFlowPanelFive.Controls.Add(this.sleightOfHandValueLabel);
             this.skillsFlowPanelFive.Controls.Add(this.stealthLabel);
             this.skillsFlowPanelFive.Controls.Add(this.stealthValueLabel);
             this.skillsFlowPanelFive.Controls.Add(this.survivalLabel);
@@ -791,7 +815,7 @@
             // stealthLabel
             // 
             this.stealthLabel.AutoSize = true;
-            this.stealthLabel.Location = new System.Drawing.Point(3, 0);
+            this.stealthLabel.Location = new System.Drawing.Point(117, 0);
             this.stealthLabel.Name = "stealthLabel";
             this.stealthLabel.Size = new System.Drawing.Size(43, 13);
             this.stealthLabel.TabIndex = 1;
@@ -801,7 +825,7 @@
             // stealthValueLabel
             // 
             this.stealthValueLabel.AutoSize = true;
-            this.stealthValueLabel.Location = new System.Drawing.Point(52, 0);
+            this.stealthValueLabel.Location = new System.Drawing.Point(166, 0);
             this.stealthValueLabel.Name = "stealthValueLabel";
             this.stealthValueLabel.Size = new System.Drawing.Size(19, 13);
             this.stealthValueLabel.TabIndex = 2;
@@ -810,7 +834,7 @@
             // survivalLabel
             // 
             this.survivalLabel.AutoSize = true;
-            this.survivalLabel.Location = new System.Drawing.Point(77, 0);
+            this.survivalLabel.Location = new System.Drawing.Point(191, 0);
             this.survivalLabel.Name = "survivalLabel";
             this.survivalLabel.Size = new System.Drawing.Size(48, 13);
             this.survivalLabel.TabIndex = 3;
@@ -820,7 +844,7 @@
             // survivalValueLabel
             // 
             this.survivalValueLabel.AutoSize = true;
-            this.survivalValueLabel.Location = new System.Drawing.Point(131, 0);
+            this.survivalValueLabel.Location = new System.Drawing.Point(245, 0);
             this.survivalValueLabel.Name = "survivalValueLabel";
             this.survivalValueLabel.Size = new System.Drawing.Size(19, 13);
             this.survivalValueLabel.TabIndex = 4;
@@ -831,7 +855,7 @@
             this.skillsTitleLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.skillsTitleLabel.AutoSize = true;
             this.skillsTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.skillsTitleLabel.Location = new System.Drawing.Point(171, 8);
+            this.skillsTitleLabel.Location = new System.Drawing.Point(162, 7);
             this.skillsTitleLabel.Name = "skillsTitleLabel";
             this.skillsTitleLabel.Size = new System.Drawing.Size(45, 20);
             this.skillsTitleLabel.TabIndex = 16;
@@ -845,8 +869,6 @@
             this.skillsFlowPanelFour.Controls.Add(this.persuasionValueLabel);
             this.skillsFlowPanelFour.Controls.Add(this.religionLabel);
             this.skillsFlowPanelFour.Controls.Add(this.religionValueLabel);
-            this.skillsFlowPanelFour.Controls.Add(this.sleightOfHandLabel);
-            this.skillsFlowPanelFour.Controls.Add(this.sleightOfHandValueLabel);
             this.skillsFlowPanelFour.Location = new System.Drawing.Point(0, 141);
             this.skillsFlowPanelFour.Name = "skillsFlowPanelFour";
             this.skillsFlowPanelFour.Size = new System.Drawing.Size(388, 28);
@@ -912,7 +934,7 @@
             // sleightOfHandLabel
             // 
             this.sleightOfHandLabel.AutoSize = true;
-            this.sleightOfHandLabel.Location = new System.Drawing.Point(276, 0);
+            this.sleightOfHandLabel.Location = new System.Drawing.Point(3, 0);
             this.sleightOfHandLabel.Name = "sleightOfHandLabel";
             this.sleightOfHandLabel.Size = new System.Drawing.Size(83, 13);
             this.sleightOfHandLabel.TabIndex = 7;
@@ -922,7 +944,7 @@
             // sleightOfHandValueLabel
             // 
             this.sleightOfHandValueLabel.AutoSize = true;
-            this.sleightOfHandValueLabel.Location = new System.Drawing.Point(365, 0);
+            this.sleightOfHandValueLabel.Location = new System.Drawing.Point(92, 0);
             this.sleightOfHandValueLabel.Name = "sleightOfHandValueLabel";
             this.sleightOfHandValueLabel.Size = new System.Drawing.Size(19, 13);
             this.sleightOfHandValueLabel.TabIndex = 8;
@@ -1367,7 +1389,9 @@
             // 
             this.flowLayoutPanel14.Controls.Add(this.label2);
             this.flowLayoutPanel14.Controls.Add(this.levelLabel);
-            this.flowLayoutPanel14.Location = new System.Drawing.Point(763, 111);
+            this.flowLayoutPanel14.Controls.Add(this.label5);
+            this.flowLayoutPanel14.Controls.Add(this.proficiencyBonusValueLabel);
+            this.flowLayoutPanel14.Location = new System.Drawing.Point(6, 33);
             this.flowLayoutPanel14.Name = "flowLayoutPanel14";
             this.flowLayoutPanel14.Size = new System.Drawing.Size(341, 28);
             this.flowLayoutPanel14.TabIndex = 21;
@@ -1398,7 +1422,7 @@
             this.flowLayoutPanel1.Controls.Add(this.maxHPLabel);
             this.flowLayoutPanel1.Controls.Add(this.label3);
             this.flowLayoutPanel1.Controls.Add(this.hitDiceLabel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(763, 147);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 65);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(341, 28);
             this.flowLayoutPanel1.TabIndex = 20;
@@ -1442,6 +1466,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.flowLayoutPanel7);
             this.groupBox3.Controls.Add(this.flowLayoutPanel13);
             this.groupBox3.Controls.Add(this.flowLayoutPanel3);
@@ -1453,7 +1478,7 @@
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
             this.tableLayoutPanel1.SetRowSpan(this.groupBox3, 7);
-            this.groupBox3.Size = new System.Drawing.Size(360, 267);
+            this.groupBox3.Size = new System.Drawing.Size(360, 266);
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox_Paint);
@@ -1520,7 +1545,6 @@
             // 
             // flowLayoutPanel13
             // 
-            this.flowLayoutPanel13.Controls.Add(this.label4);
             this.flowLayoutPanel13.Controls.Add(this.rollStatsButton);
             this.flowLayoutPanel13.Location = new System.Drawing.Point(6, 30);
             this.flowLayoutPanel13.Name = "flowLayoutPanel13";
@@ -1532,7 +1556,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 4);
+            this.label4.Location = new System.Drawing.Point(115, 6);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 20);
             this.label4.TabIndex = 3;
@@ -1540,7 +1564,7 @@
             // 
             // rollStatsButton
             // 
-            this.rollStatsButton.Location = new System.Drawing.Point(113, 3);
+            this.rollStatsButton.Location = new System.Drawing.Point(3, 3);
             this.rollStatsButton.Name = "rollStatsButton";
             this.rollStatsButton.Size = new System.Drawing.Size(75, 23);
             this.rollStatsButton.TabIndex = 2;
@@ -2093,6 +2117,161 @@
             this.notesPage.Text = "Notes";
             this.notesPage.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(61, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Proficiency Bonus:";
+            // 
+            // proficiencyBonusValueLabel
+            // 
+            this.proficiencyBonusValueLabel.AutoSize = true;
+            this.proficiencyBonusValueLabel.Location = new System.Drawing.Point(162, 0);
+            this.proficiencyBonusValueLabel.Name = "proficiencyBonusValueLabel";
+            this.proficiencyBonusValueLabel.Size = new System.Drawing.Size(10, 13);
+            this.proficiencyBonusValueLabel.TabIndex = 3;
+            this.proficiencyBonusValueLabel.Text = "-";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.flowLayoutPanel14);
+            this.groupBox4.Controls.Add(this.flowLayoutPanel1);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(763, 111);
+            this.groupBox4.Name = "groupBox4";
+            this.tableLayoutPanel1.SetRowSpan(this.groupBox4, 3);
+            this.groupBox4.Size = new System.Drawing.Size(341, 102);
+            this.groupBox4.TabIndex = 27;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox_Paint);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(91, 7);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(146, 20);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "Character Bonuses";
+            // 
+            // flowLayoutPanel10
+            // 
+            this.flowLayoutPanel10.Controls.Add(this.selectableSkillsNotificationLabel);
+            this.flowLayoutPanel10.Location = new System.Drawing.Point(0, 212);
+            this.flowLayoutPanel10.Name = "flowLayoutPanel10";
+            this.flowLayoutPanel10.Size = new System.Drawing.Size(376, 49);
+            this.flowLayoutPanel10.TabIndex = 17;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.flowLayoutPanel15);
+            this.groupBox5.Controls.Add(this.flowLayoutPanel12);
+            this.groupBox5.Controls.Add(this.flowLayoutPanel11);
+            this.groupBox5.Controls.Add(this.label8);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(369, 275);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(388, 166);
+            this.groupBox5.TabIndex = 28;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox_Paint);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(132, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 20);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Proficiencies";
+            // 
+            // flowLayoutPanel11
+            // 
+            this.flowLayoutPanel11.Controls.Add(this.label9);
+            this.flowLayoutPanel11.Controls.Add(this.proficientWeaponsLabel);
+            this.flowLayoutPanel11.Location = new System.Drawing.Point(0, 31);
+            this.flowLayoutPanel11.Name = "flowLayoutPanel11";
+            this.flowLayoutPanel11.Size = new System.Drawing.Size(388, 39);
+            this.flowLayoutPanel11.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Weapons:";
+            // 
+            // proficientWeaponsLabel
+            // 
+            this.proficientWeaponsLabel.AutoSize = true;
+            this.proficientWeaponsLabel.Location = new System.Drawing.Point(65, 0);
+            this.proficientWeaponsLabel.Name = "proficientWeaponsLabel";
+            this.proficientWeaponsLabel.Size = new System.Drawing.Size(10, 13);
+            this.proficientWeaponsLabel.TabIndex = 1;
+            this.proficientWeaponsLabel.Text = "-";
+            // 
+            // flowLayoutPanel12
+            // 
+            this.flowLayoutPanel12.Controls.Add(this.label10);
+            this.flowLayoutPanel12.Controls.Add(this.proficientArmorLabel);
+            this.flowLayoutPanel12.Location = new System.Drawing.Point(0, 76);
+            this.flowLayoutPanel12.Name = "flowLayoutPanel12";
+            this.flowLayoutPanel12.Size = new System.Drawing.Size(388, 40);
+            this.flowLayoutPanel12.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(37, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Armor:";
+            // 
+            // proficientArmorLabel
+            // 
+            this.proficientArmorLabel.AutoSize = true;
+            this.proficientArmorLabel.Location = new System.Drawing.Point(46, 0);
+            this.proficientArmorLabel.Name = "proficientArmorLabel";
+            this.proficientArmorLabel.Size = new System.Drawing.Size(10, 13);
+            this.proficientArmorLabel.TabIndex = 1;
+            this.proficientArmorLabel.Text = "-";
+            // 
+            // flowLayoutPanel15
+            // 
+            this.flowLayoutPanel15.Controls.Add(this.label11);
+            this.flowLayoutPanel15.Controls.Add(this.proficientToolsLabel);
+            this.flowLayoutPanel15.Location = new System.Drawing.Point(0, 122);
+            this.flowLayoutPanel15.Name = "flowLayoutPanel15";
+            this.flowLayoutPanel15.Size = new System.Drawing.Size(388, 44);
+            this.flowLayoutPanel15.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(36, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Tools:";
+            // 
+            // proficientToolsLabel
+            // 
+            this.proficientToolsLabel.AutoSize = true;
+            this.proficientToolsLabel.Location = new System.Drawing.Point(45, 0);
+            this.proficientToolsLabel.Name = "proficientToolsLabel";
+            this.proficientToolsLabel.Size = new System.Drawing.Size(10, 13);
+            this.proficientToolsLabel.TabIndex = 1;
+            this.proficientToolsLabel.Text = "-";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2112,7 +2291,6 @@
             this.additionalInfoTabControl.ResumeLayout(false);
             this.statsPage.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -2138,10 +2316,10 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.flowLayoutPanel7.ResumeLayout(false);
             this.flowLayoutPanel7.PerformLayout();
             this.flowLayoutPanel13.ResumeLayout(false);
-            this.flowLayoutPanel13.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -2155,6 +2333,18 @@
             this.raceAndClassTab.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.flowLayoutPanel10.ResumeLayout(false);
+            this.flowLayoutPanel10.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.flowLayoutPanel11.ResumeLayout(false);
+            this.flowLayoutPanel11.PerformLayout();
+            this.flowLayoutPanel12.ResumeLayout(false);
+            this.flowLayoutPanel12.PerformLayout();
+            this.flowLayoutPanel15.ResumeLayout(false);
+            this.flowLayoutPanel15.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2336,6 +2526,22 @@
         private System.Windows.Forms.Button addExtraLanguageButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label proficiencyBonusValueLabel;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel10;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel15;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label proficientToolsLabel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel12;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label proficientArmorLabel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label proficientWeaponsLabel;
     }
 }
 
