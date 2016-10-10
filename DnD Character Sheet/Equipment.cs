@@ -8,7 +8,7 @@ namespace DnD_Character_Sheet
 {
     class Equipment
     {
-        // Name, Damage, Weight, Description
+        // Name, Damage, Weight, Properties
         public static List<Tuple<string, string, string, string>> SimpleMeleeWeaponsTuple = new List<Tuple<string, string, string, string>>(
             new Tuple<string, string, string, string>[]
             {

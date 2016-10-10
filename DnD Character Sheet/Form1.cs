@@ -992,5 +992,169 @@ namespace DnD_Character_Sheet
                 g.DrawLine(borderPen, new Point(rect.X + box.Padding.Left + (int)(strSize.Width), rect.Y), new Point(rect.X + rect.Width, rect.Y));
             }
         }
+
+        private void weaponsRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            allEquipmentListView.Columns.Clear();
+            allEquipmentListView.Items.Clear();
+
+            if (((RadioButton)sender).Checked == true)
+            {
+                ColumnHeader nameHeader, damageHeader, weightHeader, propertiesHeader;
+                nameHeader = new ColumnHeader();
+                nameHeader.Text = "Name";
+                damageHeader = new ColumnHeader();
+                damageHeader.Text = "Damage";
+                weightHeader = new ColumnHeader();
+                weightHeader.Text = "Weight";
+                propertiesHeader = new ColumnHeader();
+                propertiesHeader.Text = "Properties";
+
+                allEquipmentListView.Columns.Add(nameHeader);
+                allEquipmentListView.Columns.Add(damageHeader);
+                allEquipmentListView.Columns.Add(weightHeader);
+                allEquipmentListView.Columns.Add(propertiesHeader);
+
+                ListViewItem l = new ListViewItem("---Simple Melee Weapons---");
+                allEquipmentListView.Items.Add(l);
+
+                foreach (var item in Equipment.SimpleMeleeWeaponsTuple)
+                {
+                    l = new ListViewItem(item.Item1);
+                    l.SubItems.Add(item.Item2);
+                    l.SubItems.Add(item.Item3);
+                    l.SubItems.Add(item.Item4);
+
+                    allEquipmentListView.Items.Add(l);
+                }
+
+                l = new ListViewItem("---Simple Ranged Weapons---");
+                allEquipmentListView.Items.Add(l);
+
+                foreach (var item in Equipment.SimpleRangedWeaponsTuple)
+                {
+                    l = new ListViewItem(item.Item1);
+                    l.SubItems.Add(item.Item2);
+                    l.SubItems.Add(item.Item3);
+                    l.SubItems.Add(item.Item4);
+
+                    allEquipmentListView.Items.Add(l);
+                }
+
+                l = new ListViewItem("---Martial Melee Weapons---");
+                allEquipmentListView.Items.Add(l);
+
+                foreach (var item in Equipment.MartialMeleeWeaponsTuple)
+                {
+                    l = new ListViewItem(item.Item1);
+                    l.SubItems.Add(item.Item2);
+                    l.SubItems.Add(item.Item3);
+                    l.SubItems.Add(item.Item4);
+
+                    allEquipmentListView.Items.Add(l);
+                }
+
+                l = new ListViewItem("---Martial Ranged Weapons---");
+                allEquipmentListView.Items.Add(l);
+
+                foreach (var item in Equipment.MartialRangedWeaponsTuple)
+                {
+                    l = new ListViewItem(item.Item1);
+                    l.SubItems.Add(item.Item2);
+                    l.SubItems.Add(item.Item3);
+                    l.SubItems.Add(item.Item4);
+
+                    allEquipmentListView.Items.Add(l);
+                }
+
+                //allEquipmentListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+                allEquipmentListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            }
+        }
+
+        private void armorRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            allEquipmentListView.Columns.Clear();
+            allEquipmentListView.Items.Clear();
+
+            if (((RadioButton)sender).Checked == true)
+            {
+                ColumnHeader nameHeader, armorClassHeader, strengthHeader, stealthHeader, weightHeader;
+                nameHeader = new ColumnHeader();
+                nameHeader.Text = "Name";
+                armorClassHeader = new ColumnHeader();
+                armorClassHeader.Text = "Armor Class";
+                strengthHeader = new ColumnHeader();
+                strengthHeader.Text = "Strength";
+                stealthHeader = new ColumnHeader();
+                stealthHeader.Text = "Stealth";
+                weightHeader = new ColumnHeader();
+                weightHeader.Text = "Weight";
+
+                allEquipmentListView.Columns.Add(nameHeader);
+                allEquipmentListView.Columns.Add(armorClassHeader);
+                allEquipmentListView.Columns.Add(strengthHeader);
+                allEquipmentListView.Columns.Add(stealthHeader);
+                allEquipmentListView.Columns.Add(weightHeader);
+
+                ListViewItem l = new ListViewItem("---Light Armor---");
+                allEquipmentListView.Items.Add(l);
+
+                foreach (var item in Equipment.LightArmorTuple)
+                {
+                    l = new ListViewItem(item.Item1);
+                    l.SubItems.Add(item.Item2);
+                    l.SubItems.Add(item.Item3);
+                    l.SubItems.Add(item.Item4);
+                    l.SubItems.Add(item.Item5);
+
+                    allEquipmentListView.Items.Add(l);
+                }
+
+                l = new ListViewItem("---Medium Armor---");
+                allEquipmentListView.Items.Add(l);
+
+                foreach (var item in Equipment.MediumArmorTuple)
+                {
+                    l = new ListViewItem(item.Item1);
+                    l.SubItems.Add(item.Item2);
+                    l.SubItems.Add(item.Item3);
+                    l.SubItems.Add(item.Item4);
+                    l.SubItems.Add(item.Item5);
+
+                    allEquipmentListView.Items.Add(l);
+                }
+
+                l = new ListViewItem("---Heavy Armor---");
+                allEquipmentListView.Items.Add(l);
+
+                foreach (var item in Equipment.HeavyArmorTuple)
+                {
+                    l = new ListViewItem(item.Item1);
+                    l.SubItems.Add(item.Item2);
+                    l.SubItems.Add(item.Item3);
+                    l.SubItems.Add(item.Item4);
+                    l.SubItems.Add(item.Item5);
+
+                    allEquipmentListView.Items.Add(l);
+                }
+
+                l = new ListViewItem("---Shields---");
+                allEquipmentListView.Items.Add(l);
+
+                foreach (var item in Equipment.ShieldTuple)
+                {
+                    l = new ListViewItem(item.Item1);
+                    l.SubItems.Add(item.Item2);
+                    l.SubItems.Add(item.Item3);
+                    l.SubItems.Add(item.Item4);
+                    l.SubItems.Add(item.Item5);
+
+                    allEquipmentListView.Items.Add(l);
+                }
+
+                allEquipmentListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            }
+        }
     }
 }

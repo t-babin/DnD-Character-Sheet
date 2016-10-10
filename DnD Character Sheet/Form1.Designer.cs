@@ -219,18 +219,18 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.equipmentPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.allEquipmentListView = new System.Windows.Forms.ListView();
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.weaponsRadioButton = new System.Windows.Forms.RadioButton();
+            this.armorRadioButton = new System.Windows.Forms.RadioButton();
             this.spellsPage = new System.Windows.Forms.TabPage();
             this.notesPage = new System.Windows.Forms.TabPage();
-            this.weaponsRadioButton = new System.Windows.Forms.RadioButton();
-            this.flowLayoutPanel16 = new System.Windows.Forms.FlowLayoutPanel();
-            this.armorRadioButton = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.basicInfoPanel.SuspendLayout();
             this.additionalInfoTabControl.SuspendLayout();
@@ -266,7 +266,7 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.equipmentPage.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.flowLayoutPanel16.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -2086,6 +2086,7 @@
             this.proficiencyBonusColumn,
             this.featuresColumn});
             this.classFeaturesListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.classFeaturesListView.FullRowSelect = true;
             this.classFeaturesListView.GridLines = true;
             this.classFeaturesListView.Location = new System.Drawing.Point(3, 40);
             this.classFeaturesListView.MultiSelect = false;
@@ -2209,6 +2210,7 @@
             this.columnHeader8,
             this.columnHeader9});
             this.spellSlotsPerLevelListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.spellSlotsPerLevelListView.FullRowSelect = true;
             this.spellSlotsPerLevelListView.GridLines = true;
             this.spellSlotsPerLevelListView.Location = new System.Drawing.Point(3, 367);
             this.spellSlotsPerLevelListView.MultiSelect = false;
@@ -2273,10 +2275,10 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.48607F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.51393F));
-            this.tableLayoutPanel4.Controls.Add(this.listView1, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.allEquipmentListView, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label13, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label12, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel16, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -2287,21 +2289,23 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1113, 619);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
-            // listView1
+            // allEquipmentListView
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.allEquipmentListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader11,
             this.columnHeader14,
             this.columnHeader12,
             this.columnHeader13});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(3, 40);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(477, 339);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.allEquipmentListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.allEquipmentListView.FullRowSelect = true;
+            this.allEquipmentListView.GridLines = true;
+            this.allEquipmentListView.Location = new System.Drawing.Point(3, 40);
+            this.allEquipmentListView.MultiSelect = false;
+            this.allEquipmentListView.Name = "allEquipmentListView";
+            this.allEquipmentListView.Size = new System.Drawing.Size(477, 339);
+            this.allEquipmentListView.TabIndex = 0;
+            this.allEquipmentListView.UseCompatibleStateImageBehavior = false;
+            this.allEquipmentListView.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader11
             // 
@@ -2318,8 +2322,19 @@
             // 
             // columnHeader13
             // 
-            this.columnHeader13.Text = "Description";
+            this.columnHeader13.Text = "Properties";
             this.columnHeader13.Width = 75;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(669, 8);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(258, 20);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Select Your Character\'s Equipment";
             // 
             // label12
             // 
@@ -2332,16 +2347,28 @@
             this.label12.TabIndex = 1;
             this.label12.Text = "All Available Weapons";
             // 
-            // label13
+            // weaponsRadioButton
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(673, 8);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(249, 20);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Select Your Character\'s Weapons";
+            this.weaponsRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.weaponsRadioButton.AutoSize = true;
+            this.weaponsRadioButton.Location = new System.Drawing.Point(5, 5);
+            this.weaponsRadioButton.Name = "weaponsRadioButton";
+            this.weaponsRadioButton.Size = new System.Drawing.Size(71, 17);
+            this.weaponsRadioButton.TabIndex = 3;
+            this.weaponsRadioButton.Text = "Weapons";
+            this.weaponsRadioButton.UseVisualStyleBackColor = true;
+            this.weaponsRadioButton.CheckedChanged += new System.EventHandler(this.weaponsRadioButton_CheckedChanged);
+            // 
+            // armorRadioButton
+            // 
+            this.armorRadioButton.AutoSize = true;
+            this.armorRadioButton.Location = new System.Drawing.Point(82, 5);
+            this.armorRadioButton.Name = "armorRadioButton";
+            this.armorRadioButton.Size = new System.Drawing.Size(52, 17);
+            this.armorRadioButton.TabIndex = 4;
+            this.armorRadioButton.Text = "Armor";
+            this.armorRadioButton.UseVisualStyleBackColor = true;
+            this.armorRadioButton.CheckedChanged += new System.EventHandler(this.armorRadioButton_CheckedChanged);
             // 
             // spellsPage
             // 
@@ -2363,38 +2390,15 @@
             this.notesPage.Text = "Notes";
             this.notesPage.UseVisualStyleBackColor = true;
             // 
-            // weaponsRadioButton
+            // panel1
             // 
-            this.weaponsRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.weaponsRadioButton.AutoSize = true;
-            this.weaponsRadioButton.Location = new System.Drawing.Point(3, 3);
-            this.weaponsRadioButton.Name = "weaponsRadioButton";
-            this.weaponsRadioButton.Size = new System.Drawing.Size(71, 17);
-            this.weaponsRadioButton.TabIndex = 3;
-            this.weaponsRadioButton.TabStop = true;
-            this.weaponsRadioButton.Text = "Weapons";
-            this.weaponsRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel16
-            // 
-            this.flowLayoutPanel16.Controls.Add(this.weaponsRadioButton);
-            this.flowLayoutPanel16.Controls.Add(this.armorRadioButton);
-            this.flowLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel16.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel16.Name = "flowLayoutPanel16";
-            this.flowLayoutPanel16.Size = new System.Drawing.Size(477, 31);
-            this.flowLayoutPanel16.TabIndex = 4;
-            // 
-            // armorRadioButton
-            // 
-            this.armorRadioButton.AutoSize = true;
-            this.armorRadioButton.Location = new System.Drawing.Point(80, 3);
-            this.armorRadioButton.Name = "armorRadioButton";
-            this.armorRadioButton.Size = new System.Drawing.Size(52, 17);
-            this.armorRadioButton.TabIndex = 4;
-            this.armorRadioButton.TabStop = true;
-            this.armorRadioButton.Text = "Armor";
-            this.armorRadioButton.UseVisualStyleBackColor = true;
+            this.panel1.Controls.Add(this.weaponsRadioButton);
+            this.panel1.Controls.Add(this.armorRadioButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(477, 31);
+            this.panel1.TabIndex = 5;
             // 
             // Form1
             // 
@@ -2472,8 +2476,8 @@
             this.equipmentPage.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.flowLayoutPanel16.ResumeLayout(false);
-            this.flowLayoutPanel16.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2672,16 +2676,16 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label proficientWeaponsLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView allEquipmentListView;
         private System.Windows.Forms.ColumnHeader columnHeader11;
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader12;
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel16;
         private System.Windows.Forms.RadioButton weaponsRadioButton;
         private System.Windows.Forms.RadioButton armorRadioButton;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
