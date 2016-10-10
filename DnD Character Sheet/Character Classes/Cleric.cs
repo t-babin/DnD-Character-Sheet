@@ -149,8 +149,8 @@ namespace DnD_Character_Sheet.Character_Classes
 
         public override void AddProficiencies()
         {
-            ProficientWeapons.AddRange(Weapons.SimpleMeleeWeapons);
-            ProficientWeapons.AddRange(Weapons.SimpleRangedWeapons);
+            ProficientWeapons.AddRange(Equipment.SimpleMeleeWeapons);
+            ProficientWeapons.AddRange(Equipment.SimpleRangedWeapons);
             ProficientTools.Add("None");
             SavingThrows.Add("Wisdom");
             SavingThrows.Add("Charisma");

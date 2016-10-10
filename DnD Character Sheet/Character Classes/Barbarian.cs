@@ -83,8 +83,8 @@ namespace DnD_Character_Sheet.Character_Classes
 
         public override void AddProficiencies()
         {
-            ProficientWeapons.AddRange(Weapons.SimpleMeleeWeapons);
-            ProficientWeapons.AddRange(Weapons.MartialMeleeWeapons);
+            ProficientWeapons.AddRange(Equipment.SimpleMeleeWeapons);
+            ProficientWeapons.AddRange(Equipment.MartialMeleeWeapons);
             ProficientWeaponTypes.Add("Simple Melee Weapons");
             ProficientWeaponTypes.Add("Martial Melee Weapons");
             ProficientArmors = new List<string>(new string[] { "Light Armor", "Medium Armor", "Shields" });

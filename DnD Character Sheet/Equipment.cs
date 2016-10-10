@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DnD_Character_Sheet
 {
-    class Weapons
+    class Equipment
     {
+        // Name, Damage, Weight, Description
         public static List<Tuple<string, string, string, string>> SimpleMeleeWeaponsTuple = new List<Tuple<string, string, string, string>>(
             new Tuple<string, string, string, string>[]
             {
@@ -66,6 +67,73 @@ namespace DnD_Character_Sheet
                 new Tuple<string, string, string, string>("Net", "--", "3 lb", "Special, thrown (range 5/15)")
             });
 
+        // Name, Armor Class, Strength, Stealth, Weight
+        public static List<Tuple<string, string, string, string, string>> LightArmorTuple = new List<Tuple<string, string, string, string, string>>(
+            new[]
+            {
+                new Tuple<string, string, string, string, string>("Padded", "11 + Dex Modifier", "---", "Disadvantage", "8 lb"),
+                new Tuple<string, string, string, string, string>("Leather", "11 + Dex Modifier", "---", "---", "10 lb"),
+                new Tuple<string, string, string, string, string>("Studded Leather", "12 + Dex Modifier", "---", "---", "13 lb")
+            });
+
+        public static List<Tuple<string, string, string, string, string>> MediumArmorTuple = new List<Tuple<string, string, string, string, string>>(
+            new[]
+            {
+                new Tuple<string, string, string, string, string>("Hide", "12 + Dex Modifier (Max 2)", "---", "---", "12 lb"),
+                new Tuple<string, string, string, string, string>("Chain Shirt", "13 + Dex Modifier (Max 2)", "---", "---", "20 lb"),
+                new Tuple<string, string, string, string, string>("Scale Mail", "14 + Dex Modifier (Max 2)", "---", "Disadvantage", "45 lb"),
+                new Tuple<string, string, string, string, string>("Breastplate", "14 + Dex Modifier (Max 2)", "---", "---", "20 lb"),
+                new Tuple<string, string, string, string, string>("Half Plate", "15 + Dex Modifier (Max 2)", "---", "Disadvantage", "40 lb")
+            });
+
+        public static List<Tuple<string, string, string, string, string>> HeavyArmorTuple = new List<Tuple<string, string, string, string, string>>(
+            new []
+            {
+                new Tuple<string, string, string, string, string>("Ring Mail", "14", "---", "Disadvantage", "40 lb"),
+                new Tuple<string, string, string, string, string>("Chain Mail", "16", "Str 13", "Disadvantage", "55 lb"),
+                new Tuple<string, string, string, string, string>("Splint", "17", "Str 15", "Disadvantage", "60 lb"),
+                new Tuple<string, string, string, string, string>("Plate", "18", "Str 15", "Disadvantage", "65 lb")
+            });
+
+        public static List<Tuple<string, string, string, string, string>> ShieldTuple = new List<Tuple<string, string, string, string, string>>(
+            new[]
+            {
+                new Tuple<string, string, string, string, string>("Shield", "+ 2", "---", "---", "6 lb")
+            });
+
+        public static List<string> BurglarsPack = new List<string>(new []
+                { "A Backpack", "Bag of 1000 Ball Bearings", "10 Feet of String", "A Bell", "5 Candles", "A Crowbar", "A Hammer", "10 Pitons",
+                  "A Hooded Lantern", "2 Flasks of Oil", "5 Days of Rations", "A Tinderbox", "A Waterskin", "50 Feet of Hempen Rope" }
+        );
+
+        public static List<string> DiplomatsPack = new List<string>(new[]
+                { "A Chest", "2 Cases for Maps and Scrolls", "A Set of Fine Clothes", "A Bottle of Ink", "An Ink Pen", "A Lamp", "2 Flasks of Oil",
+                  "5 Sheets of Paper", "A Vial of Perfume", "Sealing Wax", "Soap" }
+        );
+
+        public static List<string> DungeoneersPack = new List<string>(new[]
+                { "A Backpack", "A Crowbar", "A Hammer", "10 Pitons", "10 Torches", "A Tinderbox", "10 Days of Rations",
+                  "A Waterskin", "50 Feet of Hempen Rope" }
+        );
+
+        public static List<string> EntertainersPack = new List<string>(new[]
+                { "A Backpack", "A Bedroll", "2 Costumes", "5 Candles", "5 Days of Rations", "A Waterskin", "A Disguise Kit" }
+        );
+
+        public static List<string> ExplorersPack = new List<string>(new[]
+                { "A Backpack", "A Bedroll", "A Mess Kit", "A Tinderbox", "10 Torches", "10 Days of Rations", "A Waterskin",
+                  "50 Feet of Hempen Rope" }
+        );
+
+        public static List<string> PriestsPack = new List<string>(new[]
+                { "A Backpack", "A Blanket", "10 Candles", "A Tinderbox", "An Alms Box", "2 Blocks of Incense", "A Censer",
+                  "Vestments", "2 Days of Rations", "A Waterskin" }
+        );
+
+        public static List<string> ScholarsPack = new List<string>(new[]
+                { "A Backpack", "A Book of Lore", "A Bottle of Ink", "An Ink Pen", "10 Sheets of Parchment", "A Little Bag of Sand", "A Small Knife" }
+        );
+
         public static List<string> SimpleMeleeWeapons = new List<string>(SimpleMeleeWeaponsTuple.Select(t => t.Item1).ToList());
 
         public static List<string> SimpleRangedWeapons = new List<string>(SimpleRangedWeaponsTuple.Select(t => t.Item1).ToList());
@@ -73,5 +141,13 @@ namespace DnD_Character_Sheet
         public static List<string> MartialMeleeWeapons = new List<string>(MartialMeleeWeaponsTuple.Select(t => t.Item1).ToList());
 
         public static List<string> MartialRangedWeapons = new List<string>(MartialRangedWeaponsTuple.Select(t => t.Item1).ToList());
+
+        public static List<string> LightArmor = new List<string>(LightArmorTuple.Select(t => t.Item1).ToList());
+
+        public static List<string> MediumArmor = new List<string>(MediumArmorTuple.Select(t => t.Item1).ToList());
+
+        public static List<string> HeavyArmor = new List<string>(HeavyArmorTuple.Select(t => t.Item1).ToList());
+
+        public static List<string> Shield = new List<string>(ShieldTuple.Select(t => t.Item1).ToList());
     }
 }

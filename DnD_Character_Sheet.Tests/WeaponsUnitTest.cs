@@ -25,7 +25,7 @@ namespace DnD_Character_Sheet.Tests
                 "Unarmed Strike"
             });
 
-            CollectionAssert.AreEqual(expected, Weapons.SimpleMeleeWeapons);
+            CollectionAssert.AreEqual(expected, Equipment.SimpleMeleeWeapons);
         }
 
         [TestMethod]
@@ -39,7 +39,7 @@ namespace DnD_Character_Sheet.Tests
                 "Sling"
             });
 
-            CollectionAssert.AreEqual(expected, Weapons.SimpleRangedWeapons);
+            CollectionAssert.AreEqual(expected, Equipment.SimpleRangedWeapons);
         }
 
         [TestMethod]
@@ -67,7 +67,7 @@ namespace DnD_Character_Sheet.Tests
                 "Whip"
             });
 
-            CollectionAssert.AreEqual(expected, Weapons.MartialMeleeWeapons);
+            CollectionAssert.AreEqual(expected, Equipment.MartialMeleeWeapons);
         }
 
         [TestMethod]
@@ -82,7 +82,7 @@ namespace DnD_Character_Sheet.Tests
                 "Net"
             });
 
-            CollectionAssert.AreEqual(expected, Weapons.MartialRangedWeapons);
+            CollectionAssert.AreEqual(expected, Equipment.MartialRangedWeapons);
         }
     }
 }

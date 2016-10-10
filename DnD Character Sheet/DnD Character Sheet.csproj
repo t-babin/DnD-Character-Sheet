@@ -85,7 +85,7 @@
     <Compile Include="Skills.cs" />
     <Compile Include="Character Classes\Sorcerer.cs" />
     <Compile Include="Character Classes\Warlock.cs" />
-    <Compile Include="Weapons.cs" />
+    <Compile Include="Equipment.cs" />
     <Compile Include="Character Classes\Wizard.cs" />
     <EmbeddedResource Include="ClassCreationForm.resx">
       <DependentUpon>ClassCreationForm.cs</DependentUpon>

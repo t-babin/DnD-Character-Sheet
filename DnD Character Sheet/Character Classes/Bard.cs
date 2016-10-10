@@ -158,7 +158,7 @@ namespace DnD_Character_Sheet.Character_Classes
 
         public override void AddProficiencies()
         {
-            ProficientWeapons.AddRange(Weapons.SimpleMeleeWeapons);
+            ProficientWeapons.AddRange(Equipment.SimpleMeleeWeapons);
             ProficientWeapons.Add("Crossbow, hand");
             ProficientWeapons.Add("Longsword");
             ProficientWeapons.Add("Rapier");
