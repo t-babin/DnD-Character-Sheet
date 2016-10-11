@@ -95,11 +95,11 @@ namespace DnD_Character_Sheet.Character_Classes
                                                  { "4", "3", "3", "3", "3", "2", "1", "1", "1" },
                                                  { "4", "3", "3", "3", "3", "2", "2", "1", "1" } };
 
-            StartingEquipment = new List<string[]>();
-            StartingEquipment.Add(new string[] { "Rapier", "Longsword", "Any Simple Weapon" });
-            StartingEquipment.Add(new string[] { "Diplomat's Pack", "Entertainer's Pack"});
-            StartingEquipment.Add(new string[] { "Lute", "Any Other Musical Instrument" });
-            StartingEquipment.Add(new string[] { "Leather Armor", "Dagger"});
+            PotentialStartingEquipment = new List<string[]>();
+            PotentialStartingEquipment.Add(new string[] { "Rapier", "Longsword", "Any Simple Weapon" });
+            PotentialStartingEquipment.Add(new string[] { "Diplomat's Pack", "Entertainer's Pack"});
+            PotentialStartingEquipment.Add(new string[] { "Lute", "Any Other Musical Instrument" });
+            PotentialStartingEquipment.Add(new string[] { "Leather Armor and a Dagger"});
         }
 
         public override void AddClassFeatures()

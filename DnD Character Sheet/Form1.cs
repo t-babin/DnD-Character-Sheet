@@ -22,6 +22,7 @@ namespace DnD_Character_Sheet
         List<Label> abilityLabels = new List<Label>();
         List<ComboBox> abilityCombos = new List<ComboBox>();
         Dictionary<string, Label> savingThrowLabels = new Dictionary<string, Label>();
+        List<FlowLayoutPanel> startingEquipmentPanels = new List<FlowLayoutPanel>();
         bool[] validBasicInfo = new bool[11] { false, false, false, false, false, false, false, false, false, false, false };
 
         List<Tuple<Button, Label, ComboBox, Label>> abilityScoreFormTuples = new List<Tuple<Button, Label, ComboBox, Label>>();
@@ -102,6 +103,12 @@ namespace DnD_Character_Sheet
             savingThrowLabels.Add("Wisdom", wisdomSavingThrowValueLabel);
             savingThrowLabels.Add("Charisma", charismaSavingThrowValueLabel);
 
+            startingEquipmentPanels.Add(startingEquipmentPanelOne);
+            startingEquipmentPanels.Add(startingEquipmentPanelTwo);
+            startingEquipmentPanels.Add(startingEquipmentPanelThree);
+            startingEquipmentPanels.Add(startingEquipmentPanelFour);
+            startingEquipmentPanels.Add(startingEquipmentPanelFive);
+
             tableLayoutPanel2.BorderStyle = BorderStyle.FixedSingle;
         }
 
@@ -143,7 +150,7 @@ namespace DnD_Character_Sheet
         {
             character = new Character();
             resetClassAndRaceFeaturesTab();
-            classComboBox.SelectedIndex = 2;
+            classComboBox.SelectedIndex = 1;
             raceComboBox.SelectedIndex = 0;
 
             backgroundComboBox.SelectedIndex = 0;
@@ -1246,6 +1253,116 @@ namespace DnD_Character_Sheet
                     packListBox.Items.Add(item);
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //RadioButton rb = new RadioButton();
+            //rb.Text = "Testing";
+
+            //RadioButton rb1 = new RadioButton();
+            //rb1.Text = "test";
+
+            //startingEquipmentPanel.Controls.Add(rb);
+            //startingEquipmentPanel.Controls.Add(rb1);
+            //rb.
+            //startingEquipmentPanel
+
+            var panelIndex = 0;
+            foreach (var item in character.CharClass.PotentialStartingEquipment)
+            {
+                if (item.Length == 1)
+                {
+                    Label label = new Label();
+                    label.Text = item[0];
+                    label.AutoSize = true;
+                    startingEquipmentPanels[panelIndex].Controls.Add(label);
+                    panelIndex++;
+                }
+
+                else
+                {
+                    foreach (var i in item)
+                    {
+                        RadioButton r = new RadioButton();
+                        Console.WriteLine(i);
+                        r.Text = i;
+                        r.AutoSize = true;
+                        startingEquipmentPanels[panelIndex].Controls.Add(r);
+                    }
+                    Button b = new Button();
+                    b.Text = "Select Equipment";
+                    startingEquipmentPanels[panelIndex].Controls.Add(b);
+                    b.Click += addEquipmentButton_Click;
+                    //addStartingEquipmentHandler(b, startingEquipmentPanels[panelIndex]);
+                    panelIndex++;
+                }
+            }
+
+            addAnyWeaponButton.Enabled = true;
+        }
+
+        private void addEquipmentButton_Click(object sender, EventArgs e)
+        {
+            var parent = ((Button)sender).Parent;
+            var radios = new List<RadioButton>();
+
+            foreach (var item in parent.Controls)
+            {
+                Console.WriteLine(item);
+                if (item is RadioButton)
+                    radios.Add(item as RadioButton);
+            }
+
+            if ((radios.Count(i => i.Checked == true)) == 1)
+            {
+                RadioButton clicked = radios.Find(i => (i.Checked == true));
+                Console.WriteLine(clicked.Text);
+                character.CharClass.FinalStartingEquipment.Add(clicked.Text);
+                ((Button)sender).Enabled = false;
+                radios.ForEach(i => i.Enabled = false);
+
+                if (clicked.Text.Contains("Any"))
+                {
+                    weaponSelectListBox.Visible = true;
+                    addAnyWeaponButton.Visible = true;
+                    fillWeaponSelectListBox(clicked.Text);
+                    Console.WriteLine(clicked.Text);
+                }
+            }
+        }
+
+        private void fillWeaponSelectListBox(string text)
+        {
+            switch (text)
+            {
+                case "Any Simple Weapon":
+                    Equipment.SimpleMeleeWeapons.ForEach(i => weaponSelectListBox.Items.Add(i));
+                    Equipment.SimpleRangedWeapons.ForEach(i => weaponSelectListBox.Items.Add(i));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void addStartingEquipmentHandler(Button b, FlowLayoutPanel panel)
+        {
+            var radios = new List<RadioButton>();
+            foreach (var item in panel.Controls)
+            {
+                if (item is RadioButton)
+                {
+                    radios.Add(item as RadioButton);
+                }
+            }
+
+            int count = radios.Count(i => i.Checked == true);
+            Console.WriteLine(count);
+        }
+
+        private void addAnyWeaponButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

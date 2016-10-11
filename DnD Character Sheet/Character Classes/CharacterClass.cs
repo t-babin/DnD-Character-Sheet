@@ -22,7 +22,9 @@ namespace DnD_Character_Sheet
 
         public List<string> SavingThrows { get; set; } = new List<string>();
 
-        public List<string[]> StartingEquipment { get; set; }
+        public List<string[]> PotentialStartingEquipment { get; set; }
+
+        public List<string> FinalStartingEquipment { get; set; } = new List<string>();
 
         abstract public List<string> SelectableSkills { get; set; }
 

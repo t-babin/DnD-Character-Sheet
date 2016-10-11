@@ -77,10 +77,10 @@ namespace DnD_Character_Sheet.Character_Classes
                     SpellSlotsPerLevel[i, j] = "---";
             }
 
-            StartingEquipment = new List<string[]>();
-            StartingEquipment.Add(new[] { "Greataxe", "Any Martial Melee Weapon" });
-            StartingEquipment.Add(new[] { "Two Handaxes", "Any Simple Melee Weapon" });
-            StartingEquipment.Add(new[] { "Explorer's Pack and Four Javelins" });
+            PotentialStartingEquipment = new List<string[]>();
+            PotentialStartingEquipment.Add(new[] { "Greataxe", "Any Martial Melee Weapon" });
+            PotentialStartingEquipment.Add(new[] { "Two Handaxes", "Any Simple Melee Weapon" });
+            PotentialStartingEquipment.Add(new[] { "Explorer's Pack and Four Javelins" });
 
             AddClassFeatures();
         }
