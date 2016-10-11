@@ -99,7 +99,8 @@ namespace DnD_Character_Sheet.Character_Classes
             PotentialStartingEquipment.Add(new string[] { "Rapier", "Longsword", "Any Simple Weapon" });
             PotentialStartingEquipment.Add(new string[] { "Diplomat's Pack", "Entertainer's Pack"});
             PotentialStartingEquipment.Add(new string[] { "Lute", "Any Other Musical Instrument" });
-            PotentialStartingEquipment.Add(new string[] { "Leather Armor and a Dagger"});
+            PotentialStartingEquipment.Add(new string[] { "Leather Armor"});
+            PotentialStartingEquipment.Add(new string[] { "Dagger" });
         }
 
         public override void AddClassFeatures()

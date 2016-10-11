@@ -253,6 +253,9 @@
             this.addAnyWeaponButton = new System.Windows.Forms.Button();
             this.spellsPage = new System.Windows.Forms.TabPage();
             this.notesPage = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.selectedEquipmentListBox = new System.Windows.Forms.ListBox();
+            this.startingEquipmentPanelSix = new System.Windows.Forms.FlowLayoutPanel();
             this.toolStrip1.SuspendLayout();
             this.basicInfoPanel.SuspendLayout();
             this.additionalInfoTabControl.SuspendLayout();
@@ -2311,8 +2314,10 @@
             this.tableLayoutPanel4.Controls.Add(this.panel3, 2, 1);
             this.tableLayoutPanel4.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label14, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button1, 2, 2);
             this.tableLayoutPanel4.Controls.Add(this.panel4, 3, 1);
+            this.tableLayoutPanel4.Controls.Add(this.button1, 3, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label15, 2, 2);
+            this.tableLayoutPanel4.Controls.Add(this.selectedEquipmentListBox, 2, 3);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -2497,14 +2502,15 @@
             this.label12.AutoSize = true;
             this.tableLayoutPanel4.SetColumnSpan(this.label12, 2);
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(183, 385);
+            this.label12.Location = new System.Drawing.Point(153, 385);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(133, 20);
+            this.label12.Size = new System.Drawing.Size(194, 20);
             this.label12.TabIndex = 1;
-            this.label12.Text = "Equipment Packs";
+            this.label12.Text = "Equipment Pack Contents";
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.startingEquipmentPanelSix);
             this.panel3.Controls.Add(this.startingEquipmentPanelFive);
             this.panel3.Controls.Add(this.startingEquipmentPanelFour);
             this.panel3.Controls.Add(this.startingEquipmentPanelThree);
@@ -2517,37 +2523,37 @@
             // 
             // startingEquipmentPanelFive
             // 
-            this.startingEquipmentPanelFive.Location = new System.Drawing.Point(1, 180);
+            this.startingEquipmentPanelFive.Location = new System.Drawing.Point(3, 180);
             this.startingEquipmentPanelFive.Name = "startingEquipmentPanelFive";
-            this.startingEquipmentPanelFive.Size = new System.Drawing.Size(382, 38);
+            this.startingEquipmentPanelFive.Size = new System.Drawing.Size(377, 38);
             this.startingEquipmentPanelFive.TabIndex = 1;
             // 
             // startingEquipmentPanelFour
             // 
-            this.startingEquipmentPanelFour.Location = new System.Drawing.Point(1, 136);
+            this.startingEquipmentPanelFour.Location = new System.Drawing.Point(3, 136);
             this.startingEquipmentPanelFour.Name = "startingEquipmentPanelFour";
-            this.startingEquipmentPanelFour.Size = new System.Drawing.Size(382, 38);
+            this.startingEquipmentPanelFour.Size = new System.Drawing.Size(377, 38);
             this.startingEquipmentPanelFour.TabIndex = 1;
             // 
             // startingEquipmentPanelThree
             // 
-            this.startingEquipmentPanelThree.Location = new System.Drawing.Point(1, 92);
+            this.startingEquipmentPanelThree.Location = new System.Drawing.Point(3, 92);
             this.startingEquipmentPanelThree.Name = "startingEquipmentPanelThree";
-            this.startingEquipmentPanelThree.Size = new System.Drawing.Size(382, 38);
+            this.startingEquipmentPanelThree.Size = new System.Drawing.Size(377, 38);
             this.startingEquipmentPanelThree.TabIndex = 1;
             // 
             // startingEquipmentPanelTwo
             // 
-            this.startingEquipmentPanelTwo.Location = new System.Drawing.Point(1, 48);
+            this.startingEquipmentPanelTwo.Location = new System.Drawing.Point(3, 48);
             this.startingEquipmentPanelTwo.Name = "startingEquipmentPanelTwo";
-            this.startingEquipmentPanelTwo.Size = new System.Drawing.Size(382, 38);
+            this.startingEquipmentPanelTwo.Size = new System.Drawing.Size(377, 38);
             this.startingEquipmentPanelTwo.TabIndex = 1;
             // 
             // startingEquipmentPanelOne
             // 
-            this.startingEquipmentPanelOne.Location = new System.Drawing.Point(1, 4);
+            this.startingEquipmentPanelOne.Location = new System.Drawing.Point(3, 4);
             this.startingEquipmentPanelOne.Name = "startingEquipmentPanelOne";
-            this.startingEquipmentPanelOne.Size = new System.Drawing.Size(382, 38);
+            this.startingEquipmentPanelOne.Size = new System.Drawing.Size(377, 38);
             this.startingEquipmentPanelOne.TabIndex = 0;
             // 
             // panel1
@@ -2596,7 +2602,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(503, 380);
+            this.button1.Location = new System.Drawing.Point(892, 380);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -2636,9 +2642,9 @@
             this.addAnyWeaponButton.Enabled = false;
             this.addAnyWeaponButton.Location = new System.Drawing.Point(3, 3);
             this.addAnyWeaponButton.Name = "addAnyWeaponButton";
-            this.addAnyWeaponButton.Size = new System.Drawing.Size(75, 23);
+            this.addAnyWeaponButton.Size = new System.Drawing.Size(206, 23);
             this.addAnyWeaponButton.TabIndex = 11;
-            this.addAnyWeaponButton.Text = "button2";
+            this.addAnyWeaponButton.Text = "Add Weapon to Starting Equipment";
             this.addAnyWeaponButton.UseVisualStyleBackColor = true;
             this.addAnyWeaponButton.Visible = false;
             this.addAnyWeaponButton.Click += new System.EventHandler(this.addAnyWeaponButton_Click);
@@ -2662,6 +2668,33 @@
             this.notesPage.TabIndex = 4;
             this.notesPage.Text = "Notes";
             this.notesPage.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(618, 385);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(153, 20);
+            this.label15.TabIndex = 14;
+            this.label15.Text = "Selected Equipment";
+            // 
+            // selectedEquipmentListBox
+            // 
+            this.selectedEquipmentListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.selectedEquipmentListBox.FormattingEnabled = true;
+            this.selectedEquipmentListBox.Location = new System.Drawing.Point(503, 417);
+            this.selectedEquipmentListBox.Name = "selectedEquipmentListBox";
+            this.selectedEquipmentListBox.Size = new System.Drawing.Size(383, 199);
+            this.selectedEquipmentListBox.TabIndex = 15;
+            // 
+            // startingEquipmentPanelSix
+            // 
+            this.startingEquipmentPanelSix.Location = new System.Drawing.Point(3, 224);
+            this.startingEquipmentPanelSix.Name = "startingEquipmentPanelSix";
+            this.startingEquipmentPanelSix.Size = new System.Drawing.Size(377, 38);
+            this.startingEquipmentPanelSix.TabIndex = 2;
             // 
             // Form1
             // 
@@ -2976,6 +3009,9 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ListBox weaponSelectListBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ListBox selectedEquipmentListBox;
+        private System.Windows.Forms.FlowLayoutPanel startingEquipmentPanelSix;
     }
 }
 

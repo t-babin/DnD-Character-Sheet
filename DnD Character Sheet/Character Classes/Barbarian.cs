@@ -80,7 +80,8 @@ namespace DnD_Character_Sheet.Character_Classes
             PotentialStartingEquipment = new List<string[]>();
             PotentialStartingEquipment.Add(new[] { "Greataxe", "Any Martial Melee Weapon" });
             PotentialStartingEquipment.Add(new[] { "Two Handaxes", "Any Simple Melee Weapon" });
-            PotentialStartingEquipment.Add(new[] { "Explorer's Pack and Four Javelins" });
+            PotentialStartingEquipment.Add(new[] { "Explorer's Pack" });
+            PotentialStartingEquipment.Add(new[] { "Four Javelins" });
 
             AddClassFeatures();
         }

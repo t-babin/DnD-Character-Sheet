@@ -71,9 +71,9 @@ namespace DnD_Character_Sheet
         public static List<Tuple<string, string, string, string, string>> LightArmorTuple = new List<Tuple<string, string, string, string, string>>(
             new[]
             {
-                new Tuple<string, string, string, string, string>("Padded", "11 + Dex Modifier", "---", "Disadvantage", "8 lb"),
-                new Tuple<string, string, string, string, string>("Leather", "11 + Dex Modifier", "---", "---", "10 lb"),
-                new Tuple<string, string, string, string, string>("Studded Leather", "12 + Dex Modifier", "---", "---", "13 lb")
+                new Tuple<string, string, string, string, string>("Padded Armor", "11 + Dex Modifier", "---", "Disadvantage", "8 lb"),
+                new Tuple<string, string, string, string, string>("Leather Armor", "11 + Dex Modifier", "---", "---", "10 lb"),
+                new Tuple<string, string, string, string, string>("Studded Leather Armor", "12 + Dex Modifier", "---", "---", "13 lb")
             });
 
         public static List<Tuple<string, string, string, string, string>> MediumArmorTuple = new List<Tuple<string, string, string, string, string>>(
@@ -133,6 +133,11 @@ namespace DnD_Character_Sheet
         public static List<string> ScholarsPack = new List<string>(new []
                 { "A Backpack", "A Book of Lore", "A Bottle of Ink", "An Ink Pen", "10 Sheets of Parchment", "A Little Bag of Sand", "A Small Knife" }
         );
+
+        public static List<string> MusicalInstruments = new List<string>(new[]
+            {
+                "Bagpipes", "Drum", "Dulcimer", "Flute", "Lute", "Lyre", "Horn", "Pan Flute", "Shawm", "Viol"
+            });
 
         public static List<string> SimpleMeleeWeapons = new List<string>(SimpleMeleeWeaponsTuple.Select(t => t.Item1).ToList());
 

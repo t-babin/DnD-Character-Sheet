@@ -108,6 +108,7 @@ namespace DnD_Character_Sheet
             startingEquipmentPanels.Add(startingEquipmentPanelThree);
             startingEquipmentPanels.Add(startingEquipmentPanelFour);
             startingEquipmentPanels.Add(startingEquipmentPanelFive);
+            startingEquipmentPanels.Add(startingEquipmentPanelSix);
 
             tableLayoutPanel2.BorderStyle = BorderStyle.FixedSingle;
         }
@@ -1257,27 +1258,13 @@ namespace DnD_Character_Sheet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //RadioButton rb = new RadioButton();
-            //rb.Text = "Testing";
-
-            //RadioButton rb1 = new RadioButton();
-            //rb1.Text = "test";
-
-            //startingEquipmentPanel.Controls.Add(rb);
-            //startingEquipmentPanel.Controls.Add(rb1);
-            //rb.
-            //startingEquipmentPanel
-
             var panelIndex = 0;
             foreach (var item in character.CharClass.PotentialStartingEquipment)
             {
                 if (item.Length == 1)
                 {
-                    Label label = new Label();
-                    label.Text = item[0];
-                    label.AutoSize = true;
-                    startingEquipmentPanels[panelIndex].Controls.Add(label);
-                    panelIndex++;
+                    character.CharClass.FinalStartingEquipment.Add(item[0]);
+                    updateSelectedEquipment();
                 }
 
                 else
@@ -1294,12 +1281,9 @@ namespace DnD_Character_Sheet
                     b.Text = "Select Equipment";
                     startingEquipmentPanels[panelIndex].Controls.Add(b);
                     b.Click += addEquipmentButton_Click;
-                    //addStartingEquipmentHandler(b, startingEquipmentPanels[panelIndex]);
                     panelIndex++;
                 }
             }
-
-            addAnyWeaponButton.Enabled = true;
         }
 
         private void addEquipmentButton_Click(object sender, EventArgs e)
@@ -1316,9 +1300,7 @@ namespace DnD_Character_Sheet
 
             if ((radios.Count(i => i.Checked == true)) == 1)
             {
-                RadioButton clicked = radios.Find(i => (i.Checked == true));
-                Console.WriteLine(clicked.Text);
-                character.CharClass.FinalStartingEquipment.Add(clicked.Text);
+                RadioButton clicked = radios.Find(i => (i.Checked == true));                
                 ((Button)sender).Enabled = false;
                 radios.ForEach(i => i.Enabled = false);
 
@@ -1326,43 +1308,123 @@ namespace DnD_Character_Sheet
                 {
                     weaponSelectListBox.Visible = true;
                     addAnyWeaponButton.Visible = true;
+                    addAnyWeaponButton.Enabled = true;
                     fillWeaponSelectListBox(clicked.Text);
+                    // TODO disable all of the remaining buttons and radiobuttons until the weapon selection has been finished.
                     Console.WriteLine(clicked.Text);
+                }
+
+                else
+                {
+                    character.CharClass.FinalStartingEquipment.Add(clicked.Text);
+                    updateSelectedEquipment();
                 }
             }
         }
 
         private void fillWeaponSelectListBox(string text)
         {
+            weaponSelectListBox.Items.Clear();
             switch (text)
             {
                 case "Any Simple Weapon":
+                    addAnyWeaponButton.Text = "Add Weapon to Starting Equipment";
                     Equipment.SimpleMeleeWeapons.ForEach(i => weaponSelectListBox.Items.Add(i));
                     Equipment.SimpleRangedWeapons.ForEach(i => weaponSelectListBox.Items.Add(i));
+                    break;
+                case "Any Martial Weapon":
+                    addAnyWeaponButton.Text = "Add Weapon to Starting Equipment";
+                    Equipment.MartialMeleeWeapons.ForEach(i => weaponSelectListBox.Items.Add(i));
+                    Equipment.MartialRangedWeapons.ForEach(i => weaponSelectListBox.Items.Add(i));
+                    break;
+                case "Any Simple Melee Weapon":
+                    addAnyWeaponButton.Text = "Add Weapon to Starting Equipment";
+                    Equipment.SimpleMeleeWeapons.ForEach(i => weaponSelectListBox.Items.Add(i));
+                    break;
+                case "Any Martial Melee Weapon":
+                    addAnyWeaponButton.Text = "Add Weapon to Starting Equipment";
+                    Equipment.MartialMeleeWeapons.ForEach(i => weaponSelectListBox.Items.Add(i));
+                    break;
+                case "Any Simple Ranged Weapon":
+                    addAnyWeaponButton.Text = "Add Weapon to Starting Equipment";
+                    Equipment.SimpleRangedWeapons.ForEach(i => weaponSelectListBox.Items.Add(i));
+                    break;
+                case "Any Martial Ranged Weapon":
+                    addAnyWeaponButton.Text = "Add Weapon to Starting Equipment";
+                    Equipment.MartialRangedWeapons.ForEach(i => weaponSelectListBox.Items.Add(i));
+                    break;
+                case "Any Other Musical Instrument":
+                    addAnyWeaponButton.Text = "Add Instrument to Starting Equipment";
+                    Equipment.MusicalInstruments.ForEach(i => weaponSelectListBox.Items.Add(i));
                     break;
                 default:
                     break;
             }
         }
 
-        private void addStartingEquipmentHandler(Button b, FlowLayoutPanel panel)
-        {
-            var radios = new List<RadioButton>();
-            foreach (var item in panel.Controls)
-            {
-                if (item is RadioButton)
-                {
-                    radios.Add(item as RadioButton);
-                }
-            }
-
-            int count = radios.Count(i => i.Checked == true);
-            Console.WriteLine(count);
-        }
-
         private void addAnyWeaponButton_Click(object sender, EventArgs e)
         {
+            character.CharClass.FinalStartingEquipment.Add(weaponSelectListBox.SelectedItem.ToString());
+            addAnyWeaponButton.Enabled = false;
+            updateSelectedEquipment();
+        }
+
+        private void updateSelectedEquipment()
+        {
+            selectedEquipmentListBox.Items.Clear();
+            List<string> armorList = new List<string>(), weaponList = new List<string>(), packList = new List<string>(), otherList = new List<string>();
             
+            foreach (var item in character.CharClass.FinalStartingEquipment)
+            {
+                if ((Equipment.LightArmor.Contains(item)) || (Equipment.MediumArmor.Contains(item)) || (Equipment.HeavyArmor.Contains(item)))
+                    armorList.Add(item);
+
+                else if ((Equipment.SimpleMeleeWeapons.Contains(item)) || (Equipment.SimpleRangedWeapons.Contains(item)) ||
+                    (Equipment.MartialMeleeWeapons.Contains(item)) || (Equipment.MartialRangedWeapons.Contains(item)))
+                    weaponList.Add(item);
+
+                else if (item.Contains("Pack"))
+                {
+                    switch (item)
+                    {
+                        case "Burglar's Pack":
+                            packList.AddRange(Equipment.BurglarsPack);
+                            break;
+                        case "Diplomat's Pack":
+                            packList.AddRange(Equipment.DiplomatsPack);
+                            break;
+                        case "Dungeoneer's Pack":
+                            packList.AddRange(Equipment.DungeoneersPack);
+                            break;
+                        case "Entertainer's Pack":
+                            packList.AddRange(Equipment.EntertainersPack);
+                            break;
+                        case "Explorer's Pack":
+                            packList.AddRange(Equipment.ExplorersPack);
+                            break;
+                        case "Priest's Pack":
+                            packList.AddRange(Equipment.PriestsPack);
+                            break;
+                        case "Scholar's Pack":
+                            packList.AddRange(Equipment.ScholarsPack);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                else
+                    otherList.Add(item);
+
+            }
+            selectedEquipmentListBox.Items.Add("--- Armor ---");
+            armorList.ForEach(i => selectedEquipmentListBox.Items.Add(i));
+            selectedEquipmentListBox.Items.Add("--- Weapons ---");
+            weaponList.ForEach(i => selectedEquipmentListBox.Items.Add(i));
+            selectedEquipmentListBox.Items.Add("--- Pack Items ---");
+            packList.ForEach(i => selectedEquipmentListBox.Items.Add(i));
+            selectedEquipmentListBox.Items.Add("--- Other ---");
+            otherList.ForEach(i => selectedEquipmentListBox.Items.Add(i));
         }
     }
 }
