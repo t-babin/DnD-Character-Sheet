@@ -1156,5 +1156,96 @@ namespace DnD_Character_Sheet
                 allEquipmentListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             }
         }
+
+        private void burglersPackRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked == true)
+            {
+                packListBox.Items.Clear();
+
+                foreach (var item in Equipment.BurglarsPack)
+                {
+                    packListBox.Items.Add(item);
+                }
+            }
+        }
+
+        private void diplomatsPackRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked == true)
+            {
+                packListBox.Items.Clear();
+
+                foreach (var item in Equipment.DiplomatsPack)
+                {
+                    packListBox.Items.Add(item);
+                }
+            }
+        }
+
+        private void dungeoneersPackRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked == true)
+            {
+                packListBox.Items.Clear();
+
+                foreach (var item in Equipment.DungeoneersPack)
+                {
+                    packListBox.Items.Add(item);
+                }
+            }
+        }
+
+        private void entertainersPackRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked == true)
+            {
+                packListBox.Items.Clear();
+
+                foreach (var item in Equipment.EntertainersPack)
+                {
+                    packListBox.Items.Add(item);
+                }
+            }
+        }
+
+        private void explorersPackRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked == true)
+            {
+                packListBox.Items.Clear();
+
+                foreach (var item in Equipment.ExplorersPack)
+                {
+                    packListBox.Items.Add(item);
+                }
+            }
+        }
+
+        private void priestsPackRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked == true)
+            {
+                packListBox.Items.Clear();
+
+                foreach (var item in Equipment.PriestsPack)
+                {
+                    packListBox.Items.Add(item);
+                }
+            }
+        }
+
+        private void scholarsPackRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked == true)
+            {
+                packListBox.Items.Clear();
+
+                foreach (var item in Equipment.ScholarsPack)
+                {
+                    packListBox.Items.Add(item);
+                }
+            }
+        }
     }
 }

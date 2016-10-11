@@ -25,6 +25,7 @@ Cantrips, Spells Tab
 
 Equipment, Items Tab
 ====
+- (done) list of all available equipment and packs (done)
 - Have a list of all equipment that the character has
 	- weapons, armor, bags from background, anything like that
  

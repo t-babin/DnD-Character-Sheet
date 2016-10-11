@@ -231,6 +231,16 @@
             this.spellsPage = new System.Windows.Forms.TabPage();
             this.notesPage = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.packListBox = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.burglersPackRadioButton = new System.Windows.Forms.RadioButton();
+            this.diplomatsPackRadioButton = new System.Windows.Forms.RadioButton();
+            this.dungeoneersPackRadioButton = new System.Windows.Forms.RadioButton();
+            this.entertainersPackRadioButton = new System.Windows.Forms.RadioButton();
+            this.explorersPackRadioButton = new System.Windows.Forms.RadioButton();
+            this.priestsPackRadioButton = new System.Windows.Forms.RadioButton();
+            this.scholarsPackRadioButton = new System.Windows.Forms.RadioButton();
+            this.selectPackButton = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.basicInfoPanel.SuspendLayout();
             this.additionalInfoTabControl.SuspendLayout();
@@ -267,6 +277,7 @@
             this.equipmentPage.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -2272,20 +2283,24 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.48607F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.51393F));
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.64151F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.89937F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.45912F));
             this.tableLayoutPanel4.Controls.Add(this.allEquipmentListView, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label13, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.label12, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.packListBox, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.label13, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.panel2, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.label12, 0, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowCount = 4;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.89661F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.12601F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1113, 619);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
@@ -2296,13 +2311,14 @@
             this.columnHeader14,
             this.columnHeader12,
             this.columnHeader13});
+            this.tableLayoutPanel4.SetColumnSpan(this.allEquipmentListView, 2);
             this.allEquipmentListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.allEquipmentListView.FullRowSelect = true;
             this.allEquipmentListView.GridLines = true;
             this.allEquipmentListView.Location = new System.Drawing.Point(3, 40);
             this.allEquipmentListView.MultiSelect = false;
             this.allEquipmentListView.Name = "allEquipmentListView";
-            this.allEquipmentListView.Size = new System.Drawing.Size(477, 339);
+            this.allEquipmentListView.Size = new System.Drawing.Size(511, 334);
             this.allEquipmentListView.TabIndex = 0;
             this.allEquipmentListView.UseCompatibleStateImageBehavior = false;
             this.allEquipmentListView.View = System.Windows.Forms.View.Details;
@@ -2330,22 +2346,23 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(669, 8);
+            this.label13.Location = new System.Drawing.Point(656, 8);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(258, 20);
+            this.label13.Size = new System.Drawing.Size(318, 20);
             this.label13.TabIndex = 2;
-            this.label13.Text = "Select Your Character\'s Equipment";
+            this.label13.Text = "Select Your Character\'s Starting Equipment";
             // 
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label12.AutoSize = true;
+            this.tableLayoutPanel4.SetColumnSpan(this.label12, 2);
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(715, 490);
+            this.label12.Location = new System.Drawing.Point(192, 385);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(165, 20);
+            this.label12.Size = new System.Drawing.Size(133, 20);
             this.label12.TabIndex = 1;
-            this.label12.Text = "All Available Weapons";
+            this.label12.Text = "Equipment Packs";
             // 
             // weaponsRadioButton
             // 
@@ -2377,7 +2394,7 @@
             this.spellsPage.Padding = new System.Windows.Forms.Padding(3);
             this.spellsPage.Size = new System.Drawing.Size(1113, 619);
             this.spellsPage.TabIndex = 1;
-            this.spellsPage.Text = "Cantrips, Spells";
+            this.spellsPage.Text = "Spells and Cantrips";
             this.spellsPage.UseVisualStyleBackColor = true;
             // 
             // notesPage
@@ -2397,8 +2414,127 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(477, 31);
+            this.panel1.Size = new System.Drawing.Size(246, 31);
             this.panel1.TabIndex = 5;
+            // 
+            // packListBox
+            // 
+            this.packListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.packListBox.FormattingEnabled = true;
+            this.packListBox.Location = new System.Drawing.Point(3, 417);
+            this.packListBox.Name = "packListBox";
+            this.packListBox.Size = new System.Drawing.Size(246, 199);
+            this.packListBox.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.selectPackButton);
+            this.panel2.Controls.Add(this.scholarsPackRadioButton);
+            this.panel2.Controls.Add(this.priestsPackRadioButton);
+            this.panel2.Controls.Add(this.explorersPackRadioButton);
+            this.panel2.Controls.Add(this.entertainersPackRadioButton);
+            this.panel2.Controls.Add(this.dungeoneersPackRadioButton);
+            this.panel2.Controls.Add(this.diplomatsPackRadioButton);
+            this.panel2.Controls.Add(this.burglersPackRadioButton);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(255, 417);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(259, 199);
+            this.panel2.TabIndex = 7;
+            // 
+            // burglersPackRadioButton
+            // 
+            this.burglersPackRadioButton.AutoSize = true;
+            this.burglersPackRadioButton.Location = new System.Drawing.Point(3, 3);
+            this.burglersPackRadioButton.Name = "burglersPackRadioButton";
+            this.burglersPackRadioButton.Size = new System.Drawing.Size(93, 17);
+            this.burglersPackRadioButton.TabIndex = 0;
+            this.burglersPackRadioButton.TabStop = true;
+            this.burglersPackRadioButton.Text = "Burglar\'s Pack";
+            this.burglersPackRadioButton.UseVisualStyleBackColor = true;
+            this.burglersPackRadioButton.CheckedChanged += new System.EventHandler(this.burglersPackRadioButton_CheckedChanged);
+            // 
+            // diplomatsPackRadioButton
+            // 
+            this.diplomatsPackRadioButton.AutoSize = true;
+            this.diplomatsPackRadioButton.Location = new System.Drawing.Point(3, 27);
+            this.diplomatsPackRadioButton.Name = "diplomatsPackRadioButton";
+            this.diplomatsPackRadioButton.Size = new System.Drawing.Size(101, 17);
+            this.diplomatsPackRadioButton.TabIndex = 1;
+            this.diplomatsPackRadioButton.TabStop = true;
+            this.diplomatsPackRadioButton.Text = "Diplomat\'s Pack";
+            this.diplomatsPackRadioButton.UseVisualStyleBackColor = true;
+            this.diplomatsPackRadioButton.CheckedChanged += new System.EventHandler(this.diplomatsPackRadioButton_CheckedChanged);
+            // 
+            // dungeoneersPackRadioButton
+            // 
+            this.dungeoneersPackRadioButton.AutoSize = true;
+            this.dungeoneersPackRadioButton.Location = new System.Drawing.Point(3, 51);
+            this.dungeoneersPackRadioButton.Name = "dungeoneersPackRadioButton";
+            this.dungeoneersPackRadioButton.Size = new System.Drawing.Size(119, 17);
+            this.dungeoneersPackRadioButton.TabIndex = 2;
+            this.dungeoneersPackRadioButton.TabStop = true;
+            this.dungeoneersPackRadioButton.Text = "Dungeoneer\'s Pack";
+            this.dungeoneersPackRadioButton.UseVisualStyleBackColor = true;
+            this.dungeoneersPackRadioButton.CheckedChanged += new System.EventHandler(this.dungeoneersPackRadioButton_CheckedChanged);
+            // 
+            // entertainersPackRadioButton
+            // 
+            this.entertainersPackRadioButton.AutoSize = true;
+            this.entertainersPackRadioButton.Location = new System.Drawing.Point(3, 75);
+            this.entertainersPackRadioButton.Name = "entertainersPackRadioButton";
+            this.entertainersPackRadioButton.Size = new System.Drawing.Size(111, 17);
+            this.entertainersPackRadioButton.TabIndex = 3;
+            this.entertainersPackRadioButton.TabStop = true;
+            this.entertainersPackRadioButton.Text = "Entertainer\'s Pack";
+            this.entertainersPackRadioButton.UseVisualStyleBackColor = true;
+            this.entertainersPackRadioButton.CheckedChanged += new System.EventHandler(this.entertainersPackRadioButton_CheckedChanged);
+            // 
+            // explorersPackRadioButton
+            // 
+            this.explorersPackRadioButton.AutoSize = true;
+            this.explorersPackRadioButton.Location = new System.Drawing.Point(3, 99);
+            this.explorersPackRadioButton.Name = "explorersPackRadioButton";
+            this.explorersPackRadioButton.Size = new System.Drawing.Size(98, 17);
+            this.explorersPackRadioButton.TabIndex = 4;
+            this.explorersPackRadioButton.TabStop = true;
+            this.explorersPackRadioButton.Text = "Explorer\'s Pack";
+            this.explorersPackRadioButton.UseVisualStyleBackColor = true;
+            this.explorersPackRadioButton.CheckedChanged += new System.EventHandler(this.explorersPackRadioButton_CheckedChanged);
+            // 
+            // priestsPackRadioButton
+            // 
+            this.priestsPackRadioButton.AutoSize = true;
+            this.priestsPackRadioButton.Location = new System.Drawing.Point(3, 123);
+            this.priestsPackRadioButton.Name = "priestsPackRadioButton";
+            this.priestsPackRadioButton.Size = new System.Drawing.Size(86, 17);
+            this.priestsPackRadioButton.TabIndex = 5;
+            this.priestsPackRadioButton.TabStop = true;
+            this.priestsPackRadioButton.Text = "Priest\'s Pack";
+            this.priestsPackRadioButton.UseVisualStyleBackColor = true;
+            this.priestsPackRadioButton.CheckedChanged += new System.EventHandler(this.priestsPackRadioButton_CheckedChanged);
+            // 
+            // scholarsPackRadioButton
+            // 
+            this.scholarsPackRadioButton.AutoSize = true;
+            this.scholarsPackRadioButton.Location = new System.Drawing.Point(3, 147);
+            this.scholarsPackRadioButton.Name = "scholarsPackRadioButton";
+            this.scholarsPackRadioButton.Size = new System.Drawing.Size(96, 17);
+            this.scholarsPackRadioButton.TabIndex = 6;
+            this.scholarsPackRadioButton.TabStop = true;
+            this.scholarsPackRadioButton.Text = "Scholar\'s Pack";
+            this.scholarsPackRadioButton.UseVisualStyleBackColor = true;
+            this.scholarsPackRadioButton.CheckedChanged += new System.EventHandler(this.scholarsPackRadioButton_CheckedChanged);
+            // 
+            // selectPackButton
+            // 
+            this.selectPackButton.Location = new System.Drawing.Point(4, 171);
+            this.selectPackButton.Name = "selectPackButton";
+            this.selectPackButton.Size = new System.Drawing.Size(75, 23);
+            this.selectPackButton.TabIndex = 7;
+            this.selectPackButton.Text = "Choose";
+            this.selectPackButton.UseVisualStyleBackColor = true;
+            this.selectPackButton.Visible = false;
             // 
             // Form1
             // 
@@ -2478,6 +2614,8 @@
             this.tableLayoutPanel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2686,6 +2824,16 @@
         private System.Windows.Forms.RadioButton weaponsRadioButton;
         private System.Windows.Forms.RadioButton armorRadioButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListBox packListBox;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RadioButton burglersPackRadioButton;
+        private System.Windows.Forms.RadioButton scholarsPackRadioButton;
+        private System.Windows.Forms.RadioButton priestsPackRadioButton;
+        private System.Windows.Forms.RadioButton explorersPackRadioButton;
+        private System.Windows.Forms.RadioButton entertainersPackRadioButton;
+        private System.Windows.Forms.RadioButton dungeoneersPackRadioButton;
+        private System.Windows.Forms.RadioButton diplomatsPackRadioButton;
+        private System.Windows.Forms.Button selectPackButton;
     }
 }
 

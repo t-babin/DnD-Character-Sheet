@@ -45,8 +45,7 @@ namespace DnD_Character_Sheet.Character_Classes
         public Barbarian()
         {
             ClassName = "Barbarian";
-            HitPointDieType = 12;
-            //ProficiencyBonus = 2;            
+            HitPointDieType = 12;        
             AddProficiencies();
             FeaturesPerLevelTable = new List<Tuple<int, int, string>>(new Tuple<int, int, string>[]
             {
@@ -77,6 +76,11 @@ namespace DnD_Character_Sheet.Character_Classes
                 for (int j = 0; j < 9; j++)
                     SpellSlotsPerLevel[i, j] = "---";
             }
+
+            StartingEquipment = new List<string[]>();
+            StartingEquipment.Add(new[] { "Greataxe", "Any Martial Melee Weapon" });
+            StartingEquipment.Add(new[] { "Two Handaxes", "Any Simple Melee Weapon" });
+            StartingEquipment.Add(new[] { "Explorer's Pack and Four Javelins" });
 
             AddClassFeatures();
         }

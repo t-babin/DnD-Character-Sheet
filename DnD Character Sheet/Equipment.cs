@@ -10,7 +10,7 @@ namespace DnD_Character_Sheet
     {
         // Name, Damage, Weight, Properties
         public static List<Tuple<string, string, string, string>> SimpleMeleeWeaponsTuple = new List<Tuple<string, string, string, string>>(
-            new Tuple<string, string, string, string>[]
+            new []
             {
                 new Tuple<string, string, string, string>("Club", "1d4 Bludgeoning", "2 lb", "Light"),
                 new Tuple<string, string, string, string>("Dagger", "1d4 Piercing", "1 lb", "Finesse, light, thrown (range 20/60)"),
@@ -26,7 +26,7 @@ namespace DnD_Character_Sheet
             });
 
         public static List<Tuple<string, string, string, string>> SimpleRangedWeaponsTuple = new List<Tuple<string, string, string, string>>(
-            new Tuple<string, string, string, string>[]
+            new []
             {
                 new Tuple<string, string, string, string>("Crossbow, light", "1d8 Piercing", "5 lb", "Ammunition (range 80/320), loading, two-handed"),
                 new Tuple<string, string, string, string>("Dart", "1d4 Piercing", "1/4 lb", "Finesse, thrown (range 20/60)"),
@@ -35,7 +35,7 @@ namespace DnD_Character_Sheet
             });
 
         public static List<Tuple<string, string, string, string>> MartialMeleeWeaponsTuple = new List<Tuple<string, string, string, string>>(
-            new Tuple<string, string, string, string>[]
+            new []
             {
                 new Tuple<string, string, string, string>("Battleaxe", "1d8 Slashing", "4 lb", "Versatile (1d10)"),
                 new Tuple<string, string, string, string>("Flail", "1d8 Bludgeoning", "2 lb", "---"),
@@ -58,7 +58,7 @@ namespace DnD_Character_Sheet
             });
 
         public static List<Tuple<string, string, string, string>> MartialRangedWeaponsTuple = new List<Tuple<string, string, string, string>>(
-            new Tuple<string, string, string, string>[]
+            new []
             {
                 new Tuple<string, string, string, string>("Blowgun", "1 Piercing", "1 lb", "Ammunition (range 25/100), loading"),
                 new Tuple<string, string, string, string>("Crossbow, hand", "1d6 Piercing", "3 lb", "Ammunition (range 30/120), light, loading"),
@@ -96,7 +96,7 @@ namespace DnD_Character_Sheet
             });
 
         public static List<Tuple<string, string, string, string, string>> ShieldTuple = new List<Tuple<string, string, string, string, string>>(
-            new[]
+            new []
             {
                 new Tuple<string, string, string, string, string>("Shield", "+ 2", "---", "---", "6 lb")
             });
@@ -106,31 +106,31 @@ namespace DnD_Character_Sheet
                   "A Hooded Lantern", "2 Flasks of Oil", "5 Days of Rations", "A Tinderbox", "A Waterskin", "50 Feet of Hempen Rope" }
         );
 
-        public static List<string> DiplomatsPack = new List<string>(new[]
+        public static List<string> DiplomatsPack = new List<string>(new []
                 { "A Chest", "2 Cases for Maps and Scrolls", "A Set of Fine Clothes", "A Bottle of Ink", "An Ink Pen", "A Lamp", "2 Flasks of Oil",
                   "5 Sheets of Paper", "A Vial of Perfume", "Sealing Wax", "Soap" }
         );
 
-        public static List<string> DungeoneersPack = new List<string>(new[]
+        public static List<string> DungeoneersPack = new List<string>(new []
                 { "A Backpack", "A Crowbar", "A Hammer", "10 Pitons", "10 Torches", "A Tinderbox", "10 Days of Rations",
                   "A Waterskin", "50 Feet of Hempen Rope" }
         );
 
-        public static List<string> EntertainersPack = new List<string>(new[]
+        public static List<string> EntertainersPack = new List<string>(new []
                 { "A Backpack", "A Bedroll", "2 Costumes", "5 Candles", "5 Days of Rations", "A Waterskin", "A Disguise Kit" }
         );
 
-        public static List<string> ExplorersPack = new List<string>(new[]
+        public static List<string> ExplorersPack = new List<string>(new []
                 { "A Backpack", "A Bedroll", "A Mess Kit", "A Tinderbox", "10 Torches", "10 Days of Rations", "A Waterskin",
                   "50 Feet of Hempen Rope" }
         );
 
-        public static List<string> PriestsPack = new List<string>(new[]
+        public static List<string> PriestsPack = new List<string>(new []
                 { "A Backpack", "A Blanket", "10 Candles", "A Tinderbox", "An Alms Box", "2 Blocks of Incense", "A Censer",
                   "Vestments", "2 Days of Rations", "A Waterskin" }
         );
 
-        public static List<string> ScholarsPack = new List<string>(new[]
+        public static List<string> ScholarsPack = new List<string>(new []
                 { "A Backpack", "A Book of Lore", "A Bottle of Ink", "An Ink Pen", "10 Sheets of Parchment", "A Little Bag of Sand", "A Small Knife" }
         );
 
