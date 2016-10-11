@@ -102,36 +102,36 @@ namespace DnD_Character_Sheet
             });
 
         public static List<string> BurglarsPack = new List<string>(new []
-                { "A Backpack", "Bag of 1000 Ball Bearings", "10 Feet of String", "A Bell", "5 Candles", "A Crowbar", "A Hammer", "10 Pitons",
-                  "A Hooded Lantern", "2 Flasks of Oil", "5 Days of Rations", "A Tinderbox", "A Waterskin", "50 Feet of Hempen Rope" }
+                { "Backpack", "Bag of 1000 Ball Bearings", "10 Feet of String", "Bell", "5 Candles", "Crowbar", "Hammer", "10 Pitons",
+                  "Hooded Lantern", "2 Flasks of Oil", "5 Days of Rations", "Tinderbox", "Waterskin", "50 Feet of Hempen Rope" }
         );
 
         public static List<string> DiplomatsPack = new List<string>(new []
-                { "A Chest", "2 Cases for Maps and Scrolls", "A Set of Fine Clothes", "A Bottle of Ink", "An Ink Pen", "A Lamp", "2 Flasks of Oil",
-                  "5 Sheets of Paper", "A Vial of Perfume", "Sealing Wax", "Soap" }
+                { "Chest", "2 Cases for Maps and Scrolls", "A Set of Fine Clothes", "Bottle of Ink", "An Ink Pen", "Lamp", "2 Flasks of Oil",
+                  "5 Sheets of Paper", "Vial of Perfume", "Sealing Wax", "Soap" }
         );
 
         public static List<string> DungeoneersPack = new List<string>(new []
-                { "A Backpack", "A Crowbar", "A Hammer", "10 Pitons", "10 Torches", "A Tinderbox", "10 Days of Rations",
-                  "A Waterskin", "50 Feet of Hempen Rope" }
+                { "Backpack", "Crowbar", "Hammer", "10 Pitons", "10 Torches", "Tinderbox", "10 Days of Rations",
+                  "Waterskin", "50 Feet of Hempen Rope" }
         );
 
         public static List<string> EntertainersPack = new List<string>(new []
-                { "A Backpack", "A Bedroll", "2 Costumes", "5 Candles", "5 Days of Rations", "A Waterskin", "A Disguise Kit" }
+                { "Backpack", "Bedroll", "2 Costumes", "5 Candles", "5 Days of Rations", "Waterskin", "Disguise Kit" }
         );
 
         public static List<string> ExplorersPack = new List<string>(new []
-                { "A Backpack", "A Bedroll", "A Mess Kit", "A Tinderbox", "10 Torches", "10 Days of Rations", "A Waterskin",
+                { "Backpack", "Bedroll", "Mess Kit", "Tinderbox", "10 Torches", "10 Days of Rations", "Waterskin",
                   "50 Feet of Hempen Rope" }
         );
 
         public static List<string> PriestsPack = new List<string>(new []
-                { "A Backpack", "A Blanket", "10 Candles", "A Tinderbox", "An Alms Box", "2 Blocks of Incense", "A Censer",
-                  "Vestments", "2 Days of Rations", "A Waterskin" }
+                { "Backpack", "Blanket", "10 Candles", "Tinderbox", "An Alms Box", "2 Blocks of Incense", "Censer",
+                  "Vestments", "2 Days of Rations", "Waterskin" }
         );
 
         public static List<string> ScholarsPack = new List<string>(new []
-                { "A Backpack", "A Book of Lore", "A Bottle of Ink", "An Ink Pen", "10 Sheets of Parchment", "A Little Bag of Sand", "A Small Knife" }
+                { "Backpack", "Book of Lore", "Bottle of Ink", "An Ink Pen", "10 Sheets of Parchment", "Little Bag of Sand", "Small Knife" }
         );
 
         public static List<string> MusicalInstruments = new List<string>(new[]

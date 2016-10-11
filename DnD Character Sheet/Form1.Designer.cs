@@ -227,7 +227,6 @@
             this.packListBox = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.selectPackButton = new System.Windows.Forms.Button();
             this.scholarsPackRadioButton = new System.Windows.Forms.RadioButton();
             this.priestsPackRadioButton = new System.Windows.Forms.RadioButton();
             this.explorersPackRadioButton = new System.Windows.Forms.RadioButton();
@@ -2388,7 +2387,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.selectPackButton);
             this.panel2.Controls.Add(this.scholarsPackRadioButton);
             this.panel2.Controls.Add(this.priestsPackRadioButton);
             this.panel2.Controls.Add(this.explorersPackRadioButton);
@@ -2402,16 +2400,6 @@
             this.panel2.Size = new System.Drawing.Size(272, 199);
             this.panel2.TabIndex = 7;
             // 
-            // selectPackButton
-            // 
-            this.selectPackButton.Location = new System.Drawing.Point(4, 171);
-            this.selectPackButton.Name = "selectPackButton";
-            this.selectPackButton.Size = new System.Drawing.Size(75, 23);
-            this.selectPackButton.TabIndex = 7;
-            this.selectPackButton.Text = "Choose";
-            this.selectPackButton.UseVisualStyleBackColor = true;
-            this.selectPackButton.Visible = false;
-            // 
             // scholarsPackRadioButton
             // 
             this.scholarsPackRadioButton.AutoSize = true;
@@ -2422,7 +2410,7 @@
             this.scholarsPackRadioButton.TabStop = true;
             this.scholarsPackRadioButton.Text = "Scholar\'s Pack";
             this.scholarsPackRadioButton.UseVisualStyleBackColor = true;
-            this.scholarsPackRadioButton.CheckedChanged += new System.EventHandler(this.scholarsPackRadioButton_CheckedChanged);
+            this.scholarsPackRadioButton.CheckedChanged += new System.EventHandler(this.packRadioButtons_CheckedChanged);
             // 
             // priestsPackRadioButton
             // 
@@ -2434,7 +2422,7 @@
             this.priestsPackRadioButton.TabStop = true;
             this.priestsPackRadioButton.Text = "Priest\'s Pack";
             this.priestsPackRadioButton.UseVisualStyleBackColor = true;
-            this.priestsPackRadioButton.CheckedChanged += new System.EventHandler(this.priestsPackRadioButton_CheckedChanged);
+            this.priestsPackRadioButton.CheckedChanged += new System.EventHandler(this.packRadioButtons_CheckedChanged);
             // 
             // explorersPackRadioButton
             // 
@@ -2446,7 +2434,7 @@
             this.explorersPackRadioButton.TabStop = true;
             this.explorersPackRadioButton.Text = "Explorer\'s Pack";
             this.explorersPackRadioButton.UseVisualStyleBackColor = true;
-            this.explorersPackRadioButton.CheckedChanged += new System.EventHandler(this.explorersPackRadioButton_CheckedChanged);
+            this.explorersPackRadioButton.CheckedChanged += new System.EventHandler(this.packRadioButtons_CheckedChanged);
             // 
             // entertainersPackRadioButton
             // 
@@ -2458,7 +2446,7 @@
             this.entertainersPackRadioButton.TabStop = true;
             this.entertainersPackRadioButton.Text = "Entertainer\'s Pack";
             this.entertainersPackRadioButton.UseVisualStyleBackColor = true;
-            this.entertainersPackRadioButton.CheckedChanged += new System.EventHandler(this.entertainersPackRadioButton_CheckedChanged);
+            this.entertainersPackRadioButton.CheckedChanged += new System.EventHandler(this.packRadioButtons_CheckedChanged);
             // 
             // dungeoneersPackRadioButton
             // 
@@ -2470,7 +2458,7 @@
             this.dungeoneersPackRadioButton.TabStop = true;
             this.dungeoneersPackRadioButton.Text = "Dungeoneer\'s Pack";
             this.dungeoneersPackRadioButton.UseVisualStyleBackColor = true;
-            this.dungeoneersPackRadioButton.CheckedChanged += new System.EventHandler(this.dungeoneersPackRadioButton_CheckedChanged);
+            this.dungeoneersPackRadioButton.CheckedChanged += new System.EventHandler(this.packRadioButtons_CheckedChanged);
             // 
             // diplomatsPackRadioButton
             // 
@@ -2482,7 +2470,7 @@
             this.diplomatsPackRadioButton.TabStop = true;
             this.diplomatsPackRadioButton.Text = "Diplomat\'s Pack";
             this.diplomatsPackRadioButton.UseVisualStyleBackColor = true;
-            this.diplomatsPackRadioButton.CheckedChanged += new System.EventHandler(this.diplomatsPackRadioButton_CheckedChanged);
+            this.diplomatsPackRadioButton.CheckedChanged += new System.EventHandler(this.packRadioButtons_CheckedChanged);
             // 
             // burglersPackRadioButton
             // 
@@ -2494,7 +2482,7 @@
             this.burglersPackRadioButton.TabStop = true;
             this.burglersPackRadioButton.Text = "Burglar\'s Pack";
             this.burglersPackRadioButton.UseVisualStyleBackColor = true;
-            this.burglersPackRadioButton.CheckedChanged += new System.EventHandler(this.burglersPackRadioButton_CheckedChanged);
+            this.burglersPackRadioButton.CheckedChanged += new System.EventHandler(this.packRadioButtons_CheckedChanged);
             // 
             // label12
             // 
@@ -2996,7 +2984,6 @@
         private System.Windows.Forms.RadioButton entertainersPackRadioButton;
         private System.Windows.Forms.RadioButton dungeoneersPackRadioButton;
         private System.Windows.Forms.RadioButton diplomatsPackRadioButton;
-        private System.Windows.Forms.Button selectPackButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel startingEquipmentPanelFive;

@@ -1165,96 +1165,39 @@ namespace DnD_Character_Sheet
             }
         }
 
-        private void burglersPackRadioButton_CheckedChanged(object sender, EventArgs e)
+        private void packRadioButtons_CheckedChanged(object sender, EventArgs e)
         {
             if (((RadioButton)sender).Checked == true)
             {
                 packListBox.Items.Clear();
-
-                foreach (var item in Equipment.BurglarsPack)
+                switch (((RadioButton)sender).Text)
                 {
-                    packListBox.Items.Add(item);
+                    case "Burglar's Pack":
+                        Equipment.BurglarsPack.ForEach(i => packListBox.Items.Add(i));
+                        break;
+                    case "Diplomat's Pack":
+                        Equipment.DiplomatsPack.ForEach(i => packListBox.Items.Add(i));
+                        break;
+                    case "Dungeoneer's Pack":
+                        Equipment.DungeoneersPack.ForEach(i => packListBox.Items.Add(i));
+                        break;
+                    case "Entertainer's Pack":
+                        Equipment.EntertainersPack.ForEach(i => packListBox.Items.Add(i));
+                        break;
+                    case "Explorer's Pack":
+                        Equipment.ExplorersPack.ForEach(i => packListBox.Items.Add(i));
+                        break;
+                    case "Priest's Pack":
+                        Equipment.PriestsPack.ForEach(i => packListBox.Items.Add(i));
+                        break;
+                    case "Scholar's Pack":
+                        Equipment.ScholarsPack.ForEach(i => packListBox.Items.Add(i));
+                        break;
+                    default:
+                        break;
                 }
             }
-        }
-
-        private void diplomatsPackRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (((RadioButton)sender).Checked == true)
-            {
-                packListBox.Items.Clear();
-
-                foreach (var item in Equipment.DiplomatsPack)
-                {
-                    packListBox.Items.Add(item);
-                }
-            }
-        }
-
-        private void dungeoneersPackRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (((RadioButton)sender).Checked == true)
-            {
-                packListBox.Items.Clear();
-
-                foreach (var item in Equipment.DungeoneersPack)
-                {
-                    packListBox.Items.Add(item);
-                }
-            }
-        }
-
-        private void entertainersPackRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (((RadioButton)sender).Checked == true)
-            {
-                packListBox.Items.Clear();
-
-                foreach (var item in Equipment.EntertainersPack)
-                {
-                    packListBox.Items.Add(item);
-                }
-            }
-        }
-
-        private void explorersPackRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (((RadioButton)sender).Checked == true)
-            {
-                packListBox.Items.Clear();
-
-                foreach (var item in Equipment.ExplorersPack)
-                {
-                    packListBox.Items.Add(item);
-                }
-            }
-        }
-
-        private void priestsPackRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (((RadioButton)sender).Checked == true)
-            {
-                packListBox.Items.Clear();
-
-                foreach (var item in Equipment.PriestsPack)
-                {
-                    packListBox.Items.Add(item);
-                }
-            }
-        }
-
-        private void scholarsPackRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (((RadioButton)sender).Checked == true)
-            {
-                packListBox.Items.Clear();
-
-                foreach (var item in Equipment.ScholarsPack)
-                {
-                    packListBox.Items.Add(item);
-                }
-            }
-        }
+        }       
 
         private void button1_Click(object sender, EventArgs e)
         {
