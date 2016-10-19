@@ -151,7 +151,7 @@ namespace DnD_Character_Sheet
         {
             character = new Character();
             resetClassAndRaceFeaturesTab();
-            classComboBox.SelectedIndex = 2;
+            classComboBox.SelectedIndex = 3;
             raceComboBox.SelectedIndex = 0;
 
             backgroundComboBox.SelectedIndex = 0;
