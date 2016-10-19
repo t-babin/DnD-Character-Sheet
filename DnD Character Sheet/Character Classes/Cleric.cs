@@ -43,10 +43,6 @@ namespace DnD_Character_Sheet.Character_Classes
         {
             ClassName = "Cleric";
             HitPointDieType = 8;
-            ProficientArmors = new List<string>(new string[] { "Light Armor", "Medium Armor", "Shields" });
-            AddProficiencies();
-            AddClassFeatures();
-            //SelectableSkills.Add(2, new string[] { "History", "Insight", "Medicine", "Persuasion", "Religion" });
 
             FeaturesPerLevelTable = new List<Tuple<int, int, string>>(new Tuple<int, int, string>[]
             {
@@ -92,6 +88,19 @@ namespace DnD_Character_Sheet.Character_Classes
                                                  { "4", "3", "3", "3", "3", "1", "1", "1", "1" },
                                                  { "4", "3", "3", "3", "3", "2", "1", "1", "1" },
                                                  { "4", "3", "3", "3", "3", "2", "2", "1", "1" } };
+
+            PotentialStartingEquipment = new List<string[]>
+            {
+                new [] { "Mace", "Warhammer" },
+                new [] { "Scale Mail", "Leather Armor", "Chain Mail" },
+                new [] { "Light Crossbow", "Any Simple Weapon" },
+                new [] { "Priest's Pack", "Explorer's Pack" },
+                new [] { "Shield" },
+                new [] { "Holy Symbol" }
+            };
+
+            AddProficiencies();
+            AddClassFeatures();
         }
 
         
@@ -140,6 +149,8 @@ namespace DnD_Character_Sheet.Character_Classes
                                                           "roll required.");
 
             // TODO add the different divine domains (a ton of typing)
+            // maybe I don't have it listed in the class features section and instead make a popup window allowing the user to see them more in depth
+            // and select one?
 
             FeaturesDictionary.Add("Skills That You May be Proficient in", "History, Insight, Medicine, Persuasion, Religion");
 
@@ -149,6 +160,7 @@ namespace DnD_Character_Sheet.Character_Classes
 
         public override void AddProficiencies()
         {
+            ProficientArmors = new List<string>(new string[] { "Light Armor", "Medium Armor", "Shields" });
             ProficientWeapons.AddRange(Equipment.SimpleMeleeWeapons);
             ProficientWeapons.AddRange(Equipment.SimpleRangedWeapons);
             ProficientTools.Add("None");
@@ -156,6 +168,8 @@ namespace DnD_Character_Sheet.Character_Classes
             SavingThrows.Add("Charisma");
         }
 
+        //Level 1: 8 + Constitution Modifier
+        //Onwards: 1d8 (or 5) + Constitution Modifier
         public override int CalculateHitPoints(int level, AbilityScores scores)
         {
             throw new NotImplementedException();

@@ -151,7 +151,7 @@ namespace DnD_Character_Sheet
         {
             character = new Character();
             resetClassAndRaceFeaturesTab();
-            classComboBox.SelectedIndex = 1;
+            classComboBox.SelectedIndex = 2;
             raceComboBox.SelectedIndex = 0;
 
             backgroundComboBox.SelectedIndex = 0;
@@ -1199,6 +1199,7 @@ namespace DnD_Character_Sheet
             }
         }       
 
+        // TODO remove this so that it just gets loaded automatically when the tab is loaded or something
         private void button1_Click(object sender, EventArgs e)
         {
             var panelIndex = 0;
@@ -1319,7 +1320,8 @@ namespace DnD_Character_Sheet
             
             foreach (var item in character.CharClass.FinalStartingEquipment)
             {
-                if ((Equipment.LightArmor.Contains(item)) || (Equipment.MediumArmor.Contains(item)) || (Equipment.HeavyArmor.Contains(item)))
+                if ((Equipment.LightArmor.Contains(item)) || (Equipment.MediumArmor.Contains(item)) ||
+                    (Equipment.HeavyArmor.Contains(item)) || (Equipment.Shield.Contains(item)))
                     armorList.Add(item);
 
                 else if ((Equipment.SimpleMeleeWeapons.Contains(item)) || (Equipment.SimpleRangedWeapons.Contains(item)) ||
